@@ -1,0 +1,406 @@
+{
+  "bestsellers": [
+    {
+      "title": " Giày Lười Unisex NATIVE Miles ",
+      "description": "description 1",
+      "src": "http://product.hstatic.net/1000376021/product/11104600-1999-1_dde3bbe180c1406392336f4a6cb7af70_a391a2d67e3343f282e5ef382d2e86ba_large.jpg",
+      "price": "1400000",
+      "id": "1"
+    },
+    {
+      "title": " Giày Đế Xuồng Nữ CARMELA Camel Leather Ladies Sandals ",
+      "description": "description 2",
+      "src": "https://product.hstatic.net/1000376021/product/160835_camel_0_10557bad46b54b90ac98ef8c25ed027f_827d1d2c6a7c4373ae2b0461e708fedc_large.jpg",
+      "price": "2490000",
+      "id": "2"
+    },
+    {
+      "title": " Giày Tây Nam SLEDGERS Trouville ",
+      "description": "description 3",
+      "src": "http://product.hstatic.net/1000376021/product/trouville_black_0_3a7eb0ff388a413daaff77eb5d07d920_487386c3005546a1b03b5749c668f5d6_large.jpg",
+      "price": "2890000",
+      "id": "3"
+    },
+    {
+      "title": " Giày Sneakers Nữ GEOX D Nydame A ",
+      "description": "description 4",
+      "src": "https://product.hstatic.net/1000376021/product/d620qa_c9999_0_3d5e319fefb24b4db5257e0919c73337_b59358b78c9048b5bc98059aab51fdf4_large.jpg",
+      "price": "5700000",
+      "id": "4"
+    },
+    {
+      "title": " Giày Lười Nữ GEOX D Elidia A ",
+      "description": "description 5",
+      "src": "http://product.hstatic.net/1000376021/product/d642ta_c7005_0_4f5d7313edf449559772241c954e7264_a1962bfcb5d44e8da101997bbc10cfcd_large.jpg",
+      "price": "4800000",
+      "id": "5"
+    },
+    {
+      "title": " Giày Cao Gót Nữ GEOX D Eleana A ",
+      "description": "description 6",
+      "src": "http://product.hstatic.net/1000376021/product/d26twa_00085_c9999_0_58eac139bd2a4b15be9f2b11a1ac062a_2290da7179544e28934adf7979f1f9f5_large.jpg",
+      "price": "4900000",
+      "id": "6"
+    },
+    {
+      "title": " Giày Boots Nữ GEOX D Anylla Wedge C ",
+      "description": "description 7",
+      "src": "https://product.hstatic.net/1000376021/product/d04ldc_c0013_0_f2234de9f9ad46f59054a6895ac9d6f9_5ca88fcdaa9a4c6f8f452892e73c09e9_large.jpg",
+      "price": "5500000",
+      "id": "7"
+    },
+    {
+      "title": " Giày Boots Nam GEOX U Spherica Ec1 C ",
+      "description": "description 8",
+      "src": "https://product.hstatic.net/1000376021/product/u16d1c_c6009_0_a781870112f9468c97c65056fb82e1df_b4d3d7a859754690a45231e84c099950_large.jpg",
+      "price": "5100000",
+      "id": "8"
+    },
+    {
+      "title": " Giày Lười Nam GEOX U Moner 2Fit A ",
+      "description": "description 9",
+      "src": "https://product.hstatic.net/1000376021/product/u824ya_c6005_0_b388a92089ba404e90eeb7e692ebe7d5_70a0bdefbf4741bebb7373af82a3bb82_large.png",
+      "price": "4900000",
+      "id": "9"
+    },
+    {
+      "title": " Giày Sneakers Nam GEOX U Portello B ",
+      "description": "description 10",
+      "src": "https://product.hstatic.net/1000376021/product/u25e1b_c1006_0_0fd798fa192745719f5c4a471372af59_6098f6490eea469f9c1cbccd48a31cd4_large.png",
+      "price": "3900000",
+      "id": "10"
+    }
+  ],
+  "user": [
+    {
+      "name": "phat001a",
+      "isLogin": true,
+      "phone": "111111111111",
+      "email": "phat1@a.com",
+      "address": "Vietnam",
+      "nationality": "Vietnam",
+      "company": "VMO",
+      "password": "123456",
+      "dateOfBirth": "2023-04-19",
+      "gender": "Man",
+      "id": 5
+    }
+  ],
+  "users": [
+    {
+      "name": "son1a",
+      "isLogin": false,
+      "phone": "000000001",
+      "email": "son1@a.com",
+      "address": "Vietnam",
+      "nationality": "Vietnam",
+      "company": "VMO",
+      "password": "000000001",
+      "dateOfBirth": "2023-04-27",
+      "gender": "Man",
+      "id": 1
+    },
+    {
+      "name": "son2a",
+      "isLogin": false,
+      "phone": "000000001",
+      "email": "son2@a.com",
+      "address": "Vietnam",
+      "nationality": "Vietnam",
+      "company": "VMO",
+      "password": "00000001",
+      "dateOfBirth": "2023-04-17",
+      "gender": "Man",
+      "id": 2
+    },
+    {
+      "name": "son3a",
+      "isLogin": false,
+      "phone": "123456",
+      "email": "son3@a.com",
+      "address": "Vietnam",
+      "nationality": "Vietnam",
+      "company": "VMO",
+      "password": "123456",
+      "dateOfBirth": "2023-04-27",
+      "gender": "Man",
+      "id": 3
+    },
+    {
+      "name": "son01a",
+      "isLogin": false,
+      "phone": "123456",
+      "email": "son01@a.com",
+      "address": "Vietnam",
+      "nationality": "Vietnam",
+      "company": "VMO",
+      "password": "123456",
+      "dateOfBirth": "2023-04-05",
+      "gender": "Man",
+      "id": 4
+    },
+    {
+      "name": "phat001a",
+      "isLogin": false,
+      "phone": "111111111111",
+      "email": "phat1@a.com",
+      "address": "Vietnam",
+      "nationality": "Vietnam",
+      "company": "VMO",
+      "password": "123456",
+      "dateOfBirth": "2023-04-19",
+      "gender": "Man",
+      "id": 5
+    }
+  ],
+  "products": [
+    {
+      "title": " Giày Lười Unisex NATIVE Miles ",
+      "description": "description 1",
+      "src": "http://product.hstatic.net/1000376021/product/11104600-1999-1_dde3bbe180c1406392336f4a6cb7af70_a391a2d67e3343f282e5ef382d2e86ba_large.jpg",
+      "price": "1400000",
+      "id": "1"
+    },
+    {
+      "title": " Giày Đế Xuồng Nữ CARMELA Camel Leather Ladies Sandals ",
+      "description": "description 2",
+      "src": "https://product.hstatic.net/1000376021/product/160835_camel_0_10557bad46b54b90ac98ef8c25ed027f_827d1d2c6a7c4373ae2b0461e708fedc_large.jpg",
+      "price": "2490000",
+      "id": "2"
+    },
+    {
+      "title": " Giày Tây Nam SLEDGERS Trouville ",
+      "description": "description 3",
+      "src": "http://product.hstatic.net/1000376021/product/trouville_black_0_3a7eb0ff388a413daaff77eb5d07d920_487386c3005546a1b03b5749c668f5d6_large.jpg",
+      "price": "2890000",
+      "id": "3"
+    },
+    {
+      "title": " Giày Sneakers Nữ GEOX D Nydame A ",
+      "description": "description 4",
+      "src": "https://product.hstatic.net/1000376021/product/d620qa_c9999_0_3d5e319fefb24b4db5257e0919c73337_b59358b78c9048b5bc98059aab51fdf4_large.jpg",
+      "price": "5700000",
+      "id": "4"
+    },
+    {
+      "title": " Giày Lười Nữ GEOX D Elidia A ",
+      "description": "description 5",
+      "src": "http://product.hstatic.net/1000376021/product/d642ta_c7005_0_4f5d7313edf449559772241c954e7264_a1962bfcb5d44e8da101997bbc10cfcd_large.jpg",
+      "price": "4800000",
+      "id": "5"
+    },
+    {
+      "title": " Giày Cao Gót Nữ GEOX D Eleana A ",
+      "description": "description 6",
+      "src": "http://product.hstatic.net/1000376021/product/d26twa_00085_c9999_0_58eac139bd2a4b15be9f2b11a1ac062a_2290da7179544e28934adf7979f1f9f5_large.jpg",
+      "price": "4900000",
+      "id": "6"
+    },
+    {
+      "title": " Giày Boots Nữ GEOX D Anylla Wedge C ",
+      "description": "description 7",
+      "src": "https://product.hstatic.net/1000376021/product/d04ldc_c0013_0_f2234de9f9ad46f59054a6895ac9d6f9_5ca88fcdaa9a4c6f8f452892e73c09e9_large.jpg",
+      "price": "5500000",
+      "id": "7"
+    },
+    {
+      "title": " Giày Boots Nam GEOX U Spherica Ec1 C ",
+      "description": "description 8",
+      "src": "https://product.hstatic.net/1000376021/product/u16d1c_c6009_0_a781870112f9468c97c65056fb82e1df_b4d3d7a859754690a45231e84c099950_large.jpg",
+      "price": "5100000",
+      "id": "8"
+    },
+    {
+      "title": " Giày Lười Nam GEOX U Moner 2Fit A ",
+      "description": "description 9",
+      "src": "https://product.hstatic.net/1000376021/product/u824ya_c6005_0_b388a92089ba404e90eeb7e692ebe7d5_70a0bdefbf4741bebb7373af82a3bb82_large.png",
+      "price": "4900000",
+      "id": "9"
+    },
+    {
+      "title": " Giày Sneakers Nam GEOX U Portello B ",
+      "description": "description 10",
+      "src": "https://product.hstatic.net/1000376021/product/u25e1b_c1006_0_0fd798fa192745719f5c4a471372af59_6098f6490eea469f9c1cbccd48a31cd4_large.png",
+      "price": "3900000",
+      "id": "10"
+    },
+    {
+      "title": " Giày Sneakers Nữ GEOX D Spherica A ",
+      "description": "description 10",
+      "src": "https://product.hstatic.net/1000376021/product/d15nua_c1q8z_0_b6a0fe231c9c4cbaa5245b50198b1e67_fd070e63700a450b8d629e2d7bde158d_large.jpg",
+      "price": "4800000",
+      "id": "11"
+    },
+    {
+      "title": " Giày Sneakers Nữ GEOX D Spherica A ",
+      "description": "description 10",
+      "src": "https://product.hstatic.net/1000376021/product/d15nua_c1q8x_0_83fd96b1f31a445ebc0eae947e1ab949_1990fd85553d43729c45a9ed5400d0ca_large.jpg",
+      "price": "4800000",
+      "id": "12"
+    },
+    {
+      "title": " Giày Sneakers Trẻ Em Unisex NIKE Revolution 6 Nn (Psv) ",
+      "description": "description 10",
+      "src": "https://product.hstatic.net/1000376021/product/dd1095-600_0_a86d1c505a7745ef9b2b61c29356d3da_eb27c4c2575347d787455a8ae25e9a17_large.jpg",
+      "price": "1399000",
+      "id": "13"
+    },
+    {
+      "title": " Giày Sneakers Trẻ Em Unisex NIKE Revolution 6 Nn Jp (Psv) ",
+      "description": "description 10",
+      "src": "https://product.hstatic.net/1000376021/product/dv3182-001_0_ba49b27d1eba4b879923912665dfcc32_a6ad10d8aa804bcca18009b431a8c58c_large.jpg",
+      "price": "1619000",
+      "id": "14"
+    },
+    {
+      "title": " Giày Sneakers Trẻ Em Unisex NIKE Omni Multi-Court (Gs) ",
+      "description": "description 10",
+      "src": "https://product.hstatic.net/1000376021/product/dv3182-001_0_ba49b27d1eba4b879923912665dfcc32_a6ad10d8aa804bcca18009b431a8c58c_large.jpg",
+      "price": "1619000",
+      "id": "15"
+    },
+    {
+      "title": " Giày Sneakers Nữ NIKE W Renew Run 4 ",
+      "description": "description 10",
+      "src": "https://product.hstatic.net/1000376021/product/dr2682-500_0_4ac733817ed34d13ac02d26988554f6a_a9c77d1a33b2428a8a5ba3dcdab828cc_large.jpg",
+      "price": "2639000",
+      "id": "16"
+    }
+  ],
+  "cart": [
+    {
+      "title": " Giày Lười Unisex NATIVE Miles ",
+      "description": "description 1",
+      "src": "http://product.hstatic.net/1000376021/product/11104600-1999-1_dde3bbe180c1406392336f4a6cb7af70_a391a2d67e3343f282e5ef382d2e86ba_large.jpg",
+      "price": "1400000",
+      "id": "1"
+    },
+    {
+      "title": " Giày Đế Xuồng Nữ CARMELA Camel Leather Ladies Sandals ",
+      "description": "description 2",
+      "src": "https://product.hstatic.net/1000376021/product/160835_camel_0_10557bad46b54b90ac98ef8c25ed027f_827d1d2c6a7c4373ae2b0461e708fedc_large.jpg",
+      "price": "2490000",
+      "id": "2"
+    },
+    {
+      "title": " Giày Cao Gót Nữ GEOX D Eleana A ",
+      "description": "description 6",
+      "src": "http://product.hstatic.net/1000376021/product/d26twa_00085_c9999_0_58eac139bd2a4b15be9f2b11a1ac062a_2290da7179544e28934adf7979f1f9f5_large.jpg",
+      "price": "4900000",
+      "id": "6"
+    },
+    {
+      "title": " Giày Lười Nam GEOX U Moner 2Fit A ",
+      "description": "description 9",
+      "src": "https://product.hstatic.net/1000376021/product/u824ya_c6005_0_b388a92089ba404e90eeb7e692ebe7d5_70a0bdefbf4741bebb7373af82a3bb82_large.png",
+      "price": "4900000",
+      "id": "9"
+    },
+    {
+      "title": " Giày Sneakers Nam GEOX U Portello B ",
+      "description": "description 10",
+      "src": "https://product.hstatic.net/1000376021/product/u25e1b_c1006_0_0fd798fa192745719f5c4a471372af59_6098f6490eea469f9c1cbccd48a31cd4_large.png",
+      "price": "3900000",
+      "id": "10"
+    },
+    {
+      "title": " Giày Boots Nữ GEOX D Anylla Wedge C ",
+      "description": "description 7",
+      "src": "https://product.hstatic.net/1000376021/product/d04ldc_c0013_0_f2234de9f9ad46f59054a6895ac9d6f9_5ca88fcdaa9a4c6f8f452892e73c09e9_large.jpg",
+      "price": "5500000",
+      "id": "7"
+    },
+    {
+      "title": " Giày Sneakers Trẻ Em Unisex NIKE Revolution 6 Nn (Psv) ",
+      "description": "description 10",
+      "src": "https://product.hstatic.net/1000376021/product/dd1095-600_0_a86d1c505a7745ef9b2b61c29356d3da_eb27c4c2575347d787455a8ae25e9a17_large.jpg",
+      "price": "1399000",
+      "id": "13"
+    },
+    {
+      "title": " Giày Sneakers Nữ NIKE W Renew Run 4 ",
+      "description": "description 10",
+      "src": "https://product.hstatic.net/1000376021/product/dr2682-500_0_4ac733817ed34d13ac02d26988554f6a_a9c77d1a33b2428a8a5ba3dcdab828cc_large.jpg",
+      "price": "2639000",
+      "id": "16"
+    }
+  ],
+  "brands": [
+    {
+      "id": 1,
+      "name": "TOMS"
+    },
+    {
+      "id": 2,
+      "name": "EASTPAK"
+    },
+    {
+      "id": 3,
+      "name": "NATIVE HOT"
+    },
+    {
+      "id": 4,
+      "name": "XTI HOT"
+    },
+    {
+      "id": 5,
+      "name": "NIKE HOT"
+    },
+    {
+      "id": 6,
+      "name": "HOLSTER"
+    },
+    {
+      "id": 7,
+      "name": "VIONIC"
+    },
+    {
+      "id": 8,
+      "name": "ARTEMYS"
+    },
+    {
+      "id": 9,
+      "name": "SHUCARE"
+    },
+    {
+      "id": 10,
+      "name": "HEALTHY BACK BAG"
+    },
+    {
+      "id": 11,
+      "name": "FREEWATERS"
+    },
+    {
+      "id": 12,
+      "name": "GEOX HOT"
+    },
+    {
+      "id": 13,
+      "name": "ADIDAS HOT"
+    },
+    {
+      "id": 14,
+      "name": "HEYDUDE"
+    },
+    {
+      "id": 15,
+      "name": "CARMELA NEW"
+    },
+    {
+      "id": 16,
+      "name": "SLEDGERS"
+    },
+    {
+      "id": 17,
+      "name": "ROLLINK"
+    },
+    {
+      "id": 18,
+      "name": "XOX"
+    },
+    {
+      "id": 19,
+      "name": "FLOSSY"
+    }
+  ]
+}
