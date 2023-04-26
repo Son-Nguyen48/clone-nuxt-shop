@@ -19,7 +19,7 @@ export const actions = {
     return this.$axios.$get('/collections').then((res) => {
       // eslint-disable-next-line no-console
       console.log(res, 'res', payload, 'payload')
-      const result = res.find((item) => payload in item)
+      const result = res[payload]
       // eslint-disable-next-line no-console
       console.log(result, 'result')
       vuexContext.commit('store', result)
