@@ -14,10 +14,14 @@
           </a>
         </template>
 
-        <v-list>
+        <v-list class="flex">
           <v-list-item v-for="(item, index) in brands" :key="index" class="p-0">
             <v-list-item-title>
-              <v-btn class="w-full">{{ item.name }}</v-btn>
+              <v-btn class="w-full">
+                <nuxt-link :to="`/collections/${item.name.toLowerCase()}`">{{
+                  item.name
+                }}</nuxt-link>
+              </v-btn>
             </v-list-item-title>
           </v-list-item>
         </v-list>

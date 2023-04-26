@@ -328,7 +328,8 @@
   "brands": [
     {
       "id": 1,
-      "name": "TOMS"
+      "name": "TOMS",
+      "src": "https://file.hstatic.net/1000376021/file/banner_thuong_hieu_toms_6acffd0adb7e472894374bac065e3005.jpg"
     },
     {
       "id": 2,
@@ -336,15 +337,15 @@
     },
     {
       "id": 3,
-      "name": "NATIVE HOT"
+      "name": "NATIVE-HOT"
     },
     {
       "id": 4,
-      "name": "XTI HOT"
+      "name": "XTI-HOT"
     },
     {
       "id": 5,
-      "name": "NIKE HOT"
+      "name": "NIKE-HOT"
     },
     {
       "id": 6,
@@ -364,7 +365,7 @@
     },
     {
       "id": 10,
-      "name": "HEALTHY BACK BAG"
+      "name": "HEALTHY-BACK-BAG"
     },
     {
       "id": 11,
@@ -372,11 +373,11 @@
     },
     {
       "id": 12,
-      "name": "GEOX HOT"
+      "name": "GEOX-HOT"
     },
     {
       "id": 13,
-      "name": "ADIDAS HOT"
+      "name": "ADIDAS-HOT"
     },
     {
       "id": 14,
@@ -384,7 +385,7 @@
     },
     {
       "id": 15,
-      "name": "CARMELA NEW"
+      "name": "CARMELA-NEW"
     },
     {
       "id": 16,
@@ -401,6 +402,176 @@
     {
       "id": 19,
       "name": "FLOSSY"
+    }
+  ],
+  "collections": [
+    {
+      "toms": {
+        "brandId": 1,
+        "id": 1,
+        "src": "https://file.hstatic.net/1000376021/file/banner_thuong_hieu_toms_6acffd0adb7e472894374bac065e3005.jpg",
+        "title": "TOMS - ĐỘC QUYỀN PHÂN PHỐI TẠI VIỆT NAM",
+        "description": "Bùng nổ tháng 3 với siêu phẩm giày Toms chính thức “hạ cánh” tại Việt Nam. Là một trong những thương hiệu giày đình đám tại USA, Toms Shoes chiếm trọn tình cảm của khách hàng bởi thiết kế đơn giản, tinh tế cùng tính ứng dụng cao. Với chất liệu vải canvas cùng phần đế mỏng nhẹ, giày Toms cho cảm giác thoải mái, êm ái khi vận động, di chuyển.Toms là một trong những thương hiệu giày nổi tiếng toàn cầu với thiết kế độc đáo và chất lượng vượt trội. Đặc biệt, với mỗi đôi giày Toms bán ra, Toms sẽ tặng một đôi giày mới cho một trẻ em nghèo khó ở một số quốc gia trên thế giới.Nếu bạn là một tín đồ của Toms hay đơn giản là muốn tìm một đôi giày phù hợp, đừng bỏ lỡ siêu phẩm đến từ USA nhé!",
+        "titleHeader": "TOMS",
+        "listProduct": [
+          {
+            "id": 1,
+            "src": "https://product.hstatic.net/1000376021/product/10019759_0_f295321360cd48c1b59e85a997d028be_842d0346afd243ca933ff9004fd760b0_large.jpg",
+            "title": "Dép Đế Xuồng Nữ TOMS Diana Mule",
+            "price": 2390000
+          },
+          {
+            "id": 2,
+            "src": "https://product.hstatic.net/1000376021/product/10019744_0_98e15b4275964eef9fa8421eb07ef96e_95f83f776b6b4b1eb0c8444d69f05c98_large.jpg",
+            "title": "Dép Đế Xuồng Nữ TOMS Diana Mule",
+            "price": 2390000
+          },
+          {
+            "id": 3,
+            "src": "https://product.hstatic.net/1000376021/product/10019847_0_9582de7c459647678ae9b95ba9bce600_ae4c97a9f73647c2b340d6eb8902c466_large.jpg",
+            "title": "Giày Lười Bé Gái TOMS Alpargata",
+            "price": 1290000
+          },
+          {
+            "id": 4,
+            "src": "https://product.hstatic.net/1000376021/product/10019832_0_3ab11bb0e0e146518e5c674773771e81_2fb886f55a3543479663624b3eff6e85_large.jpg",
+            "title": "Giày Lười Bé Gái TOMS Alpargata",
+            "price": 1290000
+          },
+          {
+            "id": 5,
+            "src": "https://product.hstatic.net/1000376021/product/10019788_0_dd6f0575dd5d49ab843a2e93b90efe28_c67bcf31b11e497e89a8d63af226615a_large.jpg",
+            "title": "Giày Lười Bé Gái TOMS Alpargata",
+            "price": 1290000
+          },
+          {
+            "id": 6,
+            "src": "https://product.hstatic.net/1000376021/product/10019787_0_bf017e26b6cf4bbf8689c0bec18f9cf4_520c2981907a46678bb3ced6e5f1fda8_large.jpg",
+            "title": "Giày Lười Bé Gái TOMS Alpargata",
+            "price": 1290000
+          },
+          {
+            "id": 7,
+            "src": "https://product.hstatic.net/1000376021/product/10019836_0_5189eb0792574242a8eae190f5c9a654_ac77f04eecd34d9c9b3e5c90e819da16_large.jpg",
+            "title": "Giày Lười Bé Trai TOMS Alpargata",
+            "price": 1290000
+          },
+          {
+            "id": 8,
+            "src": "https://product.hstatic.net/1000376021/product/10019882_0_b36954f8be1946488930a863b7425d1d_2b86d670abc2411bb2e90224fcdc7ee3_large.jpg",
+            "title": "Giày Lười Nam TOMS Alp Fwd",
+            "price": 1990000
+          },
+          {
+            "id": 9,
+            "src": "https://product.hstatic.net/1000376021/product/10019873_0_689fb4bb8b97470f81c8756a874b5bf6_be73b22ab6684f899ebdf5115fde586e_large.jpg",
+            "title": "Giày Lười Nam TOMS Alp Fwd",
+            "price": 1990000
+          },
+          {
+            "id": 10,
+            "src": "https://product.hstatic.net/1000376021/product/10019872_0_0b2bf01203784098979f5b04bce6dc0d_4c96caab500642ad9cd7a1411f2a5ff2_large.jpg",
+            "title": "Giày Lười Nam TOMS Alp Fwd",
+            "price": 1290000
+          },
+          {
+            "id": 11,
+            "src": "https://product.hstatic.net/1000376021/product/10019871_0_5e449dd062df4e658b073ae953339692_b0770e3f21e24d0199b7516ae3f4de05_large.jpg",
+            "title": "Giày Lười Nam TOMS Alp Fwd",
+            "price": 1290000
+          },
+          {
+            "id": 12,
+            "src": "https://product.hstatic.net/1000376021/product/10019860_0_47dea577b0324830b2915d29f42bbcae_f80df078d22d430faf3063fdaf50fe8a_large.jpg",
+            "title": "Giày Lười Nam TOMS Alp Fwd",
+            "price": 1990000
+          }
+        ]
+      }
+    },
+    {
+      "native-hot": {
+        "brandId": 2,
+        "id": 2,
+        "src": "https://file.hstatic.net/1000376021/file/banner_thuong_hieu_8a6fd7df710945c7ac512c82ef0e3086.jpg",
+        "title": "NATIVE SHOES #LiveLightly",
+        "description": "Thương hiệu giày NATIVE SHOES được thành lập tại Vancouver, Canada từ năm 2009, mang xu hướng cổ điển kết hợp với hiện đại nổi bật với những mẫu giày siêu nhẹ, kiểu dáng đa dạng cho mọi lứa tuổi và giới tính. Sản phẩm hiện đang được phân phối tại hơn 50 quốc gia trên toàn thế giới. Tại Việt Nam, SHOOZ là đơn vị nhập khẩu và phân phối độc quyền các sản phẩm mang thương hiệu NATIVE SHOES chính hãng.Với thiết kế “đục lỗ” đặc trưng và chất liệu nhựa EVA siêu nhẹ, những mẫu giày NATIVE SHOES luôn nhận được sự yêu thích mỗi khi ra mắt bộ sưu tập mới. Không chỉ là một đôi giày thời trang và tiện dụng, các thiết kế của NATIVE SHOES luôn mang tinh thần tươi trẻ, sáng tạo và độc đáo gắn liền với sứ mệnh chung tay vì cộng đồng.",
+        "titleHeader": "NATIVE",
+        "listProduct": [
+          {
+            "id": 1,
+            "src": "https://product.hstatic.net/1000376021/product/10019759_0_f295321360cd48c1b59e85a997d028be_842d0346afd243ca933ff9004fd760b0_large.jpg",
+            "title": "Dép Đế Xuồng Nữ TOMS Diana Mule",
+            "price": 2390000
+          },
+          {
+            "id": 2,
+            "src": "https://product.hstatic.net/1000376021/product/10019744_0_98e15b4275964eef9fa8421eb07ef96e_95f83f776b6b4b1eb0c8444d69f05c98_large.jpg",
+            "title": "Dép Đế Xuồng Nữ TOMS Diana Mule",
+            "price": 2390000
+          },
+          {
+            "id": 3,
+            "src": "https://product.hstatic.net/1000376021/product/10019847_0_9582de7c459647678ae9b95ba9bce600_ae4c97a9f73647c2b340d6eb8902c466_large.jpg",
+            "title": "Giày Lười Bé Gái TOMS Alpargata",
+            "price": 1290000
+          },
+          {
+            "id": 4,
+            "src": "https://product.hstatic.net/1000376021/product/10019832_0_3ab11bb0e0e146518e5c674773771e81_2fb886f55a3543479663624b3eff6e85_large.jpg",
+            "title": "Giày Lười Bé Gái TOMS Alpargata",
+            "price": 1290000
+          },
+          {
+            "id": 5,
+            "src": "https://product.hstatic.net/1000376021/product/10019788_0_dd6f0575dd5d49ab843a2e93b90efe28_c67bcf31b11e497e89a8d63af226615a_large.jpg",
+            "title": "Giày Lười Bé Gái TOMS Alpargata",
+            "price": 1290000
+          },
+          {
+            "id": 6,
+            "src": "https://product.hstatic.net/1000376021/product/10019787_0_bf017e26b6cf4bbf8689c0bec18f9cf4_520c2981907a46678bb3ced6e5f1fda8_large.jpg",
+            "title": "Giày Lười Bé Gái TOMS Alpargata",
+            "price": 1290000
+          },
+          {
+            "id": 7,
+            "src": "https://product.hstatic.net/1000376021/product/10019836_0_5189eb0792574242a8eae190f5c9a654_ac77f04eecd34d9c9b3e5c90e819da16_large.jpg",
+            "title": "Giày Lười Bé Trai TOMS Alpargata",
+            "price": 1290000
+          },
+          {
+            "id": 8,
+            "src": "https://product.hstatic.net/1000376021/product/10019882_0_b36954f8be1946488930a863b7425d1d_2b86d670abc2411bb2e90224fcdc7ee3_large.jpg",
+            "title": "Giày Lười Nam TOMS Alp Fwd",
+            "price": 1990000
+          },
+          {
+            "id": 9,
+            "src": "https://product.hstatic.net/1000376021/product/10019873_0_689fb4bb8b97470f81c8756a874b5bf6_be73b22ab6684f899ebdf5115fde586e_large.jpg",
+            "title": "Giày Lười Nam TOMS Alp Fwd",
+            "price": 1990000
+          },
+          {
+            "id": 10,
+            "src": "https://product.hstatic.net/1000376021/product/10019872_0_0b2bf01203784098979f5b04bce6dc0d_4c96caab500642ad9cd7a1411f2a5ff2_large.jpg",
+            "title": "Giày Lười Nam TOMS Alp Fwd",
+            "price": 1290000
+          },
+          {
+            "id": 11,
+            "src": "https://product.hstatic.net/1000376021/product/10019871_0_5e449dd062df4e658b073ae953339692_b0770e3f21e24d0199b7516ae3f4de05_large.jpg",
+            "title": "Giày Lười Nam TOMS Alp Fwd",
+            "price": 1290000
+          },
+          {
+            "id": 12,
+            "src": "https://product.hstatic.net/1000376021/product/10019860_0_47dea577b0324830b2915d29f42bbcae_f80df078d22d430faf3063fdaf50fe8a_large.jpg",
+            "title": "Giày Lười Nam TOMS Alp Fwd",
+            "price": 1990000
+          }
+        ]
+      }
     }
   ]
 }
