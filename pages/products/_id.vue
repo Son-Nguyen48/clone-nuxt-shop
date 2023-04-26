@@ -89,17 +89,17 @@ export default {
     }
   },
   async created() {
+    // eslint-disable-next-line no-console
+    console.log(this.id, 'id')
     await this.$store.dispatch('product/getListProduct', this.id)
     this.listProduct = this.$store.state.product.listProduct
   },
   methods: {
     addToCart() {
-      this.$axios
-        .$post('/cart', this.listProduct)
-        .then((res) => {
-          this.$store.dispatch('sideMenu/setSideMenuId', 'side-menu-cart')
-          this.$store.dispatch('sideMenu/setStateSideMenu')
-        })
+      this.$axios.$post('/cart', this.listProduct).then((res) => {
+        this.$store.dispatch('sideMenu/setSideMenuId', 'side-menu-cart')
+        this.$store.dispatch('sideMenu/setStateSideMenu')
+      })
     },
 
     setIdTab(data) {
