@@ -4,7 +4,7 @@
       class="mt-9 grid grid-cols-2 gap-y-10 md:gap-x-4 md:gap-y-20 md:grid-cols-5"
     >
       <card-item
-        v-for="product in listProduct"
+        v-for="product in productItems"
         :key="product.id"
         :product="product"
       ></card-item>
@@ -13,21 +13,19 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import CardItem from '~/components/UI/CardItem.vue'
 export default {
   components: {
     CardItem,
   },
-  data() {
-    return {
-      listProduct: [],
-    }
+  computed: {
+    ...mapGetters({
+      productItems: 'product/productItems',
+    }),
   },
-
   async created() {
-    await this.$store.dispatch('product/getListProducts').then((res) => {
-      this.listProduct = this.$store.state.product.listProduct
-    })
+    await this.$store.dispatch('product/getListProducts')
   },
 }
 </script>

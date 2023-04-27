@@ -23,13 +23,14 @@
       </span>
       <span
         class="inline-block absolute -top-[5.6px] left-1/2 transform -translate-x-1/2"
-        >{{ cartCount }}</span
+        >{{ itemsQuantity }}</span
       >
     </div>
   </span>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   data() {
     return {
@@ -37,13 +38,12 @@ export default {
     }
   },
   computed: {
-    cartCount() {
-      return this.cart.length
-    },
+    ...mapGetters({
+      itemsQuantity: 'cart/itemsQuantity',
+    }),
   },
   async created() {
-    await this.$store.dispatch('cart/getListProduct')
-    this.cart = this.$store.state.cart.listProduct
+    await this.$store.dispatch('cart/getListItem')
   },
   methods: {
     openCart() {

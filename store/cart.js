@@ -1,35 +1,32 @@
 export const state = () => ({
-  listProduct: [],
+  cartItems: [],
 })
 
-export const getter = {
-  all(state) {
-    return state.listProduct
-  },
+export const getters = {
+  cartItems: (s) => s.cartItems,
+  itemsQuantity: (s) => s.cartItems.reduce((sum, i) => sum + i.quantity, 0),
+  totalPrice: (s) =>
+    s.cartItems.reduce((sum, i) => sum + i.quantity * +i.product.price, 0),
 }
 
 export const mutations = {
-  store(state, payload) {
-    state.listProduct = payload
-  },
-  async deleteCartItem(state, payload) {
-    await this.$axios.delete(`localhost:3004/cart/${payload}`).then((res) => {
-      const selectedIndex = state.listProduct.findIndex(
-        (product) => product.id === payload
+  addToCart(state, payload) {
+    const addedItem = state.cartItems.find((i) => i.id === payload.id)
+    if (addedItem) {
+      state.cartItems = state.cartItems.map((i) =>
+        i.id === payload.id ? payload : i
       )
-      if (selectedIndex !== -1) {
-        state.listProduct.splice(selectedIndex, 1)
-      }
-    })
+    } else state.cartItems = state.cartItems.concat(payload)
+  },
+  setCartItem(state, payload) {
+    state.cartItems = payload
   },
 }
 
 export const actions = {
-  getListProduct(vuexContext) {
-    return this.$axios.$get('/cart').then((res) => {
-      // eslint-disable-next-line no-console
-      console.log(res)
-      vuexContext.commit('store', res)
+  async getListItem(vuexContext) {
+    await this.$axios.$get('/cart').then((res) => {
+      vuexContext.commit('setCartItem', res)
     })
   },
 }

@@ -4,14 +4,14 @@
       <div class="md:w-1/2 flex justify-center items-center">
         <img
           class="shadow-[0_2px_12px_0_rgba(0,0,0,0.8)] rounded"
-          :src="listProduct.src"
+          :src="productItem.src"
           alt="product"
         />
       </div>
       <div class="md:w-1/2 text-center flex flex-col gap-4">
-        <h4 class="font-bold text-2xl">{{ listProduct.title }}</h4>
-        <p>{{ listProduct.price }}</p>
-        <div @click="addToCart">
+        <h4 class="font-bold text-2xl">{{ productItem.title }}</h4>
+        <p>{{ productItem.price }}</p>
+        <div @click="addToCart(productItem)">
           <base-button :title="'Add to cart'"></base-button>
         </div>
         <ul class="grid md:grid-cols-3">
@@ -46,6 +46,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import IntroduceView from '~/components/The-feature/The-tabs/IntroduceView.vue'
 import ProductCharacteristics from '~/components/The-feature/The-tabs/ProductCharacteristics.vue'
 import SizeView from '~/components/The-feature/The-tabs/SizeView.vue'
@@ -63,7 +64,6 @@ export default {
   data() {
     return {
       id: this.$route.params.id,
-      listProduct: [],
       idTab: 1,
       tabs: [
         {
@@ -88,17 +88,36 @@ export default {
       ],
     }
   },
+  computed: {
+    ...mapGetters({
+      productItem: 'product/productItem',
+    }),
+  },
   async created() {
     // eslint-disable-next-line no-console
     console.log(this.id, 'id')
-    await this.$store.dispatch('product/getListProduct', this.id)
-    this.listProduct = this.$store.state.product.listProduct
+    await this.$store.dispatch('product/getProduct', this.id)
+    // eslint-disable-next-line no-console
+    console.log(this.$store.state.product.productItem, 'productItem')
   },
   methods: {
-    addToCart() {
-      this.$axios.$post('/cart', this.listProduct).then((res) => {
+    addToCart(product) {
+      let data = { product }
+      const addedItem = this.$store.state.cart.cartItems.find(
+        (i) => i.product?.id === product.id
+      )
+      if (addedItem) data = { ...data, quantity: addedItem.quantity + 1 }
+      else data = { ...data, quantity: 1 }
+
+      // eslint-disable-next-line no-console
+      const methods = addedItem
+        ? this.$axios.$put(`/cart/${addedItem.id}`, data)
+        : this.$axios.$post(`/cart`, data)
+      methods.then((res) => {
+        this.$store.commit('cart/addToCart', res)
         this.$store.dispatch('sideMenu/setSideMenuId', 'side-menu-cart')
-        this.$store.dispatch('sideMenu/setStateSideMenu')
+        if (!this.$store.state.sideMenu.isSideMenuOpen)
+          this.$store.dispatch('sideMenu/setStateSideMenu')
       })
     },
 
