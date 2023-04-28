@@ -2,8 +2,8 @@ export const state = () => ({
   listProduct: [],
 })
 
-export const getter = {
-  all(state) {
+export const getters = {
+  listBestseller(state) {
     return state.listProduct
   },
 }

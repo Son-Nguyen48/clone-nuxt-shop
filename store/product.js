@@ -1,28 +1,31 @@
 export const state = () => ({
-  listProduct: {},
+  productItem: {},
+  productItems: [],
 })
 
-export const getter = {
-  all(state) {
-    return state.listProduct
-  },
+export const getters = {
+  productItem: (s) => s.productItem,
+  productItems: (s) => s.productItems,
 }
 
 export const mutations = {
-  store(state, payload) {
-    state.listProduct = payload
+  setProductItem(state, payload) {
+    state.productItem = payload
+  },
+  setProductItems(state, payload) {
+    state.productItems = payload
   },
 }
 
 export const actions = {
-  getListProduct(vuexContext, payload) {
+  getProduct(vuexContext, payload) {
     return this.$axios.$get(`/products/${payload}`).then((res) => {
-      vuexContext.commit('store', res)
+      vuexContext.commit('setProductItem', res)
     })
   },
   getListProducts(vuexContext) {
     return this.$axios.$get('/products').then((res) => {
-      vuexContext.commit('store', res)
+      vuexContext.commit('setProductItems', res)
     })
   },
 }

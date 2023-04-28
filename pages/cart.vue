@@ -1,20 +1,22 @@
 <template>
   <div class="md:pt-[105px]">
     <h1 class="pt-20 text-center font-bold text-2xl">Your cart</h1>
-    <p class="text-center">There are {{ cart.length }} products in the cart</p>
+    <p class="text-center">
+      There are {{ cartItems.length }} products in the cart
+    </p>
     <hr />
     <br />
 
     <ul class="flex flex-col gap-2 mx-4 md:mx-auto md:w-3/4">
-      <li v-for="product in cart" :key="product.id" class="my-4">
+      <li v-for="product in cartItems" :key="product.id" class="my-4">
         <div class="flex gap-2">
           <div class="w-1/3">
-            <img class="w-20 h-20" :src="product.src" alt="product" />
+            <img class="w-20 h-20" :src="product.product.src" alt="product" />
           </div>
           <div class="w-2/3">
-            <h4 class="font-bold">{{ product.title }}</h4>
-            <p>{{ product.price }}đ</p>
-            <div @click="removeItem(product.id)">
+            <h4 class="font-bold">{{ product.product.title }}</h4>
+            <p>{{ product.product.price }}đ</p>
+            <div @click="removeItem(product.product.id)">
               <base-button :title="'Delete'"></base-button>
             </div>
           </div>
@@ -44,6 +46,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import BaseButton from '~/components/UI/Button/BaseButton.vue'
 export default {
   components: {
@@ -55,14 +58,13 @@ export default {
     }
   },
   computed: {
-    totalPrice() {
-      return this.cart.reduce((sum, item) => sum + +item.price, 0)
-    },
+    ...mapGetters({
+      cartItems: 'cart/cartItems',
+      totalPrice: 'cart/totalPrice',
+    }),
   },
   async created() {
-    await this.$store.dispatch('cart/getListProduct').then((res) => {
-      this.cart = this.$store.state.cart.listProduct
-    })
+    await this.$store.dispatch('cart/getListItem')
   },
 }
 </script>
