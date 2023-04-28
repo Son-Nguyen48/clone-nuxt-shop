@@ -16,7 +16,7 @@ export const mutations = {
 
 export const actions = {
   getListProduct(vuexContext) {
-    return this.$axios.$get('/bestsellers?_page=1&_limit=15').then((res) => {
+    return this.$axios.$get('/bestsellers').then((res) => {
       vuexContext.commit('store', res)
     })
   },

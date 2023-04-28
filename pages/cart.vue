@@ -1,7 +1,9 @@
 <template>
   <div class="md:pt-[105px]">
     <h1 class="pt-20 text-center font-bold text-2xl">Your cart</h1>
-    <p class="text-center">There are {{ cart.length }} products in the cart</p>
+    <p class="text-center">
+      There are {{ cartItems.length }} products in the cart
+    </p>
     <hr />
     <br />
 

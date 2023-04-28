@@ -22,10 +22,23 @@
           </div>
         </div>
       </li>
+
+      <div class="flex gap-2">
+        <div>
+          <nuxt-link to="/">
+            <base-button :title="'Continue shoping'"></base-button>
+          </nuxt-link>
+        </div>
+        <div>
+          <nuxt-link to="/cart">
+            <base-button :title="'Pay'"></base-button>
+          </nuxt-link>
+        </div>
+      </div>
     </ul>
 
-    <div>
-      <p>{{ totalPrice }}</p>
+    <div class="py-2">
+      <p>Total: {{ totalPrice }}</p>
     </div>
   </div>
 </template>
