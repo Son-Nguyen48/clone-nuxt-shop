@@ -6,7 +6,15 @@
       </h2>
     </div>
 
-    <the-collection></the-collection>
+    <div
+      class="mt-9 grid grid-cols-2 gap-y-10 md:gap-x-4 md:gap-y-20 md:grid-cols-5"
+    >
+      <card-item
+        v-for="product in listBestseller"
+        :key="product.id"
+        :product="product"
+      ></card-item>
+    </div>
 
     <div class="text-center mt-20">
       <nuxt-link
@@ -19,12 +27,21 @@
 </template>
 
 <script>
-import TheCollection from '../The-collection/TheCollection.vue'
+import { mapGetters } from 'vuex'
+import CardItem from '../UI/CardItem.vue'
 export default {
   components: {
-    TheCollection,
+    CardItem,
   },
   props: {},
+  computed: {
+    ...mapGetters({
+      listBestseller: 'bestseller/listBestseller',
+    }),
+  },
+  async created() {
+    await this.$store.dispatch('bestseller/getListProductHomePage')
+  },
 }
 </script>
 
