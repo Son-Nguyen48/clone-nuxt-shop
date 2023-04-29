@@ -934,14 +934,69 @@
   "cart": [
     {
       "product": {
-        "title": " Giày Đế Xuồng Nữ CARMELA Camel Leather Ladies Sandals ",
-        "description": "description 2",
-        "src": "https://product.hstatic.net/1000376021/product/160835_camel_0_10557bad46b54b90ac98ef8c25ed027f_827d1d2c6a7c4373ae2b0461e708fedc_large.jpg",
-        "price": "2490000",
-        "id": "2"
+        "title": " Giày Sneakers Nữ GEOX D Nydame A ",
+        "description": "description 4",
+        "src": "https://product.hstatic.net/1000376021/product/d620qa_c9999_0_3d5e319fefb24b4db5257e0919c73337_b59358b78c9048b5bc98059aab51fdf4_large.jpg",
+        "price": "5700000",
+        "id": "4"
       },
       "quantity": 1,
       "id": 1
+    },
+    {
+      "product": {
+        "title": " Giày Boots Nam GEOX U Spherica Ec1 C ",
+        "description": "description 8",
+        "src": "https://product.hstatic.net/1000376021/product/u16d1c_c6009_0_a781870112f9468c97c65056fb82e1df_b4d3d7a859754690a45231e84c099950_large.jpg",
+        "price": "5100000",
+        "id": "8"
+      },
+      "quantity": 2,
+      "id": 2
+    },
+    {
+      "product": {
+        "title": " Giày Sneakers Trẻ Em Unisex NIKE Revolution 6 Nn (Psv) ",
+        "description": "description 10",
+        "src": "https://product.hstatic.net/1000376021/product/dd1095-600_0_a86d1c505a7745ef9b2b61c29356d3da_eb27c4c2575347d787455a8ae25e9a17_large.jpg",
+        "price": "1399000",
+        "id": "13"
+      },
+      "quantity": 2,
+      "id": 3
+    },
+    {
+      "product": {
+        "title": " Giày Sneakers Nam NIKE Renew Run 4 ",
+        "description": "description 10",
+        "src": "https://product.hstatic.net/1000376021/product/dr2677-100_0_8360d75bc42a403f9fabf51fad9319b8_0fc2f8a28363472583fb564019b52c8a_large.jpg",
+        "price": "2639000",
+        "id": "19"
+      },
+      "quantity": 1,
+      "id": 4
+    },
+    {
+      "product": {
+        "title": " Giày Sneakers Nam NIKE Quest 5 ",
+        "description": "description 10",
+        "src": "https://product.hstatic.net/1000376021/product/dd0204-102_0_c4625113edb54b1d87cde7384d0facbc_a58aa7c6403b45db9e3104e045cdaa9f_large.jpg",
+        "price": "2319000",
+        "id": "78"
+      },
+      "quantity": 1,
+      "id": 5
+    },
+    {
+      "product": {
+        "title": " Giày Sneakers Nam NIKE Court Vision Lo Nn ",
+        "description": "description 10",
+        "src": "https://product.hstatic.net/1000376021/product/dr2682-500_0_4ac733817ed34d13ac02d26988554f6a_a9c77d1a33b2428a8a5ba3dcdab828cc_large.jpg",
+        "price": "2639000",
+        "id": "79"
+      },
+      "quantity": 1,
+      "id": 6
     },
     {
       "product": {
@@ -949,10 +1004,10 @@
         "description": "description 3",
         "src": "http://product.hstatic.net/1000376021/product/trouville_black_0_3a7eb0ff388a413daaff77eb5d07d920_487386c3005546a1b03b5749c668f5d6_large.jpg",
         "price": "2890000",
-        "id": "3"
+        "id": "32"
       },
       "quantity": 1,
-      "id": 2
+      "id": 7
     }
   ],
   "brand": [
@@ -1033,9 +1088,8 @@
       "name": "FLOSSY"
     }
   ],
-  "collections": {
-    "1": {
-      "brandId": 1,
+  "collections": [
+    {
       "id": 1,
       "src": "https://file.hstatic.net/1000376021/file/banner_thuong_hieu_toms_6acffd0adb7e472894374bac065e3005.jpg",
       "title": "TOMS - ĐỘC QUYỀN PHÂN PHỐI TẠI VIỆT NAM",
@@ -1116,8 +1170,7 @@
         }
       ]
     },
-    "3": {
-      "brandId": 2,
+    {
       "id": 2,
       "src": "https://file.hstatic.net/1000376021/file/banner_thuong_hieu_8a6fd7df710945c7ac512c82ef0e3086.jpg",
       "title": "NATIVE SHOES #LiveLightly",
@@ -1198,7 +1251,7 @@
         }
       ]
     }
-  },
+  ],
   "newArrival": [
     {
       "id": 1,

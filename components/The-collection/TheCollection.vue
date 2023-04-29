@@ -26,7 +26,7 @@ export default {
   },
 
   async created() {
-    await this.$store.dispatch('bestseller/getListProduct')
+    await this.$store.dispatch('bestseller/getListProductHomePage')
   },
 }
 </script>

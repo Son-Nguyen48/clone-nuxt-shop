@@ -17,7 +17,7 @@
       :length="totalPages"
       :prev-icon="$vuetify.icons.prevPage"
       :next-icon="$vuetify.icons.nextPage"
-      @input="getPosts"
+      @input="getProducts"
     ></v-pagination>
   </div>
 </template>
@@ -55,7 +55,13 @@ export default {
   },
 
   mounted() {
-    this.$store.dispatch('bestseller/getListProduct')
+    this.getProducts()
+  },
+
+  methods: {
+    getProducts() {
+      this.$store.dispatch('bestseller/getListProduct')
+    },
   },
 }
 </script>
