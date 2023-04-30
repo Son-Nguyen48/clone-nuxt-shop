@@ -1,11 +1,25 @@
 <template>
-  <div class="pt-[105px]">
+  <div class="md:pt-[105px]">
+    <section class="px-3">
+      <div>
+        <img :src="collection.src" alt="collection img" />
+      </div>
+
+      <h2 class="font-bold text-sm text-[#333333] mt-8">
+        {{ collection.title }}
+      </h2>
+      <p class="mt-8">{{ collection.description }}</p>
+    </section>
+
     <section>
+      <h2 class="text-xl font-bold text-center mt-8">
+        {{ collection.titleHeader }}
+      </h2>
       <div
         class="mt-9 grid grid-cols-2 gap-y-10 md:gap-x-4 md:gap-y-20 md:grid-cols-5"
       >
         <card-item
-          v-for="product in listProduct"
+          v-for="product in currentCollection"
           :key="product.id"
           :product="product"
         ></card-item>
@@ -37,27 +51,34 @@ export default {
   computed: {
     ...mapState('collections', {
       collection: (state) => state.collection,
+      listProduct: (state) => state.listProduct,
     }),
 
-    listProduct() {
-      return this.collection.listProduct
+    currentCollection() {
+      if (this.listProduct) {
+        return this.listProduct.slice(
+          this.pageSize * (this.currentPage - 1),
+          this.pageSize * this.currentPage
+        )
+      }
+      return []
     },
-
-    currentBestseller() {
-      return this.listProduct.slice(
-        this.pageSize * (this.currentPage - 1),
-        this.pageSize * this.currentPage
-      )
+    //
+    totalPages() {
+      if (this.listProduct && this.listProduct.length) {
+        return Math.ceil(this.listProduct.length / this.pageSize)
+      }
+      return 0
     },
-
-    // totalPages() {
-    //   return Math.ceil(this.listProduct.length / this.pageSize)
-    // },
   },
   created() {
     // eslint-disable-next-line no-console
     console.log(this.$route.params.idCollections)
-    this.getCollection(this.$route.params.idCollections)
+    this.getCollection(this.$route.params.idCollections).then((res) => {
+      this.$store.commit('collections/setListProduct')
+      // eslint-disable-next-line no-console
+      console.log(this.$store.state.collections.listProduct, 'listProduct')
+    })
   },
   methods: {
     ...mapActions('collections', {

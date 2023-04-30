@@ -29,7 +29,7 @@
             <base-button :title="'Continue shoping'"></base-button>
           </nuxt-link>
         </div>
-        <div>
+        <div @click="closeSideMenu">
           <nuxt-link to="/cart">
             <base-button :title="'Pay'"></base-button>
           </nuxt-link>
@@ -56,6 +56,13 @@ export default {
       cartItems: 'cart/cartItems',
       totalPrice: 'cart/totalPrice',
     }),
+  },
+  methods: {
+    closeSideMenu() {
+      if (this.$store.state.sideMenu.isSideMenuOpen) {
+        this.$store.commit('sideMenu/hideSideMenu')
+      }
+    },
   },
 }
 </script>

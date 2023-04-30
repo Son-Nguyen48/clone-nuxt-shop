@@ -5,6 +5,7 @@
         <div>
           <input
             v-model="searchInput"
+            v-click-outside="isSearchResultShow"
             type="text"
             class="pl-[22px] pr-[55px] w-full bg-gray-100 md:py-3 md:px-5"
             placeholder="Search product"

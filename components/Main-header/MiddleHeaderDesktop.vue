@@ -17,10 +17,7 @@
 
         <v-list class="flex">
           <v-list-item v-for="(item, index) in brand" :key="index" class="p-0">
-            <nuxt-link
-              :to="`/collections/${item.name.toLowerCase()}`"
-              class="w-full rounded"
-            >
+            <nuxt-link :to="`/collections/${index}`" class="w-full rounded">
               <v-list-item-title>
                 <v-btn class="w-full">
                   {{ item.name }}
