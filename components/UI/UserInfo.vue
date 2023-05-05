@@ -16,8 +16,10 @@ export default {
     }
   },
   async created() {
-    await this.$axios.$get('/user').then((response) => {
-      this.user = response[0]
+    await this.$axios.$get('currentUser').then((res) => {
+      if (res) this.user = res[0]
+      // eslint-disable-next-line no-console
+      console.log(this.user, 'user', res, 'res')
     })
   },
 }

@@ -931,106 +931,7 @@
       "id": "87"
     }
   ],
-  "cart": [
-    {
-      "product": {
-        "title": " Giày Sneakers Nữ GEOX D Nydame A ",
-        "description": "description 4",
-        "src": "https://product.hstatic.net/1000376021/product/d620qa_c9999_0_3d5e319fefb24b4db5257e0919c73337_b59358b78c9048b5bc98059aab51fdf4_large.jpg",
-        "price": "5700000",
-        "id": "4"
-      },
-      "quantity": 1,
-      "id": 1
-    },
-    {
-      "product": {
-        "title": " Giày Boots Nam GEOX U Spherica Ec1 C ",
-        "description": "description 8",
-        "src": "https://product.hstatic.net/1000376021/product/u16d1c_c6009_0_a781870112f9468c97c65056fb82e1df_b4d3d7a859754690a45231e84c099950_large.jpg",
-        "price": "5100000",
-        "id": "8"
-      },
-      "quantity": 2,
-      "id": 2
-    },
-    {
-      "product": {
-        "title": " Giày Sneakers Trẻ Em Unisex NIKE Revolution 6 Nn (Psv) ",
-        "description": "description 10",
-        "src": "https://product.hstatic.net/1000376021/product/dd1095-600_0_a86d1c505a7745ef9b2b61c29356d3da_eb27c4c2575347d787455a8ae25e9a17_large.jpg",
-        "price": "1399000",
-        "id": "13"
-      },
-      "quantity": 2,
-      "id": 3
-    },
-    {
-      "product": {
-        "title": " Giày Sneakers Nam NIKE Renew Run 4 ",
-        "description": "description 10",
-        "src": "https://product.hstatic.net/1000376021/product/dr2677-100_0_8360d75bc42a403f9fabf51fad9319b8_0fc2f8a28363472583fb564019b52c8a_large.jpg",
-        "price": "2639000",
-        "id": "19"
-      },
-      "quantity": 1,
-      "id": 4
-    },
-    {
-      "product": {
-        "title": " Giày Sneakers Nam NIKE Quest 5 ",
-        "description": "description 10",
-        "src": "https://product.hstatic.net/1000376021/product/dd0204-102_0_c4625113edb54b1d87cde7384d0facbc_a58aa7c6403b45db9e3104e045cdaa9f_large.jpg",
-        "price": "2319000",
-        "id": "78"
-      },
-      "quantity": 1,
-      "id": 5
-    },
-    {
-      "product": {
-        "title": " Giày Sneakers Nam NIKE Court Vision Lo Nn ",
-        "description": "description 10",
-        "src": "https://product.hstatic.net/1000376021/product/dr2682-500_0_4ac733817ed34d13ac02d26988554f6a_a9c77d1a33b2428a8a5ba3dcdab828cc_large.jpg",
-        "price": "2639000",
-        "id": "79"
-      },
-      "quantity": 1,
-      "id": 6
-    },
-    {
-      "product": {
-        "title": " Giày Tây Nam SLEDGERS Trouville ",
-        "description": "description 3",
-        "src": "http://product.hstatic.net/1000376021/product/trouville_black_0_3a7eb0ff388a413daaff77eb5d07d920_487386c3005546a1b03b5749c668f5d6_large.jpg",
-        "price": "2890000",
-        "id": "32"
-      },
-      "quantity": 1,
-      "id": 7
-    },
-    {
-      "product": {
-        "id": 1,
-        "src": "https://product.hstatic.net/1000376021/product/10019759_0_f295321360cd48c1b59e85a997d028be_842d0346afd243ca933ff9004fd760b0_large.jpg",
-        "title": "Dép Đế Xuồng Nữ TOMS Diana Mule",
-        "price": 2390000
-      },
-      "quantity": 1,
-      "id": 8
-    },
-    {
-      "product": {
-        "title": " Giày Lười Unisex NATIVE Jefferson Block ",
-        "description": "description 10",
-        "src": "https://product.hstatic.net/1000376021/product/11100102-3314-1_20d1b7b2ab9941b196ec82fc180cffa7_86dcb5efd4ec466f897583edf16fe046_large.jpg",
-        "price": "1690000",
-        "id": "28"
-      },
-      "quantity": 1,
-      "id": 9
-    }
-  ],
+  "cart": [],
   "brand": [
     {
       "id": 1,
@@ -1038,11 +939,15 @@
     },
     {
       "id": 2,
-      "name": "EASTPAK"
+      "name": "NATIVE-HOT"
     },
     {
       "id": 3,
-      "name": "NATIVE-HOT"
+      "name": "HOLSTER"
+    },
+    {
+      "id": 6,
+      "name": "EASTPAK"
     },
     {
       "id": 4,
@@ -1052,10 +957,7 @@
       "id": 5,
       "name": "NIKE-HOT"
     },
-    {
-      "id": 6,
-      "name": "HOLSTER"
-    },
+
     {
       "id": 7,
       "name": "VIONIC"
@@ -1200,57 +1102,57 @@
       "listProduct": [
         {
           "id": 1,
-          "src": "https://product.hstatic.net/1000376021/product/10019759_0_f295321360cd48c1b59e85a997d028be_842d0346afd243ca933ff9004fd760b0_large.jpg",
-          "title": "Dép Đế Xuồng Nữ TOMS Diana Mule",
-          "price": 2390000
+          "src": "https://product.hstatic.net/1000376021/product/e-jefferson-rose-pink-bling-dust-pink_6c1c5dfdddd942d9ac85c34993432952_029f0e009e83443197b53439b7636bab_large.jpg",
+          "title": "Giày Lười Bé Gái NATIVE J Jefferson Bling Junior",
+          "price": 1040000
         },
         {
           "id": 2,
-          "src": "https://product.hstatic.net/1000376021/product/10019744_0_98e15b4275964eef9fa8421eb07ef96e_95f83f776b6b4b1eb0c8444d69f05c98_large.jpg",
-          "title": "Dép Đế Xuồng Nữ TOMS Diana Mule",
-          "price": 2390000
+          "src": "https://product.hstatic.net/1000376021/product/11100102-4267-1_ac041f16f0db46a88f966e98ce34d635_2c9e514f02a548b3a0e6daf7dd03965c_large.jpg",
+          "title": "Giày Lười Unisex NATIVE Jefferson Block",
+          "price": 1690000
         },
         {
           "id": 3,
-          "src": "https://product.hstatic.net/1000376021/product/10019847_0_9582de7c459647678ae9b95ba9bce600_ae4c97a9f73647c2b340d6eb8902c466_large.jpg",
-          "title": "Giày Lười Bé Gái TOMS Alpargata",
-          "price": 1290000
+          "src": "https://product.hstatic.net/1000376021/product/11100102-3314-1_20d1b7b2ab9941b196ec82fc180cffa7_86dcb5efd4ec466f897583edf16fe046_large.jpg",
+          "title": "Giày Lười Unisex NATIVE Jefferson Block",
+          "price": 1690000
         },
         {
           "id": 4,
-          "src": "https://product.hstatic.net/1000376021/product/10019832_0_3ab11bb0e0e146518e5c674773771e81_2fb886f55a3543479663624b3eff6e85_large.jpg",
-          "title": "Giày Lười Bé Gái TOMS Alpargata",
-          "price": 1290000
+          "src": "https://product.hstatic.net/1000376021/product/11100102-3315-1_708f5c80f5a1440eb321c6b26f8e940d_9630a9fe079140299c008c76f6a70ffa_large.jpg",
+          "title": "Giày Lười Nữ NATIVE Jefferson Block",
+          "price": 1690000
         },
         {
           "id": 5,
-          "src": "https://product.hstatic.net/1000376021/product/10019788_0_dd6f0575dd5d49ab843a2e93b90efe28_c67bcf31b11e497e89a8d63af226615a_large.jpg",
-          "title": "Giày Lười Bé Gái TOMS Alpargata",
-          "price": 1290000
+          "src": "https://product.hstatic.net/1000376021/product/11100102-1846-1_b544a989e1b0478492cd6e7d572ba986_d8b4a40f80514b489028d9e2a2c99bb2_large.jpg",
+          "title": "Giày Lười Nữ NATIVE Jefferson Block",
+          "price": 1690000
         },
         {
           "id": 6,
-          "src": "https://product.hstatic.net/1000376021/product/10019787_0_bf017e26b6cf4bbf8689c0bec18f9cf4_520c2981907a46678bb3ced6e5f1fda8_large.jpg",
-          "title": "Giày Lười Bé Gái TOMS Alpargata",
-          "price": 1290000
+          "src": "https://product.hstatic.net/1000376021/product/11104600-3158-1_8327c00b3cd448c2bf25ab55bb4e4847_e325354a742c4b52a795a527120397e8_large.jpg",
+          "title": "Giày Lười Unisex NATIVE Miles",
+          "price": 1400000
         },
         {
           "id": 7,
-          "src": "https://product.hstatic.net/1000376021/product/10019836_0_5189eb0792574242a8eae190f5c9a654_ac77f04eecd34d9c9b3e5c90e819da16_large.jpg",
-          "title": "Giày Lười Bé Trai TOMS Alpargata",
-          "price": 1290000
+          "src": "https://product.hstatic.net/1000376021/product/11104600-1999-1_dde3bbe180c1406392336f4a6cb7af70_a391a2d67e3343f282e5ef382d2e86ba_large.jpg",
+          "title": "Giày Lười Unisex NATIVE Miles",
+          "price": 1400000
         },
         {
           "id": 8,
-          "src": "https://product.hstatic.net/1000376021/product/10019882_0_b36954f8be1946488930a863b7425d1d_2b86d670abc2411bb2e90224fcdc7ee3_large.jpg",
-          "title": "Giày Lười Nam TOMS Alp Fwd",
-          "price": 1990000
+          "src": "https://product.hstatic.net/1000376021/product/11104600-1250-1_9e76e91c6489486688a7de2fc28bb178_ed383bdbe70249eeb3e1e290c72f2897_large.jpg",
+          "title": "Giày Lười Unisex NATIVE Miles",
+          "price": 1400000
         },
         {
           "id": 9,
-          "src": "https://product.hstatic.net/1000376021/product/10019873_0_689fb4bb8b97470f81c8756a874b5bf6_be73b22ab6684f899ebdf5115fde586e_large.jpg",
-          "title": "Giày Lười Nam TOMS Alp Fwd",
-          "price": 1990000
+          "src": "https://product.hstatic.net/1000376021/product/11104600-1105-1_28cfcb4260cd4fa8bcc52780fc5a1412_2a3dace8fb2b44209789bda7f2a0b6c5_large.jpg",
+          "title": "Giày Lười Unisex NATIVE Miles",
+          "price": 1400000
         },
         {
           "id": 10,
@@ -1260,15 +1162,102 @@
         },
         {
           "id": 11,
-          "src": "https://product.hstatic.net/1000376021/product/10019871_0_5e449dd062df4e658b073ae953339692_b0770e3f21e24d0199b7516ae3f4de05_large.jpg",
-          "title": "Giày Lười Nam TOMS Alp Fwd",
-          "price": 1290000
+          "src": "https://product.hstatic.net/1000376021/product/11111501-2055-1_d0de55605fe9486db8642e5977260bc3_71cf7cfb0514447790ce26f98209d2b2_large.jpg",
+          "title": "Giày Lười Unisex NATIVE Jefferson Sugarlite Print",
+          "price": 1790000
         },
         {
           "id": 12,
-          "src": "https://product.hstatic.net/1000376021/product/10019860_0_47dea577b0324830b2915d29f42bbcae_f80df078d22d430faf3063fdaf50fe8a_large.jpg",
-          "title": "Giày Lười Nam TOMS Alp Fwd",
+          "src": "https://product.hstatic.net/1000376021/product/11111501-1269-1_8a2f3ff32da74cf3ac0335c58c15772a_1e9ab5ecdda64d25a9abefb6ae25b313_large.jpg",
+          "title": "Giày Lười Unisex NATIVE Jefferson Sugarlite Print",
           "price": 1990000
+        },
+        {
+          "id": 13,
+          "src": "https://product.hstatic.net/1000376021/product/11100148-1564-1-_a7c5af7adcdd4001ba8531c63fa8f9e3_bdebcb2941a546a996a25feda7ab850a_large.jpg",
+          "title": "Giày Lười Unisex NATIVE Jefferson Sugarlite Print",
+          "price": 1990000
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "src": "https://file.hstatic.net/1000376021/file/holster_7f19263659a840898628ee83b10478dd.jpg",
+      "title": "Holster SHOES #LiveLightly",
+      "description": "Holster, một thương hiệu giày đến từ Australia. Lấy cảm hứng từ vùng biển Noosa tươi đẹp, Holster là những thăng âm vui tươi, trẻ trung, năng động và đầy duyên dáng.Holster đã tạo nên trào lưu giày nhựa đính cườm lấp lánh. Sản phẩm được bán trên 65 quốc gia và 2500 cửa hàng trên toàn thế giới.",
+      "titleHeader": "Holster",
+      "listProduct": [
+        {
+          "id": 1,
+          "src": "https://product.hstatic.net/1000376021/product/hst279pi_1_2d829ec617074b91910e99f8cb0db7ae_1929e253e7424ce8a641b68e5e6ef319_large.jpg",
+          "title": "Dép Nữ HOLSTER Sundreamer",
+          "price": 890000
+        },
+        {
+          "id": 2,
+          "src": "https://product.hstatic.net/1000376021/product/hst287bl-coastal_88dc2634344143a3b1dab28774dab7f9_b701bee6fc324ec2ab3578cdd75af5e3_large.jpg",
+          "title": "Dép Nữ HOLSTER Coastal",
+          "price": 990000
+        },
+        {
+          "id": 3,
+          "src": "https://product.hstatic.net/1000376021/product/hsc134p_1_copy_44e9aeefc3e34dc6ae6e1da467895d4c_b6b73c0fc0fc42a1bff8f3cf0b32159c_large.jpg",
+          "title": "Dép Bé Gái HOLSTER C Kids Sundreamer",
+          "price": 790000
+        },
+        {
+          "id": 4,
+          "src": "https://product.hstatic.net/1000376021/product/hst279mb_1_copy_636452addf7a4ae895913cd3ebc412cc_e162e8377e1042d7959efe32132c6d9b_large.jpg",
+          "title": "Dép Nữ HOLSTER Sundreamer",
+          "price": 990000
+        },
+        {
+          "id": 5,
+          "src": "https://product.hstatic.net/1000376021/product/hsc134mb_1_copy_b3e347c4ecc1481fb6a0b081aad28860_e793ac4d8bad496ca4c13751ad001d96_large.jpg",
+          "title": "Dép Bé Trai HOLSTER C Kids Sundreamer",
+          "price": 790000
+        },
+        {
+          "id": 6,
+          "src": "https://product.hstatic.net/1000376021/product/hst287blsh_coastal_27cc7d5dae73495e8415bdf0f270b41f_1019c73227ff421db6d0b858804eba3d_large.jpg",
+          "title": "Giày Lười Bé Gái TOMS Alpargata",
+          "price": 990000
+        },
+        {
+          "id": 7,
+          "src": "https://product.hstatic.net/1000376021/product/hst279bl_1_copy_37e8f8006d024a5db48d895c7196e1fb_44206463a05b4fafa58b16897488524a_large.jpg",
+          "title": "Dép Nữ HOLSTER Sundreamer",
+          "price": 890000
+        },
+        {
+          "id": 8,
+          "src": "https://product.hstatic.net/1000376021/product/hst279w_1_copy_7bdab63bbaa24117a2064d7186e770d5_1c77577cd0f141f891583931ed0a1584_large.jpg",
+          "title": "Dép Nữ HOLSTER Sundreamer",
+          "price": 890000
+        },
+        {
+          "id": 9,
+          "src": "https://product.hstatic.net/1000376021/product/hst287mb_coastal_41382b857ff544c4a836a301632836b2_5607332261e54e4283b9c466e5407a18_large.jpg",
+          "title": "Dép Nữ HOLSTER Coastal",
+          "price": 890000
+        },
+        {
+          "id": 10,
+          "src": "https://product.hstatic.net/1000376021/product/hsc134w_1_copy_fb7d7dcf115a4cf99f7c1d91fee41f25_a8183472d07e4776befe454aca590d85_large.jpg",
+          "title": "Dép Trẻ Em Unisex HOLSTER C Kids Sundreamer",
+          "price": 790000
+        },
+        {
+          "id": 11,
+          "src": "https://product.hstatic.net/1000376021/product/hst287w_coastal_6c8df578a03849a9b57a39043bf84458_616dd15a1123478cb4ad8b08b3645acc_large.jpg",
+          "title": "Dép Nữ HOLSTER Coastal",
+          "price": 990000
+        },
+        {
+          "id": 12,
+          "src": "https://product.hstatic.net/1000376021/product/hst374sa_0_f6a9b548baac44b78bae507870177567_large.jpg",
+          "title": "Dép Nữ HOLSTER Solace",
+          "price": 632000
         }
       ]
     }

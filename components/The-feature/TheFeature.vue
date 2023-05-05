@@ -46,7 +46,7 @@
 
       <div class="w-full text-center mt-10">
         <nuxt-link
-          to="holster-new-arrival"
+          to="/collections/2"
           class="inline-block uppercase font-semibold text-white bg-[#FFDD00] py-3 px-5"
           >See now</nuxt-link
         >

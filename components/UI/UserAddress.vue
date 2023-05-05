@@ -35,7 +35,7 @@ export default {
     }
   },
   async created() {
-    await this.$axios.$get('/user').then((response) => {
+    await this.$axios.$get('/currentUser').then((response) => {
       this.user = response[0]
     })
   },

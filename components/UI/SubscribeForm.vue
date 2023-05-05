@@ -16,9 +16,7 @@
           placeholder="Enter your email"
         />
 
-        <button
-          class="px-5 bg-[#ffdd00] text-white absolute right-0 top-0 h-[46px]"
-        >
+        <button class="px-5 bg-[#ffdd00] absolute right-0 top-0 h-[46px]">
           <h4 class="text-sm uppercase font-semibold">Subscribe</h4>
         </button>
       </form>

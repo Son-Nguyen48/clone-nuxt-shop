@@ -8,12 +8,12 @@
       <li v-for="item in cartItems" :key="item.id">
         <div class="flex gap-2">
           <div class="w-1/3">
-            <img :src="item.product.src" alt="product" />
+            <img :src="item.product.image_src" alt="product" />
           </div>
           <div class="w-2/3">
-            <h4 class="font-bold">{{ item.product.title }}</h4>
+            <h4 class="font-bold">{{ item.product.name }}</h4>
             <p>{{ item.product.price }}</p>
-            <div @click="removeItem(item.product.id)">
+            <div @click="removeItem(item.id)">
               <base-button :title="'Delete'"></base-button>
             </div>
             <div>
@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import BaseButton from '~/components/UI/Button/BaseButton.vue'
 export default {
   components: {
@@ -63,6 +63,9 @@ export default {
         this.$store.commit('sideMenu/hideSideMenu')
       }
     },
+    ...mapActions({
+      removeItem: 'cart/removeItem',
+    }),
   },
 }
 </script>

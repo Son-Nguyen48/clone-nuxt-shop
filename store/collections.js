@@ -23,13 +23,14 @@ export const mutations = {
 
 export const actions = {
   getCollection(vuexContext, payload) {
-    return this.$axios.$get('/collections').then((res) => {
+    return this.$axios.$get(`/collections/${payload}`).then((res) => {
       // eslint-disable-next-line no-console
       console.log(res, 'res', payload, 'payload')
-      const result = res[payload]
       // eslint-disable-next-line no-console
-      console.log(result, 'result')
-      vuexContext.commit('setCollection', result)
+      console.log(res, 'res')
+      // eslint-disable-next-line no-console
+      vuexContext.commit('setCollection', res)
+      vuexContext.commit('setListProduct')
     })
   },
 }

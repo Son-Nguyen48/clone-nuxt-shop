@@ -121,7 +121,7 @@ export default {
 
   methods: {
     createUser(newUser) {
-      this.$axios.$post('/users', newUser).then((res) => {
+      this.$axios.$post('/accounts', newUser).then((res) => {
         this.$router.push('/account/login')
       })
     },

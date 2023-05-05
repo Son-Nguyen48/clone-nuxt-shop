@@ -1,6 +1,6 @@
 <template>
   <div class="md:pt-[105px]">
-    <div v-show="isLogin">
+    <div>
       <h1 class="text-3xl font-bold text-center py-10">User infor</h1>
       <hr />
       <ul class="grid md:grid-cols-2">
@@ -33,10 +33,6 @@
       <div @click="logout">
         <base-button :title="'Logout'"></base-button>
       </div>
-    </div>
-
-    <div v-show="!isLogin">
-      <login />
     </div>
   </div>
 </template>
@@ -71,34 +67,24 @@ export default {
       ],
     }
   },
-  async created() {
-    this.isLogin = await this.$store.state.login.isLogin
-    // eslint-disable-next-line no-console
-    console.log(this.isLogin, 'isLogin')
+  created() {
+    if (localStorage.getItem('currentUser')) this.isLogin = true
+    if (this.isLogin === false) {
+      this.$router.push('/account/login')
+    }
   },
   methods: {
     setIdTab(data) {
       this.idTab = data
     },
     async logout() {
-      let currentUser = {}
-      await this.$axios.$get('/user').then((res) => {
-        currentUser = res[0]
-        // eslint-disable-next-line no-console
-        console.log(res, 'res')
-        // eslint-disable-next-line no-console
-        console.log(currentUser, 'here')
-        currentUser.isLogin = false
-        const updatedUser = this.$axios.$put(
-          '/user',
-          currentUser
-        )
-
-        currentUser = updatedUser
-
-        this.$store.commit('login/setStateLogin', false)
+      if (localStorage.getItem('currentUser')) {
+        const currentUser = await this.$axios.$get('/currentUser')
+        const idCurrentUser = currentUser[0].id
+        await this.$axios.$delete(`currentUser/${idCurrentUser}`)
+        localStorage.clear('currentUser')
         this.$router.push('/account/login')
-      })
+      }
     },
   },
 }

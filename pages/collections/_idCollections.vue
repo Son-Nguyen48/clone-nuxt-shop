@@ -2,7 +2,7 @@
   <div class="md:pt-[105px]">
     <section class="px-3">
       <div>
-        <img :src="collection.src" alt="collection img" />
+        <img :src="collection.image_src" alt="collection img" />
       </div>
 
       <h2 class="font-bold text-sm text-[#333333] mt-8">
@@ -73,7 +73,7 @@ export default {
   },
   created() {
     // eslint-disable-next-line no-console
-    console.log(this.$route.params.idCollections)
+    console.log(this.$route.params.idCollections, 'idCollections')
     this.getCollection(this.$route.params.idCollections).then((res) => {
       this.$store.commit('collections/setListProduct')
       // eslint-disable-next-line no-console

@@ -49,13 +49,13 @@
           <li v-for="result in results" :key="result.id" class="p-2">
             <a class="flex gap-2" @click="goToProduct(result)">
               <div class="md:w-3/5">
-                <p>{{ result.title }}</p>
+                <p>{{ result.name }}</p>
                 <p>{{ result.price }}</p>
               </div>
               <div class="md:w-2/5">
                 <img
                   class="w-10 h-10 md:w-20 md:h-20"
-                  :src="result.src"
+                  :src="result.image_src"
                   alt="img"
                 />
               </div>

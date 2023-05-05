@@ -29,4 +29,12 @@ export const actions = {
       vuexContext.commit('setCartItem', res)
     })
   },
+
+  async removeItem(vuexContext, payload) {
+    await this.$axios.$delete(`/cart/${payload}`).then((res) => {
+      this.$axios.$get('/cart').then((res) => {
+        vuexContext.commit('setCartItem', res)
+      })
+    })
+  },
 }
