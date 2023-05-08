@@ -11,19 +11,27 @@
       <li v-for="product in cartItems" :key="product.id" class="my-4">
         <div class="flex gap-2">
           <div class="w-1/3">
-            <img class="w-20 h-20" :src="product.product.src" alt="product" />
+            <img
+              class="w-20 h-20"
+              :src="product.product.image_src"
+              alt="product"
+            />
           </div>
           <div class="w-2/3">
-            <h4 class="font-bold">{{ product.product.title }}</h4>
+            <h4 class="font-bold">{{ product.product.name }}</h4>
             <p>{{ product.product.price }}đ</p>
-            <div @click="removeItem(product.product.id)">
+            <div @click="removeItem(product.id)">
               <base-button :title="'Delete'"></base-button>
             </div>
           </div>
         </div>
         <div class="mb-4">
           <button class="border shadow-md w-6">-</button>
-          <input type="text" placeholder="1" class="w-6 text-center" />
+          <input
+            v-model="product.quantity"
+            type="text"
+            class="w-6 text-center"
+          />
           <button class="border shadow-md w-6">+</button>
         </div>
         <hr />
@@ -46,7 +54,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import BaseButton from '~/components/UI/Button/BaseButton.vue'
 export default {
   components: {
@@ -65,6 +73,11 @@ export default {
   },
   async created() {
     await this.$store.dispatch('cart/getListItem')
+  },
+  methods: {
+    ...mapActions({
+      removeItem: 'cart/removeItem',
+    }),
   },
 }
 </script>

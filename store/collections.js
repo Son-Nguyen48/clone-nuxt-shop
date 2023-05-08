@@ -3,8 +3,8 @@ export const state = () => ({
 })
 
 export const getters = {
-  all(state) {
-    return state.collection
+  listProduct(state) {
+    return state.collection?.listProduct
   },
 }
 
@@ -16,13 +16,9 @@ export const mutations = {
 
 export const actions = {
   getCollection(vuexContext, payload) {
-    return this.$axios.$get('/collections').then((res) => {
+    return this.$axios.$get(`/collections/${payload}`).then((res) => {
       // eslint-disable-next-line no-console
-      console.log(res, 'res', payload, 'payload')
-      const result = res[payload]
-      // eslint-disable-next-line no-console
-      console.log(result, 'result')
-      vuexContext.commit('setCollection', result)
+      vuexContext.commit('setCollection', res)
     })
   },
 }

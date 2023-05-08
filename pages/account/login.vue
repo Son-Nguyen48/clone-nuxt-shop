@@ -43,7 +43,7 @@
           <div class="mt-4 md:mt-0 text-center">
             <nuxt-link
               to="/account/signup"
-              class="inline-block bg-[#FFDD00] py-2 px-3 text-white font-bold rounded w-full"
+              class="inline-block bg-[#FFDD00] py-2 px-3 font-bold rounded w-full"
               >Sign up</nuxt-link
             >
           </div>
@@ -86,73 +86,26 @@ export default {
     }
   },
   methods: {
-    login() {
+    async login() {
+      let accounts = []
+      await this.$axios.$get('/accounts').then((res) => {
+        // eslint-disable-next-line no-console
+        accounts = res
+      })
+
       // eslint-disable-next-line no-console
-      this.handleLogin()
-    },
-    async checkLogin(user) {
-      await this.$axios
-        .$get('/users')
-        .then((res) => {
-          const account = res.filter((res) => {
-            return res.email === user.email
-          })
+      console.log(accounts, 'accounts')
 
-          const accountPassword = account[0].password
-          const userPassword = user.password
+      const isValidUser = accounts.filter((item) => {
+        return item.email === this.email
+      })
 
-          const isValidUser = accountPassword === userPassword
-
-          // eslint-disable-next-line no-console
-          console.log('here')
-
-          if (isValidUser) {
-            account[0].isLogin = true
-            this.saveLogin(account)
-            this.$store.commit('login/setStateLogin', true)
-            // eslint-disable-next-line no-console
-            console.log(this.$store.state.login.isLogin, 'isLogin')
-            this.$router.push('/account/user')
-          }
+      if (this.password === isValidUser[0].password) {
+        this.$axios.$post('/currentUser', isValidUser[0]).then((res) => {
+          localStorage.setItem('currentUser', JSON.stringify(isValidUser[0]))
+          this.$router.push('/account/user')
         })
-        .catch((e) => {
-          // eslint-disable-next-line no-console
-          console.log(e)
-        })
-    },
-
-    handleLogin() {
-      const user = {
-        email: this.email,
-        password: this.password,
       }
-
-      // eslint-disable-next-line no-console
-      console.log('here')
-
-      this.checkLogin(user)
-    },
-
-    async saveLogin(account) {
-      const user = await this.$axios.$get('/user')
-      const currentUser = user.data
-
-      // eslint-disable-next-line no-console
-      console.log('here')
-
-      this.updateCurrentUser(account, currentUser)
-    },
-
-    async updateCurrentUser(account, currentUser) {
-      const updatedUser = await this.$axios.$put(
-        '/user',
-        account
-      )
-
-      // eslint-disable-next-line no-console
-      console.log('here')
-
-      currentUser = updatedUser
     },
   },
 }

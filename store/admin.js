@@ -1,25 +1,25 @@
 export const state = () => ({
-  productItem: {},
-  productItems: [],
-  productFilter: [],
+  item: {},
+  items: [],
+  itemsFilter: [],
 })
 
 export const getters = {
-  productItem: (s) => s.productItem,
-  productItems: (s) => s.productItems,
-  productFilter: (s) => s.productFilter,
+  item: (s) => s.productItem,
+  items: (s) => s.productItems,
+  itemsFilter: (s) => s.itemsFilter,
 }
 
 export const mutations = {
   setProductItem(state, payload) {
-    state.productItem = payload
+    state.item = payload
   },
   setProductItems(state, payload) {
-    state.productItems = payload
+    state.items = payload
   },
   setProductFilter(state, payload) {
     // eslint-disable-next-line no-console
-    state.productFilter = payload
+    state.itemsFilter = payload
   },
 }
 
@@ -35,9 +35,7 @@ export const actions = {
     })
   },
   async getListFilter(vuexContext, payload) {
-    const url = payload
-      ? `/products?${payload.name}=${payload.data}`
-      : '/products'
+    const url = `/${payload}`
     return await this.$axios.$get(url).then((res) => {
       vuexContext.commit('setProductFilter', res)
       // eslint-disable-next-line no-console

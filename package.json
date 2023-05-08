@@ -22,6 +22,7 @@
     "nuxt": "^2.15.8",
     "vue": "^2.7.10",
     "vue-agile": "^2.0.0",
+    "vue-click-outside": "^1.1.0",
     "vue-server-renderer": "^2.7.10",
     "vue-slick": "^1.2.0",
     "vue-template-compiler": "^2.7.10"

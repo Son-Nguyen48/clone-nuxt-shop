@@ -2,7 +2,7 @@
   <section class="pt-11">
     <div class="text-center">
       <h2 class="text-[28px] leading-[1.6] font-medium hover:text-[#fcda00]">
-        <nuxt-link to="/collections/bestseller">BEST SELLER</nuxt-link>
+        <nuxt-link to="/bestseller">BEST SELLER</nuxt-link>
       </h2>
     </div>
 
@@ -18,7 +18,7 @@
 
     <div class="text-center mt-20">
       <nuxt-link
-        to="/collections/bestseller"
+        to="/bestseller"
         class="uppercase inline-block py-3 px-5 font-bold text-white bg-[#FCDA00]"
         >See more</nuxt-link
       >

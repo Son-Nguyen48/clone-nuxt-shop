@@ -4,12 +4,12 @@
       <div class="md:w-1/2 flex justify-center items-center">
         <img
           class="shadow-[0_2px_12px_0_rgba(0,0,0,0.8)] rounded"
-          :src="productItem.src"
+          :src="productItem.image_src"
           alt="product"
         />
       </div>
       <div class="md:w-1/2 text-center flex flex-col gap-4">
-        <h4 class="font-bold text-2xl">{{ productItem.title }}</h4>
+        <h4 class="font-bold text-2xl">{{ productItem.name }}</h4>
         <p>{{ productItem.price }}</p>
         <div @click="addToCart(productItem)">
           <base-button :title="'Add to cart'"></base-button>

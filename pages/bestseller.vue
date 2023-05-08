@@ -15,6 +15,7 @@
       color="#FFDD00"
       class="py-8"
       :length="totalPages"
+      :total-visible="7"
       :prev-icon="$vuetify.icons.prevPage"
       :next-icon="$vuetify.icons.nextPage"
       @input="getProducts"

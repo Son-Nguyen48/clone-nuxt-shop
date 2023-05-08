@@ -2,11 +2,11 @@
   <div class="p-2">
     <nuxt-link :to="`/products/${product.id}`">
       <div>
-        <img :src="product.src" alt="" />
+        <img :src="product.image_src" alt="" />
       </div>
 
       <div>
-        <h4 class="font-bold">{{ product.title }}</h4>
+        <h4 class="font-bold">{{ product.name }}</h4>
         <p class="font-bold">{{ product.price }}</p>
       </div>
     </nuxt-link>

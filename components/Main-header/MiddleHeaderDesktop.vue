@@ -8,7 +8,7 @@
             color="black"
             class="bg-transparent font-bold text-sm"
             v-bind="attrs"
-            @click="$router.push('/collections/brand-menu')"
+            @click="$router.push({ name: 'brand-menu' })"
             v-on="on"
           >
             BRAND
@@ -16,7 +16,7 @@
         </template>
 
         <v-list class="flex">
-          <v-list-item v-for="(item, index) in brand" :key="index" class="p-0">
+          <v-list-item v-for="item in brand" :key="item.id" class="p-0">
             <nuxt-link
               :to="`/collections/${item.name.toLowerCase()}`"
               class="w-full rounded"
