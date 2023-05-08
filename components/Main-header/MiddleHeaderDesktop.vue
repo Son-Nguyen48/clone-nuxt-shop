@@ -8,7 +8,7 @@
             color="black"
             class="bg-transparent font-bold text-sm"
             v-bind="attrs"
-            @click="$router.push('/collections/brand-menu')"
+            @click="$router.push({ name: 'brand-menu' })"
             v-on="on"
           >
             BRAND

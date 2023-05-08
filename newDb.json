@@ -1389,6 +1389,7 @@
       "order_id": 1,
       "order_date": "04/28/2023",
       "customer_id": 1,
+      "name": "NTS",
       "ship_address": "HP",
       "ship_phone": "01234556779",
       "ship_email": "NTS@gmail.com"
@@ -1406,17 +1407,27 @@
       "product": {
         "brand_id": 12,
         "newArrival": null,
-        "gender": "man",
-        "category_id": 1,
+        "gender": "woman",
+        "category_id": 2,
         "sale": 20,
-        "name": " Giày Lười Nam GEOX U Moner 2Fit A ",
-        "image_src": "https://product.hstatic.net/1000376021/product/u824ya_c6005_0_b388a92089ba404e90eeb7e692ebe7d5_70a0bdefbf4741bebb7373af82a3bb82_large.png",
-        "price": "4900000",
-        "id": 9,
+        "name": " Giày Sneakers Nữ GEOX D Nydame A ",
+        "image_src": "https://product.hstatic.net/1000376021/product/d620qa_c9999_0_3d5e319fefb24b4db5257e0919c73337_b59358b78c9048b5bc98059aab51fdf4_large.jpg",
+        "price": "5700000",
+        "id": 4,
         "quantity": 100
       },
       "quantity": 1,
       "id": 1
+    },
+    {
+      "product": {
+        "id": 8,
+        "image_src": "https://product.hstatic.net/1000376021/product/10019882_0_b36954f8be1946488930a863b7425d1d_2b86d670abc2411bb2e90224fcdc7ee3_large.jpg",
+        "name": "Giày Lười Nam TOMS Alp Fwd",
+        "price": 1990000
+      },
+      "quantity": 1,
+      "id": 3
     },
     {
       "product": {
@@ -1432,7 +1443,33 @@
         "quantity": 100
       },
       "quantity": 1,
-      "id": 2
+      "id": 4
+    },
+    {
+      "product": {
+        "brand_id": 5,
+        "newArrival": null,
+        "gender": "man",
+        "category_id": 2,
+        "sale": 20,
+        "name": " Giày Sneakers Nam NIKE Renew Run 4 ",
+        "image_src": "https://product.hstatic.net/1000376021/product/dr2677-100_0_8360d75bc42a403f9fabf51fad9319b8_0fc2f8a28363472583fb564019b52c8a_large.jpg",
+        "price": "2639000",
+        "id": 19,
+        "quantity": 100
+      },
+      "quantity": 1,
+      "id": 5
+    },
+    {
+      "product": {
+        "id": 3,
+        "image_src": "https://product.hstatic.net/1000376021/product/11100102-3314-1_20d1b7b2ab9941b196ec82fc180cffa7_86dcb5efd4ec466f897583edf16fe046_large.jpg",
+        "name": "Giày Lười Unisex NATIVE Jefferson Block",
+        "price": 1690000
+      },
+      "quantity": 1,
+      "id": 6
     }
   ],
   "bestsellers": [
@@ -2819,21 +2856,20 @@
       "dateOfBirth": "2023-05-30",
       "gender": "Man",
       "id": 2
-    }
-  ],
-  "currentUser": [
+    },
     {
-      "name": "ab",
+      "name": "Híu Xà lơ",
       "isLogin": false,
-      "phone": "1234567891011",
-      "email": "a@a.com",
+      "phone": "12981281278162",
+      "email": "hiu@a.com",
       "address": "Vietnam",
       "nationality": "Vietnam",
       "company": "VMO",
       "password": "123456",
-      "dateOfBirth": "2023-05-30",
+      "dateOfBirth": "2023-05-15",
       "gender": "Man",
-      "id": 2
+      "id": 3
     }
-  ]
+  ],
+  "currentUser": []
 }
