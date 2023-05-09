@@ -6,7 +6,7 @@
     },
     {
       "id": 2,
-      "name": "NATIVE-HOT"
+      "name": "NATIVE"
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
     },
     {
       "id": 5,
-      "name": "NIKE-HOT"
+      "name": "NIKE"
     },
     {
       "id": 7,
@@ -46,11 +46,11 @@
     },
     {
       "id": 12,
-      "name": "GEOX-HOT"
+      "name": "GEOX"
     },
     {
       "id": 13,
-      "name": "ADIDAS-HOT"
+      "name": "ADIDAS"
     },
     {
       "id": 14,
@@ -58,7 +58,7 @@
     },
     {
       "id": 15,
-      "name": "CARMELA-NEW"
+      "name": "CARMELA"
     },
     {
       "id": 16,
@@ -329,7 +329,7 @@
   ],
   "products": [
     {
-      "brand_id": 3,
+      "brand": "native",
       "newArrival": null,
       "gender": "unisex",
       "category_id": 1,
@@ -341,7 +341,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 15,
+      "brand": "carmela",
       "newArrival": true,
       "gender": "woman",
       "category_id": 9,
@@ -353,7 +353,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 16,
+      "brand": "sledgers",
       "newArrival": null,
       "gender": "man",
       "category_id": 8,
@@ -365,7 +365,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -377,7 +377,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "woman",
       "category_id": 1,
@@ -389,7 +389,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "woman",
       "category_id": 10,
@@ -401,7 +401,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "woman",
       "category_id": 11,
@@ -413,7 +413,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "man",
       "category_id": 11,
@@ -425,7 +425,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "man",
       "category_id": 1,
@@ -437,7 +437,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "man",
       "category_id": 2,
@@ -449,7 +449,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -461,7 +461,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -473,7 +473,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "children",
       "category_id": 2,
@@ -485,7 +485,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "children",
       "category_id": 2,
@@ -497,7 +497,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "unisex",
       "category_id": 2,
@@ -509,7 +509,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -521,7 +521,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -533,7 +533,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -545,7 +545,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "man",
       "category_id": 2,
@@ -557,7 +557,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "man",
       "category_id": 2,
@@ -569,7 +569,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "man",
       "category_id": 2,
@@ -581,7 +581,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -593,7 +593,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "man",
       "category_id": 2,
@@ -605,7 +605,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "boy",
       "category_id": 2,
@@ -617,7 +617,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "boy",
       "category_id": 12,
@@ -629,7 +629,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 3,
+      "brand": "native",
       "newArrival": null,
       "gender": "girl",
       "category_id": 1,
@@ -641,7 +641,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 3,
+      "brand": "native",
       "newArrival": null,
       "gender": "unisex",
       "category_id": 1,
@@ -653,7 +653,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 3,
+      "brand": "native",
       "newArrival": null,
       "gender": "unisex",
       "category_id": 1,
@@ -665,7 +665,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 3,
+      "brand": "native",
       "newArrival": null,
       "gender": "woman",
       "category_id": 1,
@@ -677,7 +677,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 3,
+      "brand": "native",
       "newArrival": null,
       "gender": "unisex",
       "category_id": 1,
@@ -689,7 +689,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 15,
+      "brand": "carmela",
       "newArrival": true,
       "gender": "unisex",
       "category_id": 9,
@@ -701,7 +701,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 16,
+      "brand": "sledgers",
       "newArrival": null,
       "gender": "man",
       "category_id": 8,
@@ -713,7 +713,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -725,7 +725,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -737,7 +737,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "woman",
       "category_id": 10,
@@ -749,7 +749,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "woman",
       "category_id": 11,
@@ -761,7 +761,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "man",
       "category_id": 11,
@@ -773,7 +773,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "man",
       "category_id": 1,
@@ -785,7 +785,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "man",
       "category_id": 2,
@@ -797,7 +797,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -809,7 +809,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -821,7 +821,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "children unisex",
       "category_id": 2,
@@ -833,7 +833,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "children unisex",
       "category_id": 2,
@@ -845,7 +845,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "children unisex",
       "category_id": 2,
@@ -857,7 +857,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -869,7 +869,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -881,7 +881,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -893,7 +893,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "man",
       "category_id": 2,
@@ -905,7 +905,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "man",
       "category_id": 2,
@@ -917,7 +917,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "man",
       "category_id": 2,
@@ -929,7 +929,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -941,7 +941,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "man",
       "category_id": 2,
@@ -953,7 +953,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "boy",
       "category_id": 2,
@@ -965,7 +965,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "boy",
       "category_id": 2,
@@ -977,7 +977,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 3,
+      "brand": "native",
       "newArrival": true,
       "gender": "girl",
       "category_id": 1,
@@ -989,7 +989,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 3,
+      "brand": "native",
       "newArrival": true,
       "gender": "unisex",
       "category_id": 1,
@@ -1001,7 +1001,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 3,
+      "brand": "native",
       "newArrival": null,
       "gender": "unisex",
       "category_id": 1,
@@ -1013,7 +1013,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 3,
+      "brand": "native",
       "newArrival": true,
       "gender": "woman",
       "category_id": 1,
@@ -1025,7 +1025,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 3,
+      "brand": "native",
       "newArrival": null,
       "gender": "unisex",
       "category_id": 1,
@@ -1037,7 +1037,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 15,
+      "brand": "carmela",
       "newArrival": null,
       "gender": "unisex",
       "category_id": 9,
@@ -1049,7 +1049,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 16,
+      "brand": "sledgers",
       "newArrival": null,
       "gender": "man",
       "category_id": 8,
@@ -1061,7 +1061,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -1073,7 +1073,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "woman",
       "category_id": 1,
@@ -1085,7 +1085,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "woman",
       "category_id": 10,
@@ -1097,7 +1097,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "woman",
       "category_id": 11,
@@ -1109,7 +1109,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "man",
       "category_id": 11,
@@ -1121,7 +1121,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "man",
       "category_id": 1,
@@ -1133,7 +1133,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "man",
       "category_id": 2,
@@ -1145,7 +1145,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -1157,7 +1157,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -1169,7 +1169,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "children unisex",
       "category_id": 2,
@@ -1181,7 +1181,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "children unisex",
       "category_id": 2,
@@ -1193,7 +1193,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "children unisex",
       "category_id": 2,
@@ -1205,7 +1205,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -1217,7 +1217,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -1229,7 +1229,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -1241,7 +1241,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "man",
       "category_id": 2,
@@ -1253,7 +1253,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "man",
       "category_id": 2,
@@ -1265,7 +1265,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "man",
       "category_id": 2,
@@ -1277,7 +1277,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -1289,7 +1289,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "man",
       "category_id": 2,
@@ -1301,7 +1301,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "boy",
       "category_id": 2,
@@ -1313,7 +1313,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "boy",
       "category_id": 12,
@@ -1325,7 +1325,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 3,
+      "brand": "native",
       "newArrival": null,
       "gender": "girl",
       "category_id": 1,
@@ -1337,7 +1337,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 3,
+      "brand": "native",
       "newArrival": null,
       "gender": "unisex",
       "category_id": 1,
@@ -1349,7 +1349,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 3,
+      "brand": "native",
       "newArrival": null,
       "gender": "unisex",
       "category_id": 1,
@@ -1361,7 +1361,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 3,
+      "brand": "native",
       "newArrival": null,
       "gender": "woman",
       "category_id": 1,
@@ -1370,6 +1370,234 @@
       "image_src": "https://product.hstatic.net/1000376021/product/11100102-3315-1_708f5c80f5a1440eb321c6b26f8e940d_9630a9fe079140299c008c76f6a70ffa_large.jpg",
       "price": "1690000",
       "id": 87,
+      "quantity": 100
+    },
+    {
+      "brand": "toms",
+      "newArrival": null,
+      "gender": "woman",
+      "category_id": 9,
+      "sale": 20,
+      "name": "Dép Đế Xuồng Nữ TOMS Diana Mule",
+      "image_src": "https://product.hstatic.net/1000376021/product/10019759_0_f295321360cd48c1b59e85a997d028be_842d0346afd243ca933ff9004fd760b0_large.jpg",
+      "price": 2390000,
+      "id": 88,
+      "quantity": 100
+    },
+    {
+      "brand": "toms",
+      "newArrival": null,
+      "gender": "girl",
+      "category_id": 1,
+      "sale": 20,
+      "name": "Giày Lười Bé Gái TOMS Alpargata",
+      "image_src": "https://product.hstatic.net/1000376021/product/10019744_0_98e15b4275964eef9fa8421eb07ef96e_95f83f776b6b4b1eb0c8444d69f05c98_large.jpg",
+      "price": 2390000,
+      "id": 89,
+      "quantity": 100
+    },
+    {
+      "brand": "toms",
+      "newArrival": null,
+      "gender": "girl",
+      "category_id": 1,
+      "sale": 20,
+      "name": "Giày Lười Bé Gái TOMS Alpargata",
+      "image_src": "https://product.hstatic.net/1000376021/product/10019847_0_9582de7c459647678ae9b95ba9bce600_ae4c97a9f73647c2b340d6eb8902c466_large.jpg",
+      "price": 1290000,
+      "id": 90,
+      "quantity": 100
+    },
+    {
+      "brand": "toms",
+      "newArrival": null,
+      "gender": "girl",
+      "category_id": 1,
+      "sale": 20,
+      "name": "Giày Lười Bé Gái TOMS Alpargata",
+      "image_src": "https://product.hstatic.net/1000376021/product/10019832_0_3ab11bb0e0e146518e5c674773771e81_2fb886f55a3543479663624b3eff6e85_large.jpg",
+      "price": 1290000,
+      "id": 91,
+      "quantity": 100
+    },
+    {
+      "brand": "toms",
+      "newArrival": null,
+      "gender": "girl",
+      "category_id": 1,
+      "sale": 20,
+      "name": "Giày Lười Bé Gái TOMS Alpargata",
+      "image_src": "https://product.hstatic.net/1000376021/product/10019788_0_dd6f0575dd5d49ab843a2e93b90efe28_c67bcf31b11e497e89a8d63af226615a_large.jpg",
+      "price": 1290000,
+      "id": 92,
+      "quantity": 100
+    },
+    {
+      "brand": "toms",
+      "newArrival": null,
+      "gender": "girl",
+      "category_id": 1,
+      "sale": 20,
+      "name": "Giày Lười Bé Gái TOMS Alpargata",
+      "image_src": "https://product.hstatic.net/1000376021/product/10019787_0_bf017e26b6cf4bbf8689c0bec18f9cf4_520c2981907a46678bb3ced6e5f1fda8_large.jpg",
+      "price": 1290000,
+      "id": 93,
+      "quantity": 100
+    },
+    {
+      "brand": "toms",
+      "newArrival": null,
+      "gender": "boy",
+      "category_id": 1,
+      "sale": 20,
+      "name": "Giày Lười Bé Trai TOMS Alpargata",
+      "image_src": "https://product.hstatic.net/1000376021/product/10019836_0_5189eb0792574242a8eae190f5c9a654_ac77f04eecd34d9c9b3e5c90e819da16_large.jpg",
+      "price": 1290000,
+      "id": 94,
+      "quantity": 100
+    },
+    {
+      "brand": "toms",
+      "newArrival": null,
+      "gender": "man",
+      "category_id": 1,
+      "sale": 20,
+      "name": "Giày Lười Nam TOMS Alp Fwd",
+      "image_src": "https://product.hstatic.net/1000376021/product/10019882_0_b36954f8be1946488930a863b7425d1d_2b86d670abc2411bb2e90224fcdc7ee3_large.jpg",
+      "price": 1990000,
+      "id": 95,
+      "quantity": 100
+    },
+    {
+      "brand": "toms",
+      "newArrival": null,
+      "gender": "man",
+      "category_id": 1,
+      "sale": 20,
+      "name": "Giày Lười Nam TOMS Alp Fwd",
+      "image_src": "https://product.hstatic.net/1000376021/product/10019873_0_689fb4bb8b97470f81c8756a874b5bf6_be73b22ab6684f899ebdf5115fde586e_large.jpg",
+      "price": 1990000,
+      "id": 96,
+      "quantity": 100
+    },
+    {
+      "brand": "toms",
+      "newArrival": null,
+      "gender": "man",
+      "category_id": 1,
+      "sale": 20,
+      "name": "Giày Lười Nam TOMS Alp Fwd",
+      "image_src": "https://product.hstatic.net/1000376021/product/10019872_0_0b2bf01203784098979f5b04bce6dc0d_4c96caab500642ad9cd7a1411f2a5ff2_large.jpg",
+      "price": 1290000,
+      "id": 97,
+      "quantity": 100
+    },
+    {
+      "brand": "toms",
+      "newArrival": null,
+      "gender": "man",
+      "category_id": 1,
+      "sale": 20,
+      "name": "Giày Lười Nam TOMS Alp Fwd",
+      "image_src": "https://product.hstatic.net/1000376021/product/10019871_0_5e449dd062df4e658b073ae953339692_b0770e3f21e24d0199b7516ae3f4de05_large.jpg",
+      "price": 1290000,
+      "id": 98,
+      "quantity": 100
+    },
+    {
+      "brand": "toms",
+      "newArrival": null,
+      "gender": "man",
+      "category_id": 1,
+      "sale": 20,
+      "name": "Giày Lười Nam TOMS Alp Fwd",
+      "image_src": "https://product.hstatic.net/1000376021/product/10019860_0_47dea577b0324830b2915d29f42bbcae_f80df078d22d430faf3063fdaf50fe8a_large.jpg",
+      "price": 1990000,
+      "id": 99,
+      "quantity": 100
+    },
+    {
+      "brand": "toms",
+      "newArrival": null,
+      "gender": "unisex",
+      "category_id": 1,
+      "sale": 20,
+      "name": "Giày Lười Unisex NATIVE Miles",
+      "image_src": "https://product.hstatic.net/1000376021/product/11100102-1846-1_b544a989e1b0478492cd6e7d572ba986_d8b4a40f80514b489028d9e2a2c99bb2_large.jpg",
+      "price": 1690000,
+      "id": 100,
+      "quantity": 100
+    },
+    {
+      "brand": "toms",
+      "newArrival": null,
+      "gender": "unisex",
+      "category_id": 1,
+      "sale": 20,
+      "name": "Giày Lười Unisex NATIVE Miles",
+      "image_src": "https://product.hstatic.net/1000376021/product/11104600-3158-1_8327c00b3cd448c2bf25ab55bb4e4847_e325354a742c4b52a795a527120397e8_large.jpg",
+      "price": 1400000,
+      "id": 101,
+      "quantity": 100
+    },
+    {
+      "brand": "toms",
+      "newArrival": null,
+      "gender": "unisex",
+      "category_id": 1,
+      "sale": 20,
+      "name": "Giày Lười Unisex NATIVE Miles",
+      "image_src": "https://product.hstatic.net/1000376021/product/11104600-1250-1_9e76e91c6489486688a7de2fc28bb178_ed383bdbe70249eeb3e1e290c72f2897_large.jpg",
+      "price": 1400000,
+      "id": 102,
+      "quantity": 100
+    },
+    {
+      "brand": "toms",
+      "newArrival": null,
+      "gender": "unisex",
+      "category_id": 1,
+      "sale": 20,
+      "name": "Giày Lười Unisex NATIVE Miles",
+      "image_src": "https://product.hstatic.net/1000376021/product/11104600-1105-1_28cfcb4260cd4fa8bcc52780fc5a1412_2a3dace8fb2b44209789bda7f2a0b6c5_large.jpg",
+      "price": 1400000,
+      "id": 103,
+      "quantity": 100
+    },
+    {
+      "brand": "toms",
+      "newArrival": null,
+      "gender": "unisex",
+      "category_id": 1,
+      "sale": 20,
+      "name": "Giày Lười Unisex NATIVE Jefferson Sugarlite Print",
+      "image_src": "https://product.hstatic.net/1000376021/product/11111501-2055-1_d0de55605fe9486db8642e5977260bc3_71cf7cfb0514447790ce26f98209d2b2_large.jpg",
+      "price": 1790000,
+      "id": 104,
+      "quantity": 100
+    },
+    {
+      "brand": "toms",
+      "newArrival": null,
+      "gender": "unisex",
+      "category_id": 1,
+      "sale": 20,
+      "name": "Giày Lười Unisex NATIVE Jefferson Sugarlite Print",
+      "image_src": "https://product.hstatic.net/1000376021/product/11111501-1269-1_8a2f3ff32da74cf3ac0335c58c15772a_1e9ab5ecdda64d25a9abefb6ae25b313_large.jpg",
+      "price": 1400000,
+      "id": 105,
+      "quantity": 100
+    },
+    {
+      "brand": "toms",
+      "newArrival": null,
+      "gender": "unisex",
+      "category_id": 1,
+      "sale": 20,
+      "name": "Giày Lười Unisex NATIVE Jefferson Sugarlite Print",
+      "image_src": "https://product.hstatic.net/1000376021/product/11100148-1564-1-_a7c5af7adcdd4001ba8531c63fa8f9e3_bdebcb2941a546a996a25feda7ab850a_large.jpg",
+      "price": 1400000,
+      "id": 106,
       "quantity": 100
     }
   ],
@@ -1405,7 +1633,23 @@
   "cart": [
     {
       "product": {
-        "brand_id": 12,
+        "brand": "sledgers",
+        "newArrival": null,
+        "gender": "man",
+        "category_id": 8,
+        "sale": 20,
+        "name": " Giày Tây Nam SLEDGERS Trouville ",
+        "image_src": "http://product.hstatic.net/1000376021/product/trouville_black_0_3a7eb0ff388a413daaff77eb5d07d920_487386c3005546a1b03b5749c668f5d6_large.jpg",
+        "price": "2890000",
+        "id": 3,
+        "quantity": 100
+      },
+      "quantity": 1,
+      "id": 6
+    },
+    {
+      "product": {
+        "brand": "geox",
         "newArrival": null,
         "gender": "woman",
         "category_id": 2,
@@ -1416,65 +1660,29 @@
         "id": 4,
         "quantity": 100
       },
-      "quantity": 1,
-      "id": 1
+      "quantity": 3,
+      "id": 7
     },
     {
       "product": {
-        "id": 8,
-        "image_src": "https://product.hstatic.net/1000376021/product/10019882_0_b36954f8be1946488930a863b7425d1d_2b86d670abc2411bb2e90224fcdc7ee3_large.jpg",
-        "name": "Giày Lười Nam TOMS Alp Fwd",
-        "price": 1990000
-      },
-      "quantity": 1,
-      "id": 3
-    },
-    {
-      "product": {
-        "brand_id": 5,
-        "newArrival": null,
-        "gender": "children",
-        "category_id": 2,
+        "brand": "carmela",
+        "newArrival": true,
+        "gender": "woman",
+        "category_id": 9,
         "sale": 20,
-        "name": " Giày Sneakers Trẻ Em Unisex NIKE Revolution 6 Nn (Psv) ",
-        "image_src": "https://product.hstatic.net/1000376021/product/dd1095-600_0_a86d1c505a7745ef9b2b61c29356d3da_eb27c4c2575347d787455a8ae25e9a17_large.jpg",
-        "price": "1399000",
-        "id": 13,
+        "name": " Giày Đế Xuồng Nữ CARMELA Camel Leather Ladies Sandals ",
+        "image_src": "https://product.hstatic.net/1000376021/product/160835_camel_0_10557bad46b54b90ac98ef8c25ed027f_827d1d2c6a7c4373ae2b0461e708fedc_large.jpg",
+        "price": "2490000",
+        "id": 2,
         "quantity": 100
       },
       "quantity": 1,
-      "id": 4
-    },
-    {
-      "product": {
-        "brand_id": 5,
-        "newArrival": null,
-        "gender": "man",
-        "category_id": 2,
-        "sale": 20,
-        "name": " Giày Sneakers Nam NIKE Renew Run 4 ",
-        "image_src": "https://product.hstatic.net/1000376021/product/dr2677-100_0_8360d75bc42a403f9fabf51fad9319b8_0fc2f8a28363472583fb564019b52c8a_large.jpg",
-        "price": "2639000",
-        "id": 19,
-        "quantity": 100
-      },
-      "quantity": 1,
-      "id": 5
-    },
-    {
-      "product": {
-        "id": 3,
-        "image_src": "https://product.hstatic.net/1000376021/product/11100102-3314-1_20d1b7b2ab9941b196ec82fc180cffa7_86dcb5efd4ec466f897583edf16fe046_large.jpg",
-        "name": "Giày Lười Unisex NATIVE Jefferson Block",
-        "price": 1690000
-      },
-      "quantity": 1,
-      "id": 6
+      "id": 8
     }
   ],
   "bestsellers": [
     {
-      "brand_id": 3,
+      "brand": "native",
       "newArrival": null,
       "gender": "unisex",
       "category_id": 1,
@@ -1486,7 +1694,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 15,
+      "brand": "carmela",
       "newArrival": true,
       "gender": "woman",
       "category_id": 9,
@@ -1498,7 +1706,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 16,
+      "brand": "sledgers",
       "newArrival": null,
       "gender": "man",
       "category_id": 8,
@@ -1510,7 +1718,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -1522,7 +1730,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "woman",
       "category_id": 1,
@@ -1534,7 +1742,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "woman",
       "category_id": 10,
@@ -1546,7 +1754,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "woman",
       "category_id": 11,
@@ -1558,7 +1766,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "man",
       "category_id": 11,
@@ -1570,7 +1778,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "man",
       "category_id": 1,
@@ -1582,7 +1790,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "man",
       "category_id": 2,
@@ -1594,7 +1802,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -1606,7 +1814,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -1618,7 +1826,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "children",
       "category_id": 2,
@@ -1630,7 +1838,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "children",
       "category_id": 2,
@@ -1642,7 +1850,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "unisex",
       "category_id": 2,
@@ -1654,7 +1862,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -1666,7 +1874,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -1678,7 +1886,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -1690,7 +1898,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "man",
       "category_id": 2,
@@ -1702,7 +1910,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "man",
       "category_id": 2,
@@ -1714,7 +1922,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "man",
       "category_id": 2,
@@ -1726,7 +1934,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -1738,7 +1946,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "man",
       "category_id": 2,
@@ -1750,7 +1958,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "boy",
       "category_id": 2,
@@ -1762,7 +1970,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "boy",
       "category_id": 12,
@@ -1774,7 +1982,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 3,
+      "brand": "native",
       "newArrival": null,
       "gender": "girl",
       "category_id": 1,
@@ -1786,7 +1994,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 3,
+      "brand": "native",
       "newArrival": null,
       "gender": "unisex",
       "category_id": 1,
@@ -1798,7 +2006,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 3,
+      "brand": "native",
       "newArrival": null,
       "gender": "unisex",
       "category_id": 1,
@@ -1810,7 +2018,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 3,
+      "brand": "native",
       "newArrival": null,
       "gender": "woman",
       "category_id": 1,
@@ -1822,7 +2030,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 3,
+      "brand": "native",
       "newArrival": null,
       "gender": "unisex",
       "category_id": 1,
@@ -1834,7 +2042,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 15,
+      "brand": "carmela",
       "newArrival": true,
       "gender": "unisex",
       "category_id": 9,
@@ -1846,7 +2054,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 16,
+      "brand": "sledgers",
       "newArrival": null,
       "gender": "man",
       "category_id": 8,
@@ -1858,7 +2066,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -1870,7 +2078,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -1882,7 +2090,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "woman",
       "category_id": 10,
@@ -1894,7 +2102,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "woman",
       "category_id": 11,
@@ -1906,7 +2114,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "man",
       "category_id": 11,
@@ -1918,7 +2126,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "man",
       "category_id": 1,
@@ -1930,7 +2138,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "man",
       "category_id": 2,
@@ -1942,7 +2150,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -1954,7 +2162,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -1966,7 +2174,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "children unisex",
       "category_id": 2,
@@ -1978,7 +2186,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "children unisex",
       "category_id": 2,
@@ -1990,7 +2198,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "children unisex",
       "category_id": 2,
@@ -2002,7 +2210,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -2014,7 +2222,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -2026,7 +2234,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -2038,7 +2246,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "man",
       "category_id": 2,
@@ -2050,7 +2258,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "man",
       "category_id": 2,
@@ -2062,7 +2270,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "man",
       "category_id": 2,
@@ -2074,7 +2282,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -2086,7 +2294,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "man",
       "category_id": 2,
@@ -2098,7 +2306,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "boy",
       "category_id": 2,
@@ -2110,7 +2318,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "boy",
       "category_id": 2,
@@ -2122,7 +2330,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 3,
+      "brand": "native",
       "newArrival": true,
       "gender": "girl",
       "category_id": 1,
@@ -2134,7 +2342,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 3,
+      "brand": "native",
       "newArrival": true,
       "gender": "unisex",
       "category_id": 1,
@@ -2146,7 +2354,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 3,
+      "brand": "native",
       "newArrival": null,
       "gender": "unisex",
       "category_id": 1,
@@ -2158,7 +2366,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 3,
+      "brand": "native",
       "newArrival": true,
       "gender": "woman",
       "category_id": 1,
@@ -2170,7 +2378,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 3,
+      "brand": "native",
       "newArrival": null,
       "gender": "unisex",
       "category_id": 1,
@@ -2182,7 +2390,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 15,
+      "brand": "carmela",
       "newArrival": null,
       "gender": "unisex",
       "category_id": 9,
@@ -2194,7 +2402,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 16,
+      "brand": "sledgers",
       "newArrival": null,
       "gender": "man",
       "category_id": 8,
@@ -2206,7 +2414,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -2218,7 +2426,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "woman",
       "category_id": 1,
@@ -2230,7 +2438,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "woman",
       "category_id": 10,
@@ -2242,7 +2450,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "woman",
       "category_id": 11,
@@ -2254,7 +2462,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "man",
       "category_id": 11,
@@ -2266,7 +2474,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "man",
       "category_id": 1,
@@ -2278,7 +2486,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "man",
       "category_id": 2,
@@ -2290,7 +2498,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -2302,7 +2510,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 12,
+      "brand": "geox",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -2314,7 +2522,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "children unisex",
       "category_id": 2,
@@ -2326,7 +2534,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "children unisex",
       "category_id": 2,
@@ -2338,7 +2546,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "children unisex",
       "category_id": 2,
@@ -2350,7 +2558,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -2362,7 +2570,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -2374,7 +2582,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -2386,7 +2594,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "man",
       "category_id": 2,
@@ -2398,7 +2606,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "man",
       "category_id": 2,
@@ -2410,7 +2618,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "man",
       "category_id": 2,
@@ -2422,7 +2630,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "woman",
       "category_id": 2,
@@ -2434,7 +2642,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "man",
       "category_id": 2,
@@ -2446,7 +2654,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "boy",
       "category_id": 2,
@@ -2458,7 +2666,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 5,
+      "brand": "nike",
       "newArrival": null,
       "gender": "boy",
       "category_id": 12,
@@ -2470,7 +2678,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 3,
+      "brand": "native",
       "newArrival": null,
       "gender": "girl",
       "category_id": 1,
@@ -2482,7 +2690,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 3,
+      "brand": "native",
       "newArrival": null,
       "gender": "unisex",
       "category_id": 1,
@@ -2494,7 +2702,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 3,
+      "brand": "native",
       "newArrival": null,
       "gender": "unisex",
       "category_id": 1,
@@ -2506,7 +2714,7 @@
       "quantity": 100
     },
     {
-      "brand_id": 3,
+      "brand": "native",
       "newArrival": null,
       "gender": "woman",
       "category_id": 1,
@@ -2528,73 +2736,73 @@
       "brand_id": "toms",
       "listProduct": [
         {
-          "id": 1,
+          "id": 88,
           "image_src": "https://product.hstatic.net/1000376021/product/10019759_0_f295321360cd48c1b59e85a997d028be_842d0346afd243ca933ff9004fd760b0_large.jpg",
           "name": "Dép Đế Xuồng Nữ TOMS Diana Mule",
           "price": 2390000
         },
         {
-          "id": 2,
+          "id": 89,
           "image_src": "https://product.hstatic.net/1000376021/product/10019744_0_98e15b4275964eef9fa8421eb07ef96e_95f83f776b6b4b1eb0c8444d69f05c98_large.jpg",
           "name": "Dép Đế Xuồng Nữ TOMS Diana Mule",
           "price": 2390000
         },
         {
-          "id": 3,
+          "id": 90,
           "image_src": "https://product.hstatic.net/1000376021/product/10019847_0_9582de7c459647678ae9b95ba9bce600_ae4c97a9f73647c2b340d6eb8902c466_large.jpg",
           "name": "Giày Lười Bé Gái TOMS Alpargata",
           "price": 1290000
         },
         {
-          "id": 4,
+          "id": 91,
           "image_src": "https://product.hstatic.net/1000376021/product/10019832_0_3ab11bb0e0e146518e5c674773771e81_2fb886f55a3543479663624b3eff6e85_large.jpg",
           "name": "Giày Lười Bé Gái TOMS Alpargata",
           "price": 1290000
         },
         {
-          "id": 5,
+          "id": 92,
           "image_src": "https://product.hstatic.net/1000376021/product/10019788_0_dd6f0575dd5d49ab843a2e93b90efe28_c67bcf31b11e497e89a8d63af226615a_large.jpg",
           "name": "Giày Lười Bé Gái TOMS Alpargata",
           "price": 1290000
         },
         {
-          "id": 6,
+          "id": 93,
           "image_src": "https://product.hstatic.net/1000376021/product/10019787_0_bf017e26b6cf4bbf8689c0bec18f9cf4_520c2981907a46678bb3ced6e5f1fda8_large.jpg",
           "name": "Giày Lười Bé Gái TOMS Alpargata",
           "price": 1290000
         },
         {
-          "id": 7,
+          "id": 94,
           "image_src": "https://product.hstatic.net/1000376021/product/10019836_0_5189eb0792574242a8eae190f5c9a654_ac77f04eecd34d9c9b3e5c90e819da16_large.jpg",
           "name": "Giày Lười Bé Trai TOMS Alpargata",
           "price": 1290000
         },
         {
-          "id": 8,
+          "id": 95,
           "image_src": "https://product.hstatic.net/1000376021/product/10019882_0_b36954f8be1946488930a863b7425d1d_2b86d670abc2411bb2e90224fcdc7ee3_large.jpg",
           "name": "Giày Lười Nam TOMS Alp Fwd",
           "price": 1990000
         },
         {
-          "id": 9,
+          "id": 96,
           "image_src": "https://product.hstatic.net/1000376021/product/10019873_0_689fb4bb8b97470f81c8756a874b5bf6_be73b22ab6684f899ebdf5115fde586e_large.jpg",
           "name": "Giày Lười Nam TOMS Alp Fwd",
           "price": 1990000
         },
         {
-          "id": 10,
+          "id": 97,
           "image_src": "https://product.hstatic.net/1000376021/product/10019872_0_0b2bf01203784098979f5b04bce6dc0d_4c96caab500642ad9cd7a1411f2a5ff2_large.jpg",
           "name": "Giày Lười Nam TOMS Alp Fwd",
           "price": 1290000
         },
         {
-          "id": 11,
+          "id": 98,
           "image_src": "https://product.hstatic.net/1000376021/product/10019871_0_5e449dd062df4e658b073ae953339692_b0770e3f21e24d0199b7516ae3f4de05_large.jpg",
           "name": "Giày Lười Nam TOMS Alp Fwd",
           "price": 1290000
         },
         {
-          "id": 12,
+          "id": 99,
           "image_src": "https://product.hstatic.net/1000376021/product/10019860_0_47dea577b0324830b2915d29f42bbcae_f80df078d22d430faf3063fdaf50fe8a_large.jpg",
           "name": "Giày Lười Nam TOMS Alp Fwd",
           "price": 1990000
@@ -2610,79 +2818,73 @@
       "brand_id": "native",
       "listProduct": [
         {
-          "id": 1,
+          "id": 26,
           "image_src": "https://product.hstatic.net/1000376021/product/e-jefferson-rose-pink-bling-dust-pink_6c1c5dfdddd942d9ac85c34993432952_029f0e009e83443197b53439b7636bab_large.jpg",
           "name": "Giày Lười Bé Gái NATIVE J Jefferson Bling Junior",
           "price": 1040000
         },
         {
-          "id": 2,
+          "id": 85,
           "image_src": "https://product.hstatic.net/1000376021/product/11100102-4267-1_ac041f16f0db46a88f966e98ce34d635_2c9e514f02a548b3a0e6daf7dd03965c_large.jpg",
           "name": "Giày Lười Unisex NATIVE Jefferson Block",
           "price": 1690000
         },
         {
-          "id": 3,
+          "id": 86,
           "image_src": "https://product.hstatic.net/1000376021/product/11100102-3314-1_20d1b7b2ab9941b196ec82fc180cffa7_86dcb5efd4ec466f897583edf16fe046_large.jpg",
           "name": "Giày Lười Unisex NATIVE Jefferson Block",
           "price": 1690000
         },
         {
-          "id": 4,
+          "id": 29,
           "image_src": "https://product.hstatic.net/1000376021/product/11100102-3315-1_708f5c80f5a1440eb321c6b26f8e940d_9630a9fe079140299c008c76f6a70ffa_large.jpg",
           "name": "Giày Lười Nữ NATIVE Jefferson Block",
           "price": 1690000
         },
         {
-          "id": 5,
+          "id": 100,
           "image_src": "https://product.hstatic.net/1000376021/product/11100102-1846-1_b544a989e1b0478492cd6e7d572ba986_d8b4a40f80514b489028d9e2a2c99bb2_large.jpg",
           "name": "Giày Lười Nữ NATIVE Jefferson Block",
           "price": 1690000
         },
         {
-          "id": 6,
+          "id": 101,
           "image_src": "https://product.hstatic.net/1000376021/product/11104600-3158-1_8327c00b3cd448c2bf25ab55bb4e4847_e325354a742c4b52a795a527120397e8_large.jpg",
           "name": "Giày Lười Unisex NATIVE Miles",
           "price": 1400000
         },
         {
-          "id": 7,
+          "id": 1,
           "image_src": "https://product.hstatic.net/1000376021/product/11104600-1999-1_dde3bbe180c1406392336f4a6cb7af70_a391a2d67e3343f282e5ef382d2e86ba_large.jpg",
           "name": "Giày Lười Unisex NATIVE Miles",
           "price": 1400000
         },
         {
-          "id": 8,
+          "id": 102,
           "image_src": "https://product.hstatic.net/1000376021/product/11104600-1250-1_9e76e91c6489486688a7de2fc28bb178_ed383bdbe70249eeb3e1e290c72f2897_large.jpg",
           "name": "Giày Lười Unisex NATIVE Miles",
           "price": 1400000
         },
         {
-          "id": 9,
+          "id": 103,
           "image_src": "https://product.hstatic.net/1000376021/product/11104600-1105-1_28cfcb4260cd4fa8bcc52780fc5a1412_2a3dace8fb2b44209789bda7f2a0b6c5_large.jpg",
           "name": "Giày Lười Unisex NATIVE Miles",
           "price": 1400000
         },
         {
-          "id": 10,
-          "image_src": "https://product.hstatic.net/1000376021/product/10019872_0_0b2bf01203784098979f5b04bce6dc0d_4c96caab500642ad9cd7a1411f2a5ff2_large.jpg",
-          "name": "Giày Lười Nam TOMS Alp Fwd",
-          "price": 1290000
-        },
-        {
-          "id": 11,
+          "id": 104,
           "image_src": "https://product.hstatic.net/1000376021/product/11111501-2055-1_d0de55605fe9486db8642e5977260bc3_71cf7cfb0514447790ce26f98209d2b2_large.jpg",
           "name": "Giày Lười Unisex NATIVE Jefferson Sugarlite Print",
           "price": 1790000
         },
         {
-          "id": 12,
+          "id": 105,
           "image_src": "https://product.hstatic.net/1000376021/product/11111501-1269-1_8a2f3ff32da74cf3ac0335c58c15772a_1e9ab5ecdda64d25a9abefb6ae25b313_large.jpg",
           "name": "Giày Lười Unisex NATIVE Jefferson Sugarlite Print",
           "price": 1990000
         },
         {
-          "id": 13,
+          "id": 106,
           "image_src": "https://product.hstatic.net/1000376021/product/11100148-1564-1-_a7c5af7adcdd4001ba8531c63fa8f9e3_bdebcb2941a546a996a25feda7ab850a_large.jpg",
           "name": "Giày Lười Unisex NATIVE Jefferson Sugarlite Print",
           "price": 1990000

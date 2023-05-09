@@ -8,7 +8,7 @@
     <br />
 
     <ul class="flex flex-col gap-2 mx-4 md:mx-auto md:w-3/4">
-      <li v-for="product in cartItems" :key="product.id" class="my-4">
+      <li v-for="(product, index) in cartItems" :key="product.id" class="my-4">
         <div class="flex gap-2">
           <div class="w-1/3">
             <img
@@ -20,19 +20,38 @@
           <div class="w-2/3">
             <h4 class="font-bold">{{ product.product.name }}</h4>
             <p>{{ product.product.price }}đ</p>
-            <div @click="removeItem(product.id)">
+            <div class="w-max" @click="removeItem(product.id)">
               <base-button :title="'Delete'"></base-button>
             </div>
           </div>
         </div>
         <div class="mb-4">
-          <button class="border shadow-md w-6">-</button>
+          <button
+            :disabled="product.quantity === 0"
+            class="border shadow-md w-6"
+            @click="updateQuantity({ index, type: 'sub' })"
+          >
+            -
+          </button>
           <input
-            v-model="product.quantity"
+            :value="product.quantity"
             type="text"
             class="w-6 text-center"
+            @change="
+              (e) =>
+                updateQuantity({
+                  index,
+                  quantity: e.target.value,
+                  type: 'update',
+                })
+            "
           />
-          <button class="border shadow-md w-6">+</button>
+          <button
+            class="border shadow-md w-6"
+            @click="updateQuantity({ index, type: 'add' })"
+          >
+            +
+          </button>
         </div>
         <hr />
       </li>
@@ -46,7 +65,9 @@
             ></base-button>
           </nuxt-link>
         </div>
-        <base-button class="w-3/4" :title="'Update'"></base-button>
+        <div class="w-3/4" @click="updateCart(cartItems)">
+          <base-button class="w-full" :title="'Update'"></base-button>
+        </div>
         <base-button class="w-3/4" :title="'Pay'"></base-button>
       </div>
     </ul>
@@ -54,7 +75,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
+import { mapGetters, mapActions, mapMutations } from 'vuex'
 import BaseButton from '~/components/UI/Button/BaseButton.vue'
 export default {
   components: {
@@ -77,6 +98,11 @@ export default {
   methods: {
     ...mapActions({
       removeItem: 'cart/removeItem',
+      updateCart: 'cart/updateCart',
+    }),
+
+    ...mapMutations({
+      updateQuantity: 'cart/updateQuantity',
     }),
   },
 }

@@ -35,7 +35,7 @@ export default {
   data() {
     return {
       currentPage: 1,
-      pageSize: 20, // số bản ghi tối đa cho mỗi trang
+      pageSize: 10, // số bản ghi tối đa cho mỗi trang
     }
   },
   computed: {

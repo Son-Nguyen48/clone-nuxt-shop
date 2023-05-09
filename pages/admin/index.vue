@@ -1,11 +1,122 @@
 <template>
-  <div>
-    <v-data-table :headers="headers" :item="items"> </v-data-table>
-  </div>
+  <v-app>
+    <v-data-table
+      :headers="headers"
+      :items="items"
+      sort-by="calories"
+      class="elevation-1"
+    >
+      <template #[`item.image_src`]="{ item }">
+        <img class="max-w-[120px]" :src="item.image_src" alt="image" />
+      </template>
+
+      <template #[`item.actions`]="{ item }">
+        <font-awesome-icon
+          role="button"
+          :icon="['fas', 'pen-to-square']"
+          size="lg"
+          style="color: #000000"
+          @click="editItem(item)"
+        />
+        <font-awesome-icon
+          role="button"
+          :icon="['fas', 'trash']"
+          size="lg"
+          style="color: #000000"
+          @click="deleteItem(item)"
+        />
+      </template>
+    </v-data-table>
+
+    <v-dialog v-model="isShowModal" persistent max-width="600px">
+      <v-card>
+        <v-card-title>
+          <span class="text-h5">Product Edit</span>
+        </v-card-title>
+        <v-card-text>
+          <v-container>
+            <v-row>
+              <v-col cols="12" sm="6" md="4">
+                <v-text-field v-model="id" required></v-text-field>
+              </v-col>
+              <v-col cols="12" sm="6" md="4">
+                <v-text-field
+                  v-model="brand"
+                  hint="Edit your brand name"
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12" sm="6" md="4">
+                <v-text-field
+                  v-model="gender"
+                  hint="Edit product gender"
+                  persistent-hint
+                  required
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12">
+                <v-text-field
+                  v-model="name"
+                  required
+                  hint="Edit product name"
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12">
+                <v-text-field
+                  v-model="image_src"
+                  required
+                  hint="Edit product image_src"
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12" sm="6">
+                <v-select
+                  v-model="category"
+                  :items="[
+                    'lazy_shoes',
+                    'sneaker_shoes',
+                    'unisex_shoes',
+                    'children_shoes',
+                    'flat_shoes',
+                  ]"
+                  required
+                  hint="Edit product category"
+                ></v-select>
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn color="blue darken-1" text @click="isShowModal = false">
+            Close
+          </v-btn>
+          <v-btn color="blue darken-1" text @click="isShowModal = false">
+            Save
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+
+    <v-dialog v-model="isDeleteFormShow" persistent max-width="290">
+      <v-card>
+        <v-card-title class="text-h5">
+          Do you really want to delete this product?
+        </v-card-title>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn color="green darken-1" text @click="isDeleteFormShow = false">
+            Disagree
+          </v-btn>
+          <v-btn color="green darken-1" text @click="agreeDelete(item)">
+            Agree
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+  </v-app>
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 export default {
   layout: 'admin',
   data() {
@@ -22,6 +133,7 @@ export default {
         { text: 'Gender', value: 'gender' },
         { text: 'Name', value: 'name' },
         { text: 'Image', value: 'image_src' },
+        { text: 'Category', value: 'category_id' },
         { text: 'Actions', value: 'actions', sortable: false },
       ],
       items: [
@@ -29,7 +141,7 @@ export default {
           brand_id: 3,
           newArrival: null,
           gender: 'unisex',
-          category_id: 1,
+          category_id: 'lazy_shoes',
           sale: 20,
           name: ' Giày Lười Unisex NATIVE Miles ',
           image_src:
@@ -42,7 +154,7 @@ export default {
           brand_id: 15,
           newArrival: true,
           gender: 'woman',
-          category_id: 9,
+          category_id: 'flat_shoes',
           sale: 20,
           name: ' Giày Đế Xuồng Nữ CARMELA Camel Leather Ladies Sandals ',
           image_src:
@@ -51,1131 +163,53 @@ export default {
           id: 2,
           quantity: 100,
         },
-        {
-          brand_id: 16,
-          newArrival: null,
-          gender: 'man',
-          category_id: 8,
-          sale: 20,
-          name: ' Giày Tây Nam SLEDGERS Trouville ',
-          image_src:
-            'http://product.hstatic.net/1000376021/product/trouville_black_0_3a7eb0ff388a413daaff77eb5d07d920_487386c3005546a1b03b5749c668f5d6_large.jpg',
-          price: '2890000',
-          id: 3,
-          quantity: 100,
-        },
-        {
-          brand_id: 12,
-          newArrival: null,
-          gender: 'woman',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Nữ GEOX D Nydame A ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/d620qa_c9999_0_3d5e319fefb24b4db5257e0919c73337_b59358b78c9048b5bc98059aab51fdf4_large.jpg',
-          price: '5700000',
-          id: 4,
-          quantity: 100,
-        },
-        {
-          brand_id: 12,
-          newArrival: null,
-          gender: 'woman',
-          category_id: 1,
-          sale: 20,
-          name: ' Giày Lười Nữ GEOX D Elidia A ',
-          image_src:
-            'http://product.hstatic.net/1000376021/product/d642ta_c7005_0_4f5d7313edf449559772241c954e7264_a1962bfcb5d44e8da101997bbc10cfcd_large.jpg',
-          price: '4800000',
-          id: 5,
-          quantity: 100,
-        },
-        {
-          brand_id: 12,
-          newArrival: null,
-          gender: 'woman',
-          category_id: 10,
-          sale: 20,
-          name: ' Giày Cao Gót Nữ GEOX D Eleana A ',
-          image_src:
-            'http://product.hstatic.net/1000376021/product/d26twa_00085_c9999_0_58eac139bd2a4b15be9f2b11a1ac062a_2290da7179544e28934adf7979f1f9f5_large.jpg',
-          price: '4900000',
-          id: 6,
-          quantity: 100,
-        },
-        {
-          brand_id: 12,
-          newArrival: null,
-          gender: 'woman',
-          category_id: 11,
-          sale: 20,
-          name: ' Giày Boots Nữ GEOX D Anylla Wedge C ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/d04ldc_c0013_0_f2234de9f9ad46f59054a6895ac9d6f9_5ca88fcdaa9a4c6f8f452892e73c09e9_large.jpg',
-          price: '5500000',
-          id: 7,
-          quantity: 100,
-        },
-        {
-          brand_id: 12,
-          newArrival: null,
-          gender: 'man',
-          category_id: 11,
-          sale: 20,
-          name: ' Giày Boots Nam GEOX U Spherica Ec1 C ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/u16d1c_c6009_0_a781870112f9468c97c65056fb82e1df_b4d3d7a859754690a45231e84c099950_large.jpg',
-          price: '5100000',
-          id: 8,
-          quantity: 100,
-        },
-        {
-          brand_id: 12,
-          newArrival: null,
-          gender: 'man',
-          category_id: 1,
-          sale: 20,
-          name: ' Giày Lười Nam GEOX U Moner 2Fit A ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/u824ya_c6005_0_b388a92089ba404e90eeb7e692ebe7d5_70a0bdefbf4741bebb7373af82a3bb82_large.png',
-          price: '4900000',
-          id: 9,
-          quantity: 100,
-        },
-        {
-          brand_id: 12,
-          newArrival: null,
-          gender: 'man',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Nam GEOX U Portello B ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/u25e1b_c1006_0_0fd798fa192745719f5c4a471372af59_6098f6490eea469f9c1cbccd48a31cd4_large.png',
-          price: '3900000',
-          id: 10,
-          quantity: 100,
-        },
-        {
-          brand_id: 12,
-          newArrival: null,
-          gender: 'woman',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Nữ GEOX D Spherica A ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/d15nua_c1q8z_0_b6a0fe231c9c4cbaa5245b50198b1e67_fd070e63700a450b8d629e2d7bde158d_large.jpg',
-          price: '4800000',
-          id: 11,
-          quantity: 100,
-        },
-        {
-          brand_id: 12,
-          newArrival: null,
-          gender: 'woman',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Nữ GEOX D Spherica A ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/d15nua_c1q8x_0_83fd96b1f31a445ebc0eae947e1ab949_1990fd85553d43729c45a9ed5400d0ca_large.jpg',
-          price: '4800000',
-          id: 12,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'children',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Trẻ Em Unisex NIKE Revolution 6 Nn (Psv) ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/dd1095-600_0_a86d1c505a7745ef9b2b61c29356d3da_eb27c4c2575347d787455a8ae25e9a17_large.jpg',
-          price: '1399000',
-          id: 13,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'children',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Trẻ Em Unisex NIKE Revolution 6 Nn Jp (Psv) ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/dv3182-001_0_ba49b27d1eba4b879923912665dfcc32_a6ad10d8aa804bcca18009b431a8c58c_large.jpg',
-          price: '1619000',
-          id: 14,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'unisex',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Trẻ Em Unisex NIKE Omni Multi-Court (Gs) ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/dv3182-001_0_ba49b27d1eba4b879923912665dfcc32_a6ad10d8aa804bcca18009b431a8c58c_large.jpg',
-          price: '1619000',
-          id: 15,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'woman',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Nữ NIKE W Renew Run 4 ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/dr2682-500_0_4ac733817ed34d13ac02d26988554f6a_a9c77d1a33b2428a8a5ba3dcdab828cc_large.jpg',
-          price: '2639000',
-          id: 16,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'woman',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Nữ NIKE W Renew Run 4 ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/dr2682-100_0_aa6591702bf24b1ca5c1a7578c364070_45ed9ae9efcb4288a24d3d00543b3ddd_large.jpg',
-          price: '2639000',
-          id: 17,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'woman',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Nữ NIKE W Free Rn 5.0 Next Nature ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/cz1891-602_0_c5cfee886e564a82af3f235ce773e6fd_54915dd403704cbc9b6cc4883da49d21_large.jpg',
-          price: '3099000',
-          id: 18,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'man',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Nam NIKE Renew Run 4 ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/dr2677-100_0_8360d75bc42a403f9fabf51fad9319b8_0fc2f8a28363472583fb564019b52c8a_large.jpg',
-          price: '2639000',
-          id: 19,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'man',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Nam NIKE Quest 5 ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/dd0204-102_0_c4625113edb54b1d87cde7384d0facbc_a58aa7c6403b45db9e3104e045cdaa9f_large.jpg',
-          price: '2319000',
-          id: 20,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'man',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Nam NIKE Court Vision Lo Nn ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/dr2682-500_0_4ac733817ed34d13ac02d26988554f6a_a9c77d1a33b2428a8a5ba3dcdab828cc_large.jpg',
-          price: '2639000',
-          id: 21,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'woman',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Nữ NIKE W Renew Run 4 ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/dh2987-004_0_b6a4b6598cce465fb48daee217787754_large.jpg',
-          price: '2639000',
-          id: 22,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'man',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Nam NIKE Air Winflo 9 ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/dd6203-008_0_3ce57fa7f440495197570c9325cd6948_71c365f6fb3041709522982946ae1048_large.jpg',
-          price: '3099000',
-          id: 23,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'boy',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Bé Trai NIKE Court Borough Low 2 (Psv) ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/bq5451-405_0_acbaf1e8b3264445b328af64aa4fafbb_77082179bbc84b1db2e419de4c299bcb_large.jpg',
-          price: '1079000',
-          id: 24,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'boy',
-          category_id: 12,
-          sale: 20,
-          name: ' Dép Bé Trai NIKE Kawa Slide (Gs/Ps) ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/819352-001_0_3b113f4fdce449ba8dca6e199639b534_7414071ae7ec432dbdda498f33e24ea3_large.jpg',
-          price: '779000',
-          id: 25,
-          quantity: 100,
-        },
-        {
-          brand_id: 3,
-          newArrival: null,
-          gender: 'girl',
-          category_id: 1,
-          sale: 20,
-          name: ' Giày Lười Bé Gái NATIVE J Jefferson Bling Junior ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/e-jefferson-rose-pink-bling-dust-pink_6c1c5dfdddd942d9ac85c34993432952_029f0e009e83443197b53439b7636bab_large.jpg',
-          price: '1300000',
-          id: 26,
-          quantity: 100,
-        },
-        {
-          brand_id: 3,
-          newArrival: null,
-          gender: 'unisex',
-          category_id: 1,
-          sale: 20,
-          name: ' Giày Lười Unisex NATIVE Jefferson Block ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/11100102-4267-1_ac041f16f0db46a88f966e98ce34d635_2c9e514f02a548b3a0e6daf7dd03965c_large.jpg',
-          price: '1690000',
-          id: 27,
-          quantity: 100,
-        },
-        {
-          brand_id: 3,
-          newArrival: null,
-          gender: 'unisex',
-          category_id: 1,
-          sale: 20,
-          name: ' Giày Lười Unisex NATIVE Jefferson Block ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/11100102-3314-1_20d1b7b2ab9941b196ec82fc180cffa7_86dcb5efd4ec466f897583edf16fe046_large.jpg',
-          price: '1690000',
-          id: 28,
-          quantity: 100,
-        },
-        {
-          brand_id: 3,
-          newArrival: null,
-          gender: 'woman',
-          category_id: 1,
-          sale: 20,
-          name: ' Giày Lười Nữ NATIVE Jefferson Block ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/11100102-3315-1_708f5c80f5a1440eb321c6b26f8e940d_9630a9fe079140299c008c76f6a70ffa_large.jpg',
-          price: '1690000',
-          id: 29,
-          quantity: 100,
-        },
-        {
-          brand_id: 3,
-          newArrival: null,
-          gender: 'unisex',
-          category_id: 1,
-          sale: 20,
-          name: ' Giày Lười Unisex NATIVE Miles ',
-          image_src:
-            'http://product.hstatic.net/1000376021/product/11104600-1999-1_dde3bbe180c1406392336f4a6cb7af70_a391a2d67e3343f282e5ef382d2e86ba_large.jpg',
-          price: '1400000',
-          id: 30,
-          quantity: 100,
-        },
-        {
-          brand_id: 15,
-          newArrival: true,
-          gender: 'unisex',
-          category_id: 9,
-          sale: 20,
-          name: ' Giày Đế Xuồng Nữ CARMELA Camel Leather Ladies Sandals ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/160835_camel_0_10557bad46b54b90ac98ef8c25ed027f_827d1d2c6a7c4373ae2b0461e708fedc_large.jpg',
-          price: '2490000',
-          id: 31,
-          quantity: 100,
-        },
-        {
-          brand_id: 16,
-          newArrival: null,
-          gender: 'man',
-          category_id: 8,
-          sale: 20,
-          name: ' Giày Tây Nam SLEDGERS Trouville ',
-          image_src:
-            'http://product.hstatic.net/1000376021/product/trouville_black_0_3a7eb0ff388a413daaff77eb5d07d920_487386c3005546a1b03b5749c668f5d6_large.jpg',
-          price: '2890000',
-          id: 32,
-          quantity: 100,
-        },
-        {
-          brand_id: 12,
-          newArrival: null,
-          gender: 'woman',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Nữ GEOX D Nydame A ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/d620qa_c9999_0_3d5e319fefb24b4db5257e0919c73337_b59358b78c9048b5bc98059aab51fdf4_large.jpg',
-          price: '5700000',
-          id: 33,
-          quantity: 100,
-        },
-        {
-          brand_id: 12,
-          newArrival: null,
-          gender: 'woman',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Lười Nữ GEOX D Elidia A ',
-          image_src:
-            'http://product.hstatic.net/1000376021/product/d642ta_c7005_0_4f5d7313edf449559772241c954e7264_a1962bfcb5d44e8da101997bbc10cfcd_large.jpg',
-          price: '4800000',
-          id: 34,
-          quantity: 100,
-        },
-        {
-          brand_id: 12,
-          newArrival: null,
-          gender: 'woman',
-          category_id: 10,
-          sale: 20,
-          name: ' Giày Cao Gót Nữ GEOX D Eleana A ',
-          image_src:
-            'http://product.hstatic.net/1000376021/product/d26twa_00085_c9999_0_58eac139bd2a4b15be9f2b11a1ac062a_2290da7179544e28934adf7979f1f9f5_large.jpg',
-          price: '4900000',
-          id: 35,
-          quantity: 100,
-        },
-        {
-          brand_id: 12,
-          newArrival: null,
-          gender: 'woman',
-          category_id: 11,
-          sale: 20,
-          name: ' Giày Boots Nữ GEOX D Anylla Wedge C ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/d04ldc_c0013_0_f2234de9f9ad46f59054a6895ac9d6f9_5ca88fcdaa9a4c6f8f452892e73c09e9_large.jpg',
-          price: '5500000',
-          id: 36,
-          quantity: 100,
-        },
-        {
-          brand_id: 12,
-          newArrival: null,
-          gender: 'man',
-          category_id: 11,
-          sale: 20,
-          name: ' Giày Boots Nam GEOX U Spherica Ec1 C ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/u16d1c_c6009_0_a781870112f9468c97c65056fb82e1df_b4d3d7a859754690a45231e84c099950_large.jpg',
-          price: '5100000',
-          id: 37,
-          quantity: 100,
-        },
-        {
-          brand_id: 12,
-          newArrival: null,
-          gender: 'man',
-          category_id: 1,
-          sale: 20,
-          name: ' Giày Lười Nam GEOX U Moner 2Fit A ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/u824ya_c6005_0_b388a92089ba404e90eeb7e692ebe7d5_70a0bdefbf4741bebb7373af82a3bb82_large.png',
-          price: '4900000',
-          id: 38,
-          quantity: 100,
-        },
-        {
-          brand_id: 12,
-          newArrival: null,
-          gender: 'man',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Nam GEOX U Portello B ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/u25e1b_c1006_0_0fd798fa192745719f5c4a471372af59_6098f6490eea469f9c1cbccd48a31cd4_large.png',
-          price: '3900000',
-          id: 39,
-          quantity: 100,
-        },
-        {
-          brand_id: 12,
-          newArrival: null,
-          gender: 'woman',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Nữ GEOX D Spherica A ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/d15nua_c1q8z_0_b6a0fe231c9c4cbaa5245b50198b1e67_fd070e63700a450b8d629e2d7bde158d_large.jpg',
-          price: '4800000',
-          id: 40,
-          quantity: 100,
-        },
-        {
-          brand_id: 12,
-          newArrival: null,
-          gender: 'woman',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Nữ GEOX D Spherica A ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/d15nua_c1q8x_0_83fd96b1f31a445ebc0eae947e1ab949_1990fd85553d43729c45a9ed5400d0ca_large.jpg',
-          price: '4800000',
-          id: 41,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'children unisex',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Trẻ Em Unisex NIKE Revolution 6 Nn (Psv) ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/dd1095-600_0_a86d1c505a7745ef9b2b61c29356d3da_eb27c4c2575347d787455a8ae25e9a17_large.jpg',
-          price: '1399000',
-          id: 42,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'children unisex',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Trẻ Em Unisex NIKE Revolution 6 Nn Jp (Psv) ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/dv3182-001_0_ba49b27d1eba4b879923912665dfcc32_a6ad10d8aa804bcca18009b431a8c58c_large.jpg',
-          price: '1619000',
-          id: 43,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'children unisex',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Trẻ Em Unisex NIKE Omni Multi-Court (Gs) ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/dv3182-001_0_ba49b27d1eba4b879923912665dfcc32_a6ad10d8aa804bcca18009b431a8c58c_large.jpg',
-          price: '1619000',
-          id: 44,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'woman',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Nữ NIKE W Renew Run 4 ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/dr2682-500_0_4ac733817ed34d13ac02d26988554f6a_a9c77d1a33b2428a8a5ba3dcdab828cc_large.jpg',
-          price: '2639000',
-          id: 45,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'woman',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Nữ NIKE W Renew Run 4 ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/dr2682-100_0_aa6591702bf24b1ca5c1a7578c364070_45ed9ae9efcb4288a24d3d00543b3ddd_large.jpg',
-          price: '2639000',
-          id: 46,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'woman',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Nữ NIKE W Free Rn 5.0 Next Nature ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/cz1891-602_0_c5cfee886e564a82af3f235ce773e6fd_54915dd403704cbc9b6cc4883da49d21_large.jpg',
-          price: '3099000',
-          id: 47,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'man',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Nam NIKE Renew Run 4 ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/dr2677-100_0_8360d75bc42a403f9fabf51fad9319b8_0fc2f8a28363472583fb564019b52c8a_large.jpg',
-          price: '2639000',
-          id: 48,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'man',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Nam NIKE Quest 5 ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/dd0204-102_0_c4625113edb54b1d87cde7384d0facbc_a58aa7c6403b45db9e3104e045cdaa9f_large.jpg',
-          price: '2319000',
-          id: 49,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'man',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Nam NIKE Court Vision Lo Nn ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/dr2682-500_0_4ac733817ed34d13ac02d26988554f6a_a9c77d1a33b2428a8a5ba3dcdab828cc_large.jpg',
-          price: '2639000',
-          id: 50,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'woman',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Nữ NIKE W Renew Run 4 ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/dh2987-004_0_b6a4b6598cce465fb48daee217787754_large.jpg',
-          price: '2639000',
-          id: 51,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'man',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Nam NIKE Air Winflo 9 ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/dd6203-008_0_3ce57fa7f440495197570c9325cd6948_71c365f6fb3041709522982946ae1048_large.jpg',
-          price: '3099000',
-          id: 52,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'boy',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Bé Trai NIKE Court Borough Low 2 (Psv) ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/bq5451-405_0_acbaf1e8b3264445b328af64aa4fafbb_77082179bbc84b1db2e419de4c299bcb_large.jpg',
-          price: '1079000',
-          id: 53,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'boy',
-          category_id: 2,
-          sale: 20,
-          name: ' Dép Bé Trai NIKE Kawa Slide (Gs/Ps) ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/819352-001_0_3b113f4fdce449ba8dca6e199639b534_7414071ae7ec432dbdda498f33e24ea3_large.jpg',
-          price: '779000',
-          id: 54,
-          quantity: 100,
-        },
-        {
-          brand_id: 3,
-          newArrival: true,
-          gender: 'girl',
-          category_id: 1,
-          sale: 20,
-          name: ' Giày Lười Bé Gái NATIVE J Jefferson Bling Junior ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/e-jefferson-rose-pink-bling-dust-pink_6c1c5dfdddd942d9ac85c34993432952_029f0e009e83443197b53439b7636bab_large.jpg',
-          price: '1300000',
-          id: 55,
-          quantity: 100,
-        },
-        {
-          brand_id: 3,
-          newArrival: true,
-          gender: 'unisex',
-          category_id: 1,
-          sale: 20,
-          name: ' Giày Lười Unisex NATIVE Jefferson Block ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/11100102-4267-1_ac041f16f0db46a88f966e98ce34d635_2c9e514f02a548b3a0e6daf7dd03965c_large.jpg',
-          price: '1690000',
-          id: 56,
-          quantity: 100,
-        },
-        {
-          brand_id: 3,
-          newArrival: null,
-          gender: 'unisex',
-          category_id: 1,
-          sale: 20,
-          name: ' Giày Lười Unisex NATIVE Jefferson Block ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/11100102-3314-1_20d1b7b2ab9941b196ec82fc180cffa7_86dcb5efd4ec466f897583edf16fe046_large.jpg',
-          price: '1690000',
-          id: 57,
-          quantity: 100,
-        },
-        {
-          brand_id: 3,
-          newArrival: true,
-          gender: 'woman',
-          category_id: 1,
-          sale: 20,
-          name: ' Giày Lười Nữ NATIVE Jefferson Block ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/11100102-3315-1_708f5c80f5a1440eb321c6b26f8e940d_9630a9fe079140299c008c76f6a70ffa_large.jpg',
-          price: '1690000',
-          id: 58,
-          quantity: 100,
-        },
-        {
-          brand_id: 3,
-          newArrival: null,
-          gender: 'unisex',
-          category_id: 1,
-          sale: 20,
-          name: ' Giày Lười Unisex NATIVE Miles ',
-          image_src:
-            'http://product.hstatic.net/1000376021/product/11104600-1999-1_dde3bbe180c1406392336f4a6cb7af70_a391a2d67e3343f282e5ef382d2e86ba_large.jpg',
-          price: '1400000',
-          id: 59,
-          quantity: 100,
-        },
-        {
-          brand_id: 15,
-          newArrival: null,
-          gender: 'unisex',
-          category_id: 9,
-          sale: 20,
-          name: ' Giày Đế Xuồng Nữ CARMELA Camel Leather Ladies Sandals ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/160835_camel_0_10557bad46b54b90ac98ef8c25ed027f_827d1d2c6a7c4373ae2b0461e708fedc_large.jpg',
-          price: '2490000',
-          id: 60,
-          quantity: 100,
-        },
-        {
-          brand_id: 16,
-          newArrival: null,
-          gender: 'man',
-          category_id: 8,
-          sale: 20,
-          name: ' Giày Tây Nam SLEDGERS Trouville ',
-          image_src:
-            'http://product.hstatic.net/1000376021/product/trouville_black_0_3a7eb0ff388a413daaff77eb5d07d920_487386c3005546a1b03b5749c668f5d6_large.jpg',
-          price: '2890000',
-          id: 61,
-          quantity: 100,
-        },
-        {
-          brand_id: 12,
-          newArrival: null,
-          gender: 'woman',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Nữ GEOX D Nydame A ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/d620qa_c9999_0_3d5e319fefb24b4db5257e0919c73337_b59358b78c9048b5bc98059aab51fdf4_large.jpg',
-          price: '5700000',
-          id: 62,
-          quantity: 100,
-        },
-        {
-          brand_id: 12,
-          newArrival: null,
-          gender: 'woman',
-          category_id: 1,
-          sale: 20,
-          name: ' Giày Lười Nữ GEOX D Elidia A ',
-          image_src:
-            'http://product.hstatic.net/1000376021/product/d642ta_c7005_0_4f5d7313edf449559772241c954e7264_a1962bfcb5d44e8da101997bbc10cfcd_large.jpg',
-          price: '4800000',
-          id: 63,
-          quantity: 100,
-        },
-        {
-          brand_id: 12,
-          newArrival: null,
-          gender: 'woman',
-          category_id: 10,
-          sale: 20,
-          name: ' Giày Cao Gót Nữ GEOX D Eleana A ',
-          image_src:
-            'http://product.hstatic.net/1000376021/product/d26twa_00085_c9999_0_58eac139bd2a4b15be9f2b11a1ac062a_2290da7179544e28934adf7979f1f9f5_large.jpg',
-          price: '4900000',
-          id: 64,
-          quantity: 100,
-        },
-        {
-          brand_id: 12,
-          newArrival: null,
-          gender: 'woman',
-          category_id: 11,
-          sale: 20,
-          name: ' Giày Boots Nữ GEOX D Anylla Wedge C ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/d04ldc_c0013_0_f2234de9f9ad46f59054a6895ac9d6f9_5ca88fcdaa9a4c6f8f452892e73c09e9_large.jpg',
-          price: '5500000',
-          id: 65,
-          quantity: 100,
-        },
-        {
-          brand_id: 12,
-          newArrival: null,
-          gender: 'man',
-          category_id: 11,
-          sale: 20,
-          name: ' Giày Boots Nam GEOX U Spherica Ec1 C ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/u16d1c_c6009_0_a781870112f9468c97c65056fb82e1df_b4d3d7a859754690a45231e84c099950_large.jpg',
-          price: '5100000',
-          id: 66,
-          quantity: 100,
-        },
-        {
-          brand_id: 12,
-          newArrival: null,
-          gender: 'man',
-          category_id: 1,
-          sale: 20,
-          name: ' Giày Lười Nam GEOX U Moner 2Fit A ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/u824ya_c6005_0_b388a92089ba404e90eeb7e692ebe7d5_70a0bdefbf4741bebb7373af82a3bb82_large.png',
-          price: '4900000',
-          id: 67,
-          quantity: 100,
-        },
-        {
-          brand_id: 12,
-          newArrival: null,
-          gender: 'man',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Nam GEOX U Portello B ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/u25e1b_c1006_0_0fd798fa192745719f5c4a471372af59_6098f6490eea469f9c1cbccd48a31cd4_large.png',
-          price: '3900000',
-          id: 68,
-          quantity: 100,
-        },
-        {
-          brand_id: 12,
-          newArrival: null,
-          gender: 'woman',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Nữ GEOX D Spherica A ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/d15nua_c1q8z_0_b6a0fe231c9c4cbaa5245b50198b1e67_fd070e63700a450b8d629e2d7bde158d_large.jpg',
-          price: '4800000',
-          id: 69,
-          quantity: 100,
-        },
-        {
-          brand_id: 12,
-          newArrival: null,
-          gender: 'woman',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Nữ GEOX D Spherica A ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/d15nua_c1q8x_0_83fd96b1f31a445ebc0eae947e1ab949_1990fd85553d43729c45a9ed5400d0ca_large.jpg',
-          price: '4800000',
-          id: 70,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'children unisex',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Trẻ Em Unisex NIKE Revolution 6 Nn (Psv) ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/dd1095-600_0_a86d1c505a7745ef9b2b61c29356d3da_eb27c4c2575347d787455a8ae25e9a17_large.jpg',
-          price: '1399000',
-          id: 71,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'children unisex',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Trẻ Em Unisex NIKE Revolution 6 Nn Jp (Psv) ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/dv3182-001_0_ba49b27d1eba4b879923912665dfcc32_a6ad10d8aa804bcca18009b431a8c58c_large.jpg',
-          price: '1619000',
-          id: 72,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'children unisex',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Trẻ Em Unisex NIKE Omni Multi-Court (Gs) ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/dv3182-001_0_ba49b27d1eba4b879923912665dfcc32_a6ad10d8aa804bcca18009b431a8c58c_large.jpg',
-          price: '1619000',
-          id: 73,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'woman',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Nữ NIKE W Renew Run 4 ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/dr2682-500_0_4ac733817ed34d13ac02d26988554f6a_a9c77d1a33b2428a8a5ba3dcdab828cc_large.jpg',
-          price: '2639000',
-          id: 74,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'woman',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Nữ NIKE W Renew Run 4 ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/dr2682-100_0_aa6591702bf24b1ca5c1a7578c364070_45ed9ae9efcb4288a24d3d00543b3ddd_large.jpg',
-          price: '2639000',
-          id: 75,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'woman',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Nữ NIKE W Free Rn 5.0 Next Nature ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/cz1891-602_0_c5cfee886e564a82af3f235ce773e6fd_54915dd403704cbc9b6cc4883da49d21_large.jpg',
-          price: '3099000',
-          id: 76,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'man',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Nam NIKE Renew Run 4 ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/dr2677-100_0_8360d75bc42a403f9fabf51fad9319b8_0fc2f8a28363472583fb564019b52c8a_large.jpg',
-          price: '2639000',
-          id: 77,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'man',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Nam NIKE Quest 5 ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/dd0204-102_0_c4625113edb54b1d87cde7384d0facbc_a58aa7c6403b45db9e3104e045cdaa9f_large.jpg',
-          price: '2319000',
-          id: 78,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'man',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Nam NIKE Court Vision Lo Nn ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/dr2682-500_0_4ac733817ed34d13ac02d26988554f6a_a9c77d1a33b2428a8a5ba3dcdab828cc_large.jpg',
-          price: '2639000',
-          id: 79,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'woman',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Nữ NIKE W Renew Run 4 ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/dh2987-004_0_b6a4b6598cce465fb48daee217787754_large.jpg',
-          price: '2639000',
-          id: 80,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'man',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Nam NIKE Air Winflo 9 ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/dd6203-008_0_3ce57fa7f440495197570c9325cd6948_71c365f6fb3041709522982946ae1048_large.jpg',
-          price: '3099000',
-          id: 81,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'boy',
-          category_id: 2,
-          sale: 20,
-          name: ' Giày Sneakers Bé Trai NIKE Court Borough Low 2 (Psv) ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/bq5451-405_0_acbaf1e8b3264445b328af64aa4fafbb_77082179bbc84b1db2e419de4c299bcb_large.jpg',
-          price: '1079000',
-          id: 82,
-          quantity: 100,
-        },
-        {
-          brand_id: 5,
-          newArrival: null,
-          gender: 'boy',
-          category_id: 12,
-          sale: 20,
-          name: ' Dép Bé Trai NIKE Kawa Slide (Gs/Ps) ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/819352-001_0_3b113f4fdce449ba8dca6e199639b534_7414071ae7ec432dbdda498f33e24ea3_large.jpg',
-          price: '779000',
-          id: 83,
-          quantity: 100,
-        },
-        {
-          brand_id: 3,
-          newArrival: null,
-          gender: 'girl',
-          category_id: 1,
-          sale: 20,
-          name: ' Giày Lười Bé Gái NATIVE J Jefferson Bling Junior ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/e-jefferson-rose-pink-bling-dust-pink_6c1c5dfdddd942d9ac85c34993432952_029f0e009e83443197b53439b7636bab_large.jpg',
-          price: '1300000',
-          id: 84,
-          quantity: 100,
-        },
-        {
-          brand_id: 3,
-          newArrival: null,
-          gender: 'unisex',
-          category_id: 1,
-          sale: 20,
-          name: ' Giày Lười Unisex NATIVE Jefferson Block ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/11100102-4267-1_ac041f16f0db46a88f966e98ce34d635_2c9e514f02a548b3a0e6daf7dd03965c_large.jpg',
-          price: '1690000',
-          id: 85,
-          quantity: 100,
-        },
-        {
-          brand_id: 3,
-          newArrival: null,
-          gender: 'unisex',
-          category_id: 1,
-          sale: 20,
-          name: ' Giày Lười Unisex NATIVE Jefferson Block ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/11100102-3314-1_20d1b7b2ab9941b196ec82fc180cffa7_86dcb5efd4ec466f897583edf16fe046_large.jpg',
-          price: '1690000',
-          id: 86,
-          quantity: 100,
-        },
-        {
-          brand_id: 3,
-          newArrival: null,
-          gender: 'woman',
-          category_id: 1,
-          sale: 20,
-          name: ' Giày Lười Nữ NATIVE Jefferson Block ',
-          image_src:
-            'https://product.hstatic.net/1000376021/product/11100102-3315-1_708f5c80f5a1440eb321c6b26f8e940d_9630a9fe079140299c008c76f6a70ffa_large.jpg',
-          price: '1690000',
-          id: 87,
-          quantity: 100,
-        },
       ],
+      id: '',
+      brand: '',
+      gender: '',
+      name: '',
+      image_src: '',
+      category: '',
+      isShowModal: false,
+      isDeleteFormShow: false,
     }
   },
 
   computed: {
-    ...mapState('admin', {
-      itemsFilter: (state) => state.itemsFilter,
+    ...mapGetters({
+      getState: 'indexAdmin/getState',
     }),
   },
 
   created() {
     this.getItems('products')
     // eslint-disable-next-line no-console
-    console.log(this.items, 'items')
+    console.log(this.getState, 'getState')
   },
 
   methods: {
     ...mapActions({
       getItems: 'indexAdmin/getItems',
     }),
+
+    editItem(item) {
+      this.isShowModal = true
+      this.id = item.id
+      this.brand = item.brand
+      this.gender = item.gender
+      this.name = item.name
+      this.image_src = item.image_src
+      this.category = item.category_id
+    },
+
+    deleteItem(item) {
+      this.isDeleteFormShow = true
+    },
+
+    agreeDelete(item) {
+      const indexSelected = this.items.indexOf(item)
+      this.items.slice(indexSelected, 1)
+    },
   },
 }
 </script>

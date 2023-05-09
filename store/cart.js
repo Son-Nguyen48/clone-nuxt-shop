@@ -21,6 +21,18 @@ export const mutations = {
   setCartItem(state, payload) {
     state.cartItems = payload
   },
+
+  updateQuantity(state, payload) {
+    const quantity = +state.cartItems[payload.index].quantity
+    if (payload.type === 'sub')
+      state.cartItems[payload.index].quantity = quantity - 1
+    else if (payload.type === 'add')
+      state.cartItems[payload.index].quantity = quantity + 1
+    else {
+      state.cartItems[payload.index].quantity =
+        +payload.quantity >= 0 ? +payload.quantity : 0
+    }
+  },
 }
 
 export const actions = {
@@ -36,5 +48,13 @@ export const actions = {
         vuexContext.commit('setCartItem', res)
       })
     })
+  },
+
+  async updateCart(vuexContext, payload) {
+    for (let index = 0; index < payload.length; index++) {
+      await this.$axios.$patch(`/cart/${payload[index].id}`, {
+        quantity: payload[index].quantity,
+      })
+    }
   },
 }
