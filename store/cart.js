@@ -57,4 +57,17 @@ export const actions = {
       })
     }
   },
+
+  async checkoutCart(vuexContext, payload) {
+    if (localStorage.getItem('currentUser')) {
+      for (let index = 0; index < payload.length; index++) {
+        await this.$axios.$patch(`/cart/${payload[index].id}`, {
+          quantity: payload[index].quantity,
+        })
+      }
+      this.$router.push('/checkout')
+    } else {
+      this.$router.push('/account/login')
+    }
+  },
 }

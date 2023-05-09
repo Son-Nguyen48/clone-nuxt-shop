@@ -1,5 +1,8 @@
 <template>
   <div class="md:pt-[105px]">
+    <section>
+      <the-filter @do-filter="doFilter"></the-filter>
+    </section>
     <section class="px-3">
       <div>
         <img :src="collection.image_src" alt="collection img" />
@@ -15,6 +18,7 @@
       <h2 class="text-xl font-bold text-center mt-8">
         {{ collection.titleHeader }}
       </h2>
+
       <div
         class="mt-9 grid grid-cols-2 gap-y-10 md:gap-x-4 md:gap-y-20 md:grid-cols-5"
       >
@@ -39,9 +43,10 @@
 
 <script>
 import { mapState, mapActions, mapGetters } from 'vuex'
+import TheFilter from '~/components/The-filter/TheFilter.vue'
 import CardItem from '~/components/UI/CardItem.vue'
 export default {
-  components: { CardItem },
+  components: { CardItem, TheFilter },
   data() {
     return {
       currentPage: 1,
@@ -86,6 +91,12 @@ export default {
     ...mapActions('collections', {
       getCollection: 'getCollection',
     }),
+
+    doFilter(name, data) {
+      // eslint-disable-next-line no-console
+      console.log(name, 'name', data, 'data')
+      this.getListFilter({ name, data })
+    },
   },
 }
 </script>

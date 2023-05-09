@@ -68,7 +68,10 @@
         <div class="w-3/4" @click="updateCart(cartItems)">
           <base-button class="w-full" :title="'Update'"></base-button>
         </div>
-        <base-button class="w-3/4" :title="'Pay'"></base-button>
+
+        <div class="w-3/4" @click="checkoutCart(cartItems)">
+          <base-button class="w-full" :title="'Pay'"></base-button>
+        </div>
       </div>
     </ul>
   </div>
@@ -99,6 +102,7 @@ export default {
     ...mapActions({
       removeItem: 'cart/removeItem',
       updateCart: 'cart/updateCart',
+      checkoutCart: 'cart/checkoutCart',
     }),
 
     ...mapMutations({
