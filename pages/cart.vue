@@ -84,11 +84,6 @@ export default {
   components: {
     BaseButton,
   },
-  data() {
-    return {
-      cart: [],
-    }
-  },
   computed: {
     ...mapGetters({
       cartItems: 'cart/cartItems',

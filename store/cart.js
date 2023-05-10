@@ -1,3 +1,5 @@
+// import Swal from 'sweetalert2'
+
 export const state = () => ({
   cartItems: [],
 })
@@ -43,11 +45,26 @@ export const actions = {
   },
 
   async removeItem(vuexContext, payload) {
-    await this.$axios.$delete(`/cart/${payload}`).then((res) => {
-      this.$axios.$get('/cart').then((res) => {
-        vuexContext.commit('setCartItem', res)
+    await this.$swal
+      .fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!',
       })
-    })
+      .then((result) => {
+        if (result.isConfirmed) {
+          this.$axios.$delete(`/cart/${payload}`).then((res) => {
+            this.$axios.$get('/cart').then((res) => {
+              vuexContext.commit('setCartItem', res)
+            })
+          })
+          this.$swal.fire('Deleted!', 'Your file has been deleted.', 'success')
+        }
+      })
   },
 
   async updateCart(vuexContext, payload) {
@@ -56,6 +73,15 @@ export const actions = {
         quantity: payload[index].quantity,
       })
     }
+
+    await this.$swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Your cart has been updated',
+      showConfirmButton: false,
+      timer: 1500,
+      toast: true,
+    })
   },
 
   async checkoutCart(vuexContext, payload) {
@@ -65,8 +91,22 @@ export const actions = {
           quantity: payload[index].quantity,
         })
       }
+
+      await this.$swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Your cart has been updated',
+        showConfirmButton: false,
+        toast: true,
+        timer: 1500,
+      })
       this.$router.push('/checkout')
     } else {
+      await this.$swal.fire(
+        'You need to login first',
+        'Click to go to login page!',
+        'error'
+      )
       this.$router.push('/account/login')
     }
   },

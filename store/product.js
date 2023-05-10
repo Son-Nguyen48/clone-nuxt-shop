@@ -18,7 +18,6 @@ export const mutations = {
     state.productItems = payload
   },
   setProductFilter(state, payload) {
-    // eslint-disable-next-line no-console
     state.productFilter = payload
   },
 }
@@ -35,7 +34,6 @@ export const actions = {
     })
   },
   async getListFilter(vuexContext, payload) {
-    console.log(payload, 'payload')
     const url = payload
       ? `/products?${payload.name}=${payload.data}`
       : '/products'

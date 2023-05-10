@@ -15,7 +15,6 @@ export const mutations = {
 export const actions = {
   async getCurrentUser(vuexContext, payload) {
     await this.$axios.$get('/currentUser').then((res) => {
-      console.log(res, 'res')
       vuexContext.commit('setCurrentUser', res[0])
     })
   },

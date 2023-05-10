@@ -1,7 +1,7 @@
 <template>
   <div
     v-show="isSideMenuOpen"
-    class="fixed overflow-y-scroll right-0 top-0 w-full md:w-80 h-full z-[1000] bg-white px-[30px] pt-10"
+    class="fixed overflow-y-scroll right-0 top-0 w-full md:w-80 h-full z-[1000] bg-white px-[30px] pt-10 shadow-lg"
   >
     <component :is="sideMenuId"></component>
     <close-button></close-button>

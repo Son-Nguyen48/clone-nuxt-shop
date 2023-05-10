@@ -38,8 +38,6 @@ export const actions = {
     const url = `/${payload}`
     return await this.$axios.$get(url).then((res) => {
       vuexContext.commit('setProductFilter', res)
-      // eslint-disable-next-line no-console
-      console.log(res)
     })
   },
 }

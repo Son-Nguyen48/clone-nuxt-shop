@@ -1,8 +1,5 @@
 <template>
   <div class="md:pt-[105px]">
-    <section>
-      <the-filter @do-filter="doFilter"></the-filter>
-    </section>
     <section class="px-3">
       <div>
         <img :src="collection.image_src" alt="collection img" />
@@ -43,10 +40,9 @@
 
 <script>
 import { mapState, mapActions, mapGetters } from 'vuex'
-import TheFilter from '~/components/The-filter/TheFilter.vue'
 import CardItem from '~/components/UI/CardItem.vue'
 export default {
-  components: { CardItem, TheFilter },
+  components: { CardItem },
   data() {
     return {
       currentPage: 1,
@@ -82,21 +78,11 @@ export default {
   created() {
     this.getCollection(this.$route.params.idCollections)
   },
-
-  mounted() {
-    // eslint-disable-next-line no-console
-    console.log(this.listProduct, 'listProduct')
-  },
   methods: {
     ...mapActions('collections', {
       getCollection: 'getCollection',
+      getListFilter: 'getListFilter',
     }),
-
-    doFilter(name, data) {
-      // eslint-disable-next-line no-console
-      console.log(name, 'name', data, 'data')
-      this.getListFilter({ name, data })
-    },
   },
 }
 </script>

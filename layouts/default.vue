@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <v-app>
     <main-header></main-header>
     <search-bar class="pt-28 md:hidden lg:hidden"></search-bar>
     <side-menu></side-menu>
     <Nuxt />
     <the-footer></the-footer>
-  </div>
+  </v-app>
 </template>
 
 <script>
@@ -141,5 +141,9 @@ body {
 
 .remove-hightlight {
   -webkit-tap-highlight-color: transparent;
+}
+
+.v-application a {
+  color: black !important;
 }
 </style>

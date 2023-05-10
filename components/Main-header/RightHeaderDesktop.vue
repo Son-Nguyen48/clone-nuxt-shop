@@ -34,17 +34,25 @@
       to="/cart"
       class="flex justify-center items-center w-10 h-10 remove-hightlight rounded-full bg-black"
     >
-      <font-awesome-icon
-        :icon="['fas', 'cart-shopping']"
-        style="color: #000000"
-        size="lg"
-        class="filter brightness-0 invert"
-      />
+      <v-badge
+        :content="itemsQuantity"
+        :value="itemsQuantity"
+        color="green"
+        overlap
+      >
+        <font-awesome-icon
+          :icon="['fas', 'cart-shopping']"
+          style="color: #000000"
+          size="lg"
+          class="filter brightness-0 invert"
+        />
+      </v-badge>
     </nuxt-link>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import SearchBar from './SearchBar.vue'
 export default {
   components: {
@@ -55,7 +63,16 @@ export default {
       isShowSearchBar: false,
     }
   },
+  computed: {
+    ...mapGetters({
+      itemsQuantity: 'cart/itemsQuantity',
+    }),
+  },
 }
 </script>
 
-<style></style>
+<style scoped>
+.v-badge__wrapper span.v-badge__badge {
+  background-color: green;
+}
+</style>

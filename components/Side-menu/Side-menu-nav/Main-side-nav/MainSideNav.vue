@@ -8,9 +8,7 @@
       :index="index"
       @toggle-tab="toggleTab"
     >
-      <transition name="rotate" appear mode="out-in">
-        <component :is="menu.component" :component="menu.component"></component>
-      </transition>
+      <component :is="menu.component" :component="menu.component"></component>
     </tab-view>
   </div>
 </template>
