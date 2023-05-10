@@ -25,6 +25,7 @@
     "vue-click-outside": "^1.1.0",
     "vue-server-renderer": "^2.7.10",
     "vue-slick": "^1.2.0",
+    "vue-sweetalert2": "^5.0.5",
     "vue-template-compiler": "^2.7.10"
   },
   "devDependencies": {

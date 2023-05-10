@@ -26,19 +26,19 @@
         </div>
 
         <div class="md:flex md:gap-4 justify-center mt-5 px-2">
-          <div class="text-center">
+          <div class="text-center mt-4 md:mt-0">
             <base-button :title="'Login'" class="w-full"></base-button>
           </div>
 
-          <div
+          <nuxt-link
+            to="/account/resetPassword"
             class="mt-4 md:mt-0 text-center"
-            @click="isForgotPassword = true"
           >
             <base-button
               :title="'Forgot password?'"
               class="w-full"
             ></base-button>
-          </div>
+          </nuxt-link>
 
           <div class="mt-4 md:mt-0 text-center">
             <nuxt-link
@@ -49,27 +49,6 @@
           </div>
         </div>
       </form>
-    </div>
-
-    <div v-show="isForgotPassword" class="px-2 md:flex">
-      <h2
-        class="text-3xl font-bold py-10 text-center md:w-1/2 md:border-r md:border-gray-400"
-      >
-        Password Recovery
-      </h2>
-      <div class="px-2 w-1/2 text-center">
-        <input
-          class="py-2 px-3 bg-gray-200 w-3/4 my-5 md:mt-2 rounded"
-          type="email"
-          placeholder="Email"
-        />
-        <div class="flex justify-center">
-          <base-button :title="'Send'" class="mr-2"></base-button>
-          <div @click="isForgotPassword = false">
-            <base-button :title="'Cancel'"></base-button>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </template>
@@ -99,6 +78,9 @@ export default {
       const isValidUser = accounts.filter((item) => {
         return item.email === this.email
       })
+
+      // eslint-disable-next-line no-console
+      console.log(isValidUser, 'isValidUser')
 
       if (this.password === isValidUser[0].password) {
         this.$axios.$post('/currentUser', isValidUser[0]).then((res) => {

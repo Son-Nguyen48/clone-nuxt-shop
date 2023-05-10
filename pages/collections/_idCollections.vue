@@ -15,6 +15,7 @@
       <h2 class="text-xl font-bold text-center mt-8">
         {{ collection.titleHeader }}
       </h2>
+
       <div
         class="mt-9 grid grid-cols-2 gap-y-10 md:gap-x-4 md:gap-y-20 md:grid-cols-5"
       >
@@ -77,14 +78,10 @@ export default {
   created() {
     this.getCollection(this.$route.params.idCollections)
   },
-
-  mounted() {
-    // eslint-disable-next-line no-console
-    console.log(this.listProduct, 'listProduct')
-  },
   methods: {
     ...mapActions('collections', {
       getCollection: 'getCollection',
+      getListFilter: 'getListFilter',
     }),
   },
 }

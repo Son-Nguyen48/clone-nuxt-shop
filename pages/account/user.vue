@@ -38,6 +38,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import login from './login.vue'
 import TabsView from '~/components/UI/TabsView.vue'
 import UserInfo from '~/components/UI/UserInfo.vue'
@@ -77,15 +78,9 @@ export default {
     setIdTab(data) {
       this.idTab = data
     },
-    async logout() {
-      if (localStorage.getItem('currentUser')) {
-        const currentUser = await this.$axios.$get('/currentUser')
-        const idCurrentUser = currentUser[0].id
-        await this.$axios.$delete(`currentUser/${idCurrentUser}`)
-        localStorage.clear('currentUser')
-        this.$router.push('/account/login')
-      }
-    },
+    ...mapActions({
+      logout: 'login/logout',
+    }),
   },
 }
 </script>

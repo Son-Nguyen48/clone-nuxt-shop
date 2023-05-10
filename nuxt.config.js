@@ -49,6 +49,7 @@ export default {
         },
       },
     ],
+    'vue-sweetalert2/nuxt',
   ],
 
   googleFonts: {

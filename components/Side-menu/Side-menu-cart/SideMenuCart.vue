@@ -24,7 +24,7 @@
       </li>
 
       <div class="flex gap-2">
-        <div>
+        <div @click="closeSideMenu">
           <nuxt-link to="/">
             <base-button :title="'Continue shoping'"></base-button>
           </nuxt-link>
