@@ -1,9 +1,9 @@
 <template>
   <div class="md:pt-[105px]">
-    <div>
+    <div class="md:px-12">
       <h1 class="text-3xl font-bold text-center py-10">User infor</h1>
       <hr />
-      <ul class="grid md:grid-cols-2">
+      <ul class="grid md:grid-cols-3">
         <li
           v-for="(menu, index) in tabs"
           :key="menu.id"
@@ -29,10 +29,6 @@
         v-show="idTab === menu.id"
         :key="menu.id"
       ></component>
-
-      <div @click="logout">
-        <base-button :title="'Logout'"></base-button>
-      </div>
     </div>
   </div>
 </template>
@@ -42,11 +38,15 @@ import { mapActions } from 'vuex'
 import login from './login.vue'
 import TabsView from '~/components/UI/TabsView.vue'
 import UserInfo from '~/components/UI/UserInfo.vue'
-import UserAddress from '~/components/UI/UserAddress.vue'
 import BaseButton from '~/components/UI/Button/BaseButton.vue'
 
 export default {
-  components: { TabsView, UserInfo, UserAddress, login, BaseButton },
+  components: {
+    TabsView,
+    UserInfo,
+    login,
+    BaseButton,
+  },
   data() {
     return {
       idTab: 1,
@@ -56,13 +56,6 @@ export default {
           id: 1,
           title: 'User info',
           component: 'user-info',
-          isTabOpen: false,
-        },
-
-        {
-          id: 2,
-          title: 'User address',
-          component: 'user-address',
           isTabOpen: false,
         },
       ],

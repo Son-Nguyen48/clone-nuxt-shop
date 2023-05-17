@@ -146,4 +146,9 @@ body {
 .v-application a {
   color: black !important;
 }
+
+.v-application ul,
+.v-application ol {
+  padding-left: 0;
+}
 </style>

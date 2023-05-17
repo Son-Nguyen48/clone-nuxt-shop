@@ -50,7 +50,7 @@
             <a class="flex gap-2" @click="goToProduct(result)">
               <div class="md:w-3/5">
                 <p>{{ result.name }}</p>
-                <p>{{ result.price }}</p>
+                <currency-formatter :amount="result.price" />
               </div>
               <div class="md:w-2/5">
                 <img
@@ -68,7 +68,11 @@
 </template>
 
 <script>
+import CurrencyFormatter from '../UI/CurrencyFormatter.vue'
 export default {
+  components: {
+    CurrencyFormatter,
+  },
   data() {
     return {
       searchInput: '',

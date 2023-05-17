@@ -1,13 +1,15 @@
 <template>
-  <div class="p-2">
+  <div
+    class="p-2 flex flex-col justify-between transition-all ease-linear duration-300 hover:transform hover:scale-105 hover:-translate-y-2 rounded-lg"
+  >
     <nuxt-link :to="`/products/${product.id}`">
       <div>
-        <img :src="product.image_src" alt="" />
+        <img class="rounded-lg" :src="product.image_src" alt="" />
       </div>
 
       <div>
         <h4 class="font-bold">{{ product.name }}</h4>
-        <p class="font-bold">{{ product.price }}</p>
+        <currency-formatter :amount="product.price" />
       </div>
     </nuxt-link>
     <BaseButton :title="'Add to cart'" @click.native="addToCart(product)" />
@@ -16,9 +18,11 @@
 
 <script>
 import BaseButton from './Button/BaseButton.vue'
+import CurrencyFormatter from './CurrencyFormatter.vue'
 export default {
   components: {
     BaseButton,
+    CurrencyFormatter,
   },
   props: {
     product: {

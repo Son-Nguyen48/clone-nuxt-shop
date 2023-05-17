@@ -19,7 +19,7 @@
     <div class="text-center mt-20">
       <nuxt-link
         to="/bestseller"
-        class="uppercase inline-block py-3 px-5 font-bold text-white bg-[#FCDA00]"
+        class="uppercase inline-block py-3 px-5 font-bold text-black bg-white hover:bg-[#FFDD00] hover:transform hover:-translate-y-2 hover:scale-105 transition-all ease-linear duration-300 rounded-lg border border-gray-500 hover:border-none"
         >See more</nuxt-link
       >
     </div>

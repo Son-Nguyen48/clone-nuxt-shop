@@ -34,6 +34,7 @@ export const actions = {
     })
   },
   async getListFilter(vuexContext, payload) {
+    console.log(payload, 'payload')
     const url = payload
       ? `/products?${payload.name}=${payload.data}`
       : '/products'

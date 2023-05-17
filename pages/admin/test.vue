@@ -34,6 +34,30 @@
           >
             Image_src
           </th>
+          <th
+            v-show="isOrderTab"
+            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+          >
+            Address
+          </th>
+          <th
+            v-show="isOrderTab"
+            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+          >
+            Phone number
+          </th>
+          <th
+            v-show="isOrderTab"
+            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+          >
+            Orders items
+          </th>
+          <th
+            v-show="isOrderTab"
+            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+          >
+            Orders time
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -41,25 +65,59 @@
           <td class="border-t px-6 py-4">
             {{
               idParams === 'orders'
-                ? item.order_id
+                ? item.id
                 : idParams === 'category'
                 ? item.category_id
                 : item.id
             }}
           </td>
-          <td class="border-t px-6 py-4">{{ item.name }}</td>
+          <td class="border-t px-6 py-4">
+            {{ idParams === 'orders' ? item.form.name : item.name }}
+          </td>
           <td class="border-t px-6 py-4">
             {{
               idParams === 'products'
                 ? item.price
                 : idParams === 'orders'
-                ? item.ship_email
+                ? item.form.email
                 : idParams === 'accounts'
                 ? item.email
                 : idParams === 'category'
                 ? ''
                 : ''
             }}
+          </td>
+          <td class="border-t px-6 py-4">
+            {{ idParams === 'orders' ? item.form.address : '' }}
+          </td>
+          <td class="border-t px-6 py-4">
+            {{ idParams === 'orders' ? item.form.phone : '' }}
+          </td>
+          <td v-show="isOrderTab" class="border-t px-6 py-4">
+            Items id list
+            <tr>
+              <th class="border border-gray-400">Id</th>
+              <td
+                v-for="orderItem in item.ordersItems"
+                :key="orderItem.id"
+                class="border border-gray-400 px-3"
+              >
+                {{ orderItem.id }}
+              </td>
+            </tr>
+            <tr>
+              <th class="border border-gray-400">Quantity</th>
+              <td
+                v-for="orderItem in item.ordersItems"
+                :key="orderItem.id"
+                class="border border-gray-400 px-3"
+              >
+                {{ orderItem.quantity }}
+              </td>
+            </tr>
+          </td>
+          <td class="border-t px-6 py-4">
+            {{ idParams === 'orders' ? item.form.order_date : '' }}
           </td>
           <td class="border-t px-6 py-4">
             <img
@@ -121,13 +179,19 @@ export default {
     isProductTab() {
       return this.idParams === 'products'
     },
+
+    isOrderTab() {
+      return this.idParams === 'orders'
+    },
   },
+
   created() {
     this.getListFilter(this.$route.params.id).then((res) => {
       // eslint-disable-next-line no-console
       console.log(this.itemsFilter, 'itemsFilter')
     })
   },
+
   methods: {
     ...mapActions('admin', {
       getListFilter: 'getListFilter',
