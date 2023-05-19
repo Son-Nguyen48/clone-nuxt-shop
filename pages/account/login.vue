@@ -83,10 +83,21 @@ export default {
       console.log(isValidUser, 'isValidUser')
 
       if (this.password === isValidUser[0].password) {
+        await this.$swal.fire(
+          'Logged in successfully!',
+          'You are redirected to the Profile page!',
+          'success'
+        )
         this.$axios.$post('/currentUser', isValidUser[0]).then((res) => {
           localStorage.setItem('currentUser', JSON.stringify(isValidUser[0]))
           this.$router.push('/account/user')
         })
+      } else {
+        await this.$swal.fire(
+          'Your email or password is incorrect!',
+          'Please enter your email and password again!',
+          'error'
+        )
       }
     },
   },

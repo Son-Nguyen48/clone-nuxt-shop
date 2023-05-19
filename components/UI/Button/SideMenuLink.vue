@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="'/collections/' + component" @click.native="closeSideMenu">{{
+  <nuxt-link :to="'/' + component" @click.native="closeSideMenu">{{
     title
   }}</nuxt-link>
 </template>

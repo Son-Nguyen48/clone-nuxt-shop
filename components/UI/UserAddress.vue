@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="md:px-12">
     <h4 class="grid grid-cols-2 px-2">
       <div class="flex md:justify-normal py-2">
         <span>{{ user.name }}</span>

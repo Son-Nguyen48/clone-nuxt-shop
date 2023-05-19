@@ -20,6 +20,7 @@
     "@nuxtjs/google-fonts": "^3.0.0",
     "core-js": "^3.25.3",
     "nuxt": "^2.15.8",
+    "vee-validate": "^3.4.15",
     "vue": "^2.7.10",
     "vue-agile": "^2.0.0",
     "vue-click-outside": "^1.1.0",

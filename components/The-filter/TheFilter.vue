@@ -54,8 +54,8 @@ button.v-expansion-panel-header {
 }
 
 @media (min-width: 426px) {
-  .v-expansion-panel {
+  /* .v-expansion-panel {
     flex: 1 0;
-  }
+  } */
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <button
     type="submit"
-    class="bg-[#FFDD00] py-2 px-3 text-white font-bold rounded"
+    class="bg-[#FFDD00] inline-block py-3 px-3 text-white font-bold rounded"
   >
     {{ title }}
   </button>

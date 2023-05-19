@@ -1,25 +1,27 @@
 <template>
-  <div class="md:pt-[105px]">
-    <the-filter @do-filter="doFilter"></the-filter>
-    <div
-      class="mt-9 grid grid-cols-2 gap-y-10 md:gap-x-4 md:gap-y-20 md:grid-cols-5"
-    >
-      <card-item
-        v-for="product in currentProductItems"
-        :key="product.id"
-        :product="product"
-      ></card-item>
+  <div class="md:pt-[105px] md:flex">
+    <the-filter class="max-w-xs" @do-filter="doFilter"></the-filter>
+    <div>
+      <div
+        class="mt-9 grid grid-cols-2 gap-y-10 md:gap-x-4 md:gap-y-20 md:grid-cols-5"
+      >
+        <card-item
+          v-for="product in currentProductItems"
+          :key="product.id"
+          :product="product"
+        ></card-item>
+      </div>
+      <v-pagination
+        v-model="currentPage"
+        color="#FFDD00"
+        class="py-8"
+        :length="totalPages"
+        :total-visible="7"
+        :prev-icon="$vuetify.icons.prevPage"
+        :next-icon="$vuetify.icons.nextPage"
+        @input="getListProducts"
+      ></v-pagination>
     </div>
-    <v-pagination
-      v-model="currentPage"
-      color="#FFDD00"
-      class="py-8"
-      :length="totalPages"
-      :total-visible="7"
-      :prev-icon="$vuetify.icons.prevPage"
-      :next-icon="$vuetify.icons.nextPage"
-      @input="getListProducts"
-    ></v-pagination>
   </div>
 </template>
 
@@ -55,7 +57,7 @@ export default {
     },
   },
   async created() {
-    await this.getListProducts()
+    // await this.getListProducts()
     await this.getListFilter()
   },
   methods: {

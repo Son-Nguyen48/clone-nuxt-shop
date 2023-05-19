@@ -19,7 +19,7 @@
           </div>
           <div class="w-2/3">
             <h4 class="font-bold">{{ product.product.name }}</h4>
-            <p>{{ product.product.price }}đ</p>
+            <currency-formatter :amount="product.product.price" />
             <div class="w-max" @click="removeItem(product.id)">
               <base-button :title="'Delete'"></base-button>
             </div>
@@ -80,9 +80,11 @@
 <script>
 import { mapGetters, mapActions, mapMutations } from 'vuex'
 import BaseButton from '~/components/UI/Button/BaseButton.vue'
+import CurrencyFormatter from '~/components/UI/CurrencyFormatter.vue'
 export default {
   components: {
     BaseButton,
+    CurrencyFormatter,
   },
   computed: {
     ...mapGetters({
@@ -107,4 +109,4 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped></style>

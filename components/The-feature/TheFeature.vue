@@ -3,6 +3,7 @@
   <div class="grid grid-cols-1 md:grid-cols-2 md:gap-7 mt-10 px-2 lg:h-[750px]">
     <div class="flex justify-center items-center">
       <img
+        class="rounded-lg"
         src="https://theme.hstatic.net/1000376021/1000834008/14/pro_featured_img.png?v=3045"
         alt="feature"
       />
@@ -46,9 +47,9 @@
 
       <div class="w-full text-center mt-10">
         <nuxt-link
-          to="/collections/2"
-          class="inline-block uppercase font-semibold text-white bg-[#FFDD00] py-3 px-5"
-          >See now</nuxt-link
+          to="/collections/holster"
+          class="uppercase inline-block py-3 px-5 font-bold text-black bg-white hover:bg-[#FFDD00] hover:transform hover:-translate-y-2 hover:scale-105 transition-all ease-linear duration-300 rounded-lg border border-gray-500 hover:border-none"
+          >See more</nuxt-link
         >
       </div>
     </div>

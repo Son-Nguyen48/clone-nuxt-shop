@@ -179,6 +179,16 @@ export default {
     ...mapGetters({
       getState: 'indexAdmin/getState',
     }),
+    currentItem() {
+      return {
+        id: this.id,
+        brand: this.brand,
+        gender: this.gender,
+        name: this.name,
+        image_src: this.image_src,
+        category: this.category_id,
+      }
+    },
   },
 
   created() {

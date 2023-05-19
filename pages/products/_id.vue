@@ -1,6 +1,6 @@
 <template>
-  <div class="md:pt-[105px]">
-    <div class="flex flex-col gap-6 md:flex-row md:p-20 md:h-[800px] py-20">
+  <div class="px-6 md:pt-[105px]">
+    <div class="flex flex-col gap-6 md:flex-row lg:p-20 md:h-[800px] py-20">
       <div class="md:w-1/2 flex justify-center items-center">
         <img
           class="shadow-[0_2px_12px_0_rgba(0,0,0,0.8)] rounded"
@@ -10,7 +10,7 @@
       </div>
       <div class="md:w-1/2 text-center flex flex-col gap-4">
         <h4 class="font-bold text-2xl">{{ productItem.name }}</h4>
-        <p>{{ productItem.price }}</p>
+        <currency-formatter :amount="productItem.price" />
         <div @click="addToCart(productItem)">
           <base-button :title="'Add to cart'"></base-button>
         </div>
@@ -22,7 +22,7 @@
             class="py-[15px] list-none text-center"
           >
             <tabs-view
-              :id_tab="idTab"
+              :idTab="idTab"
               :menu="menu"
               :index="index"
               @set-id-tab="setIdTab"
@@ -42,16 +42,35 @@
         ></component>
       </div>
     </div>
+
+    <div class="text-center">
+      <h2 class="text-[28px] leading-[1.6] font-medium hover:text-[#fcda00]">
+        <p class="uppercase font-bold">Similar product</p>
+      </h2>
+    </div>
+
+    <div
+      class="mt-9 grid grid-cols-2 gap-y-10 md:gap-x-4 md:gap-y-20 md:grid-cols-5"
+    >
+      <card-item
+        v-for="product in similarProduct"
+        :key="product.id"
+        :product="product"
+      ></card-item>
+    </div>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
+
 import IntroduceView from '~/components/The-feature/The-tabs/IntroduceView.vue'
 import ProductCharacteristics from '~/components/The-feature/The-tabs/ProductCharacteristics.vue'
 import SizeView from '~/components/The-feature/The-tabs/SizeView.vue'
 import BaseButton from '~/components/UI/Button/BaseButton.vue'
 import TabsView from '~/components/UI/TabsView.vue'
+import CardItem from '~/components/UI/CardItem.vue'
+import CurrencyFormatter from '~/components/UI/CurrencyFormatter.vue'
 
 export default {
   components: {
@@ -60,6 +79,8 @@ export default {
     IntroduceView,
     ProductCharacteristics,
     SizeView,
+    CardItem,
+    CurrencyFormatter,
   },
   data() {
     return {
@@ -91,7 +112,11 @@ export default {
   computed: {
     ...mapGetters({
       productItem: 'product/productItem',
+      productFilter: 'product/productFilter',
     }),
+    similarProduct() {
+      return this.productFilter.slice(0, 5)
+    },
   },
   async created() {
     // eslint-disable-next-line no-console
@@ -99,6 +124,7 @@ export default {
     await this.$store.dispatch('product/getProduct', this.id)
     // eslint-disable-next-line no-console
     console.log(this.$store.state.product.productItem, 'productItem')
+    await this.getListFilter({ name: 'brand', data: this.productItem.brand })
   },
   methods: {
     async addToCart(product) {
@@ -125,13 +151,12 @@ export default {
             const methods = addedItem
               ? this.$axios.$put(`/cart/${addedItem.id}`, data)
               : this.$axios.$post(`/cart`, data)
-            methods
-              .then((res) => {
-                this.$store.commit('cart/addToCart', res)
-                this.$store.dispatch('sideMenu/setSideMenuId', 'side-menu-cart')
-                if (!this.$store.state.sideMenu.isSideMenuOpen)
-                  this.$store.dispatch('sideMenu/setStateSideMenu')
-              })
+            methods.then((res) => {
+              this.$store.commit('cart/addToCart', res)
+              this.$store.dispatch('sideMenu/setSideMenuId', 'side-menu-cart')
+              if (!this.$store.state.sideMenu.isSideMenuOpen)
+                this.$store.dispatch('sideMenu/setStateSideMenu')
+            })
 
             this.$swal.fire('Great!', 'Your item has been added.', 'success')
           }
@@ -141,8 +166,16 @@ export default {
     setIdTab(data) {
       this.idTab = data
     },
+
+    ...mapActions({
+      getListFilter: 'product/getListFilter',
+    }),
   },
 }
 </script>
 
-<style></style>
+<style scoped>
+.v-application ul {
+  padding-left: 0;
+}
+</style>
