@@ -26,15 +26,22 @@ export const actions = {
     // const ordersItems = payload.cartItems.map((item) => {
     //   return { id: item.id, quantity: item.quantity }
     // })
+    console.log(payload, 'payload')
 
     await this.$swal.fire('Great!', 'Your order has been updated!', 'success')
 
     await this.$axios.$post('/orders', {
-      order_date: payload.form.order_date,
       name: payload.form.name,
       address: payload.form.address,
       phone: payload.form.phone,
       email: payload.form.email,
+      paymentsMethods: payload.form.paymentsMethods,
+      totalPayment: payload.form.totalPayment,
+      orderStatus: 'pending',
+      order_date: payload.form.order_date.toUTCString(),
+      cartItems: payload.cartItems,
     })
+
+    this.$router.push('/account/user?idTab=2')
   },
 }

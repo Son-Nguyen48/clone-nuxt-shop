@@ -1,6 +1,6 @@
 <template>
   <div class="md:pt-[105px] md:flex">
-    <the-filter @do-filter="doFilter"></the-filter>
+    <the-filter class="max-w-xs" @do-filter="doFilter"></the-filter>
     <div>
       <div
         class="mt-9 grid grid-cols-2 gap-y-10 md:gap-x-4 md:gap-y-20 md:grid-cols-5"

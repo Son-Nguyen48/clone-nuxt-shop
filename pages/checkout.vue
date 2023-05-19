@@ -5,7 +5,7 @@
         <v-expansion-panel-header>
           Show order information
         </v-expansion-panel-header>
-        <v-expansion-panel-content class="overflow-y-scroll h-[400px]">
+        <v-expansion-panel-content class="overflow-y-scroll h-[800px]">
           <ul class="flex flex-col gap-2 mx-4 md:mx-auto md:w-3/4">
             <li
               v-for="(product, index) in cartItems"
@@ -60,13 +60,14 @@
               </div>
               <hr />
             </li>
-            <p class="px-9 md:px-2">Tổng Tiền: {{ totalPrice }}đ</p>
+            <!-- <p class="px-9 md:px-2">Tổng Tiền: {{ totalPrice }}đ</p> -->
+            <currency-formatter class="ml-auto" :amount="String(totalPrice)" />
           </ul>
         </v-expansion-panel-content>
       </v-expansion-panel>
     </v-expansion-panels>
 
-    <div class="hidden md:block md:h-[400px] overflow-y-scroll md:w-1/2">
+    <div class="hidden md:block md:h-[800px] overflow-y-scroll md:w-1/2">
       <ul class="flex flex-col gap-2 mx-4 md:mx-auto md:w-3/4">
         <li
           v-for="(product, index) in cartItems"
@@ -121,23 +122,29 @@
           </div>
           <hr />
         </li>
-        <p class="px-9 md:px-2">Tổng Tiền: {{ totalPrice }}đ</p>
+        <!-- <p class="px-9 md:px-2">Tổng Tiền: {{ totalPrice }}đ</p> -->
+        <currency-formatter class="ml-auto" :amount="String(totalPrice)" />
+        <div class="w-3/4 mb-5" @click="updateCart(cartItems)">
+          <base-button class="w-full" :title="'Update'"></base-button>
+        </div>
       </ul>
     </div>
 
     <section class="md:w-1/2 md:p-4">
       <h2>Ship Information</h2>
-      <div class="flex items-center gap-4">
-        <font-awesome-icon
-          :icon="['fas', 'user']"
-          size="lg"
-          style="color: #000000"
-        />
-        <div>
-          <p class="m-0">{{ currentUser.name }}({{ currentUser.email }})</p>
+      <div class="md:flex md:items-center gap-4 mt-5">
+        <div class="flex items-center gap-3">
+          <font-awesome-icon
+            :icon="['fas', 'user']"
+            size="lg"
+            style="color: #000000"
+          />
+          <div>
+            <p class="mb-0">{{ currentUser.name }}({{ currentUser.email }})</p>
+          </div>
         </div>
 
-        <div @click="logout">
+        <div class="mt-5" @click="logout">
           <base-button :title="'Logout'"></base-button>
         </div>
       </div>
@@ -213,8 +220,73 @@
             ></v-checkbox>
           </validation-provider>
 
-          <v-btn class="mr-4" type="submit" :disabled="invalid"> submit </v-btn>
-          <v-btn @click="clear"> clear </v-btn>
+          <h2 class="font-bold text-xl">Payments Methods</h2>
+
+          <div class="mt-3">
+            <h4>Ship Methods</h4>
+            <div class="flex p-3 gap-3 border border-gray-200 rounded-lg mt-3">
+              <input
+                id="ship"
+                v-model="shipFee"
+                type="radio"
+                name="ship-methods"
+                value="35000"
+              />
+              <label class="max-w-max" for="ship">Delivery</label>
+              <!-- <label class="ml-auto" for="fee-ship">{{ shipFee }}</label> -->
+              <currency-formatter class="ml-auto" :amount="shipFee" />
+            </div>
+          </div>
+
+          <div class="mt-3">
+            <h4>Payments Methods</h4>
+
+            <div class="flex p-3 gap-3 border border-gray-200 rounded-lg mt-3">
+              <input
+                id="delivery_payments"
+                v-model="paymentsMethods"
+                type="radio"
+                name="payments_methods"
+                value="delivery_payments"
+              />
+              <label class="max-w-max" for="delivery_payments"
+                >Payment on delivery(COD)</label
+              >
+              <!-- <label class="ml-auto" for="fee-ship">{{ paymentsMethods }}</label> -->
+              <currency-formatter class="ml-auto" :amount="totalPayment" />
+            </div>
+
+            <div class="flex p-3 gap-3 border border-gray-200 rounded-lg mt-3">
+              <input
+                id="transfer_payments"
+                v-model="paymentsMethods"
+                type="radio"
+                name="payments_methods"
+                value="transfer_payments"
+              />
+              <label class="max-w-max" for="transfer_payments"
+                >Bank transfer</label
+              >
+              <currency-formatter class="ml-auto" :amount="totalPayment" />
+            </div>
+
+            <div class="flex p-3 gap-3 border border-gray-200 rounded-lg mt-3">
+              <input
+                id="momo_payments"
+                v-model="paymentsMethods"
+                type="radio"
+                name="payments_methods"
+                value="momo_payments"
+              />
+              <label class="max-w-max" for="momo_payments">Pay with MOMO</label>
+              <currency-formatter class="ml-auto" :amount="totalPayment" />
+            </div>
+          </div>
+
+          <v-btn class="mt-5 mr-4" type="submit" :disabled="invalid">
+            submit
+          </v-btn>
+          <v-btn class="mt-5" @click="clear"> clear </v-btn>
         </form>
       </validation-observer>
     </section>
@@ -274,6 +346,9 @@ export default {
       email: '',
       checkbox: null,
       address: '',
+      shipFee: '',
+      paymentsMethods: '',
+      transferFee: '',
     }
   },
   computed: {
@@ -289,7 +364,21 @@ export default {
         address: this.address,
         phone: this.phoneNumber,
         email: this.email,
+        paymentsMethods: this.paymentsMethods,
+        totalPayment: this.totalPayment,
       }
+    },
+
+    formPayments() {
+      return {
+        shipFee: this.shipFee,
+        paymentsMethods: this.paymentsMethods,
+        totalPayment: this.totalPayment,
+      }
+    },
+
+    totalPayment() {
+      return String(this.totalPrice + +this.shipFee + this.transferFee)
     },
   },
 
@@ -303,6 +392,7 @@ export default {
       getCurrentUser: 'login/getCurrentUser',
       logout: 'login/logout',
       removeItem: 'cart/removeItem',
+      updateCart: 'cart/updateCart',
       addOrders: 'checkout/addOrders',
     }),
     ...mapMutations({
@@ -312,7 +402,6 @@ export default {
     submit(form) {
       this.$refs.observer.validate()
       this.addOrders({ form, cartItems: this.cartItems })
-      
     },
     clear() {
       this.name = ''

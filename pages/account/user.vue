@@ -39,6 +39,7 @@ import login from './login.vue'
 import TabsView from '~/components/UI/TabsView.vue'
 import UserInfo from '~/components/UI/UserInfo.vue'
 import BaseButton from '~/components/UI/Button/BaseButton.vue'
+import UserOrdersVue from '~/components/UserOrders.vue'
 
 export default {
   components: {
@@ -46,6 +47,7 @@ export default {
     UserInfo,
     login,
     BaseButton,
+    UserOrdersVue,
   },
   data() {
     return {
@@ -58,14 +60,24 @@ export default {
           component: 'user-info',
           isTabOpen: false,
         },
+        {
+          id: 2,
+          title: 'User Orders',
+          component: 'user-orders',
+          isTabOpen: false,
+        },
       ],
     }
   },
   created() {
+    if (this.$route.query.idTab) {
+      this.idTab = +this.$route.query.idTab
+    }
     if (localStorage.getItem('currentUser')) this.isLogin = true
     if (this.isLogin === false) {
       this.$router.push('/account/login')
     }
+    console.log(this.$route, 'route')
   },
   methods: {
     setIdTab(data) {

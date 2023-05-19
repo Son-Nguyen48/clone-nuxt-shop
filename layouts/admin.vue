@@ -51,7 +51,6 @@
               >{{ tab.name }}</nuxt-link
             >
           </li>
-          <v-btn class="absolute bottom-0 left-0">⬅️</v-btn>
         </ul>
       </nav>
       <Nuxt :is-side-bar-show="isSideBarShow" />

@@ -1,7 +1,7 @@
 <template>
   <div class="h-screen flex-1 overflow-y-scroll">
     <v-data-table
-      :headers="headers"
+      :headers="theHeader"
       :items="desserts"
       sort-by="calories"
       class="elevation-1"
@@ -24,7 +24,7 @@
 
               <v-card-text class="flex flex-wrap gap-2">
                 <v-text-field
-                  v-for="key in Object.keys(editedItem)"
+                  v-for="key in keyListItem"
                   :key="key"
                   v-model="editedItem[key]"
                   :label="`${key}`"
@@ -37,7 +37,13 @@
                 <v-btn color="blue darken-1" text @click="close">
                   Cancel
                 </v-btn>
-                <v-btn color="blue darken-1" text @click="save"> Save </v-btn>
+                <v-btn
+                  color="blue darken-1"
+                  text
+                  @click="save($route.params.idAdmin)"
+                >
+                  Save
+                </v-btn>
               </v-card-actions>
             </v-card>
           </v-dialog>
@@ -51,7 +57,10 @@
                 <v-btn color="blue darken-1" text @click="closeDelete"
                   >Cancel</v-btn
                 >
-                <v-btn color="blue darken-1" text @click="deleteItemConfirm"
+                <v-btn
+                  color="blue darken-1"
+                  text
+                  @click="deleteItemConfirm($route.params.idAdmin)"
                   >OK</v-btn
                 >
                 <v-spacer></v-spacer>
@@ -121,11 +130,84 @@ export default {
       category_id: '',
       quantity: 0,
     },
+    keyListItem: [],
   }),
 
   computed: {
     formTitle() {
       return this.editedIndex === -1 ? 'New Item' : 'Edit Item'
+    },
+    // Config row title of table data
+    theHeader() {
+      if (this.$route.params.idAdmin === 'products') {
+        return [
+          {
+            text: 'Name',
+            align: 'start',
+            sortable: false,
+            value: 'name',
+          },
+          { text: 'Id', value: 'id' },
+          { text: 'Brand', value: 'brand' },
+          { text: 'Gender', value: 'gender' },
+          { text: 'Image', value: 'image_src' },
+          { text: 'Price', value: 'price' },
+          { text: 'Quantity (g)', value: 'quantity' },
+          { text: 'Actions', value: 'actions', sortable: false },
+        ]
+      } else if (this.$route.params.idAdmin === 'orders') {
+        return [
+          {
+            text: 'Name',
+            align: 'start',
+            sortable: false,
+            value: 'name',
+          },
+          { text: 'Id', value: 'id' },
+          { text: 'Address', value: 'address' },
+          { text: 'Phone', value: 'phone' },
+          { text: 'Email', value: 'email' },
+          { text: 'Payment Methods', value: 'paymentsMethods' },
+          { text: 'Order status', value: 'orderStatus' },
+          { text: 'Order date', value: 'order_date' },
+          { text: 'Total Payment (đ)', value: 'totalPayment' },
+          { text: 'Actions', value: 'actions', sortable: false },
+        ]
+      } else if (this.$route.params.idAdmin === 'accounts') {
+        return [
+          {
+            text: 'Name',
+            align: 'start',
+            sortable: false,
+            value: 'name',
+          },
+          { text: 'Id', value: 'id' },
+          { text: 'Phone', value: 'phone' },
+          { text: 'Email', value: 'email' },
+          { text: 'Address', value: 'address' },
+          { text: 'Nationality', value: 'nationality' },
+          { text: 'Company', value: 'company' },
+          { text: 'Password', value: 'password' },
+          { text: 'Date of birth', value: 'dateOfBirth' },
+          { text: 'Gender', value: 'gender' },
+          { text: 'Actions', value: 'actions', sortable: false },
+        ]
+      } else {
+        return [
+          {
+            text: 'Name',
+            align: 'start',
+            sortable: false,
+            value: 'name',
+          },
+          { text: 'Id', value: 'category_id' },
+          { text: 'Actions', value: 'actions', sortable: false },
+        ]
+      }
+    },
+
+    formEdit() {
+      return Object.keys(this.editedItem)
     },
   },
 
@@ -140,6 +222,7 @@ export default {
 
   created() {
     this.initialize()
+    console.log(this.formEdit, 'formEdit')
   },
 
   methods: {
@@ -149,7 +232,11 @@ export default {
 
     editItem(item) {
       this.editedIndex = this.desserts.indexOf(item)
+      this.keyListItem = Object.keys(Object.assign({}, item))
+      if (this.keyListItem.includes('cartItems') > -1)
+        this.keyListItem.splice(this.keyListItem.indexOf('cartItems'), 1)
       this.editedItem = Object.assign({}, item)
+      console.log(this.keyListItem, 'keyListItem')
       this.dialog = true
     },
 
@@ -159,8 +246,8 @@ export default {
       this.dialogDelete = true
     },
 
-    async deleteItemConfirm() {
-      await this.$axios.$delete(`/products/${this.editedItem.id}`)
+    async deleteItemConfirm(id) {
+      await this.$axios.$delete(`/${id}/${this.editedItem.id}`)
       this.desserts.splice(this.editedIndex, 1)
       this.closeDelete()
     },
@@ -181,13 +268,13 @@ export default {
       })
     },
 
-    async save() {
+    async save(id) {
       if (this.editedIndex > -1) {
         Object.assign(this.desserts[this.editedIndex], this.editedItem)
         const idSelected = this.desserts[this.editedIndex].id
-        await this.$axios.$put(`/products/${idSelected}`, this.editedItem)
+        await this.$axios.$put(`/${id}/${idSelected}`, this.editedItem)
       } else {
-        await this.$axios.$post('/products', this.editedItem)
+        await this.$axios.$post(`/${id}`, this.editedItem)
         this.desserts.push(this.editedItem)
       }
       this.close()
