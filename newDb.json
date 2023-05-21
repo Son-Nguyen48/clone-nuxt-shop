@@ -1689,7 +1689,7 @@
       "email": "theson4895@gmail.com",
       "paymentsMethods": "delivery_payments",
       "totalPayment": "6005000",
-      "orderStatus": "pending",
+      "orderStatus": "complete",
       "order_date": "Thu, 18 May 2023 18:52:50 GMT",
       "cartItems": [
         {
@@ -1712,7 +1712,7 @@
       "email": "a@a.com",
       "paymentsMethods": "delivery_payments",
       "totalPayment": "10485000",
-      "orderStatus": "complete",
+      "orderStatus": "wait_to_pay",
       "order_date": "Thu, 18 May 2023 19:07:04 GMT",
       "cartItems": [
         {
@@ -1743,6 +1743,133 @@
         }
       ],
       "id": 3
+    },
+    {
+      "name": "Son",
+      "address": "Phung Khoang",
+      "phone": "0387758077",
+      "email": "Theson4895@gmail.com",
+      "paymentsMethods": "delivery_payments",
+      "totalPayment": "15465000",
+      "orderStatus": "pending",
+      "order_date": "Sun, 21 May 2023 03:38:40 GMT",
+      "cartItems": [
+        {
+          "product": {
+            "id": 95,
+            "image_src": "https://product.hstatic.net/1000376021/product/10019882_0_b36954f8be1946488930a863b7425d1d_2b86d670abc2411bb2e90224fcdc7ee3_large.jpg",
+            "name": "Giày Lười Nam TOMS Alp Fwd",
+            "price": "1990000"
+          },
+          "quantity": 4,
+          "id": 1
+        },
+        {
+          "product": {
+            "brand": "carmela",
+            "newArrival": true,
+            "gender": "woman",
+            "category_id": 9,
+            "sale": 20,
+            "name": " Giày Đế Xuồng Nữ CARMELA Camel Leather Ladies Sandals ",
+            "image_src": "https://product.hstatic.net/1000376021/product/160835_camel_0_10557bad46b54b90ac98ef8c25ed027f_827d1d2c6a7c4373ae2b0461e708fedc_large.jpg",
+            "price": "2490000",
+            "id": 2,
+            "quantity": 100
+          },
+          "quantity": 3,
+          "id": 2
+        }
+      ],
+      "id": 4
+    },
+    {
+      "name": "Son",
+      "address": "Hoang Mai",
+      "phone": "0387758077",
+      "email": "Theson4895@gmail.com",
+      "paymentsMethods": "delivery_payments",
+      "totalPayment": "20445000",
+      "orderStatus": "pending",
+      "order_date": "Sun, 21 May 2023 03:39:36 GMT",
+      "cartItems": [
+        {
+          "product": {
+            "id": 95,
+            "image_src": "https://product.hstatic.net/1000376021/product/10019882_0_b36954f8be1946488930a863b7425d1d_2b86d670abc2411bb2e90224fcdc7ee3_large.jpg",
+            "name": "Giày Lười Nam TOMS Alp Fwd",
+            "price": "1990000"
+          },
+          "quantity": 4,
+          "id": 1
+        },
+        {
+          "product": {
+            "brand": "carmela",
+            "newArrival": true,
+            "gender": "woman",
+            "category_id": 9,
+            "sale": 20,
+            "name": " Giày Đế Xuồng Nữ CARMELA Camel Leather Ladies Sandals ",
+            "image_src": "https://product.hstatic.net/1000376021/product/160835_camel_0_10557bad46b54b90ac98ef8c25ed027f_827d1d2c6a7c4373ae2b0461e708fedc_large.jpg",
+            "price": "2490000",
+            "id": 2,
+            "quantity": 100
+          },
+          "quantity": 5,
+          "id": 2
+        }
+      ],
+      "id": 5
+    },
+    {
+      "name": "Son",
+      "address": "Hai Phong ",
+      "phone": "0387758077",
+      "email": "theson4895@gmail.com",
+      "paymentsMethods": "delivery_payments",
+      "totalPayment": "26305000",
+      "orderStatus": "pending",
+      "order_date": "Sun, 21 May 2023 03:41:51 GMT",
+      "cartItems": [
+        {
+          "product": {
+            "id": 95,
+            "image_src": "https://product.hstatic.net/1000376021/product/10019882_0_b36954f8be1946488930a863b7425d1d_2b86d670abc2411bb2e90224fcdc7ee3_large.jpg",
+            "name": "Giày Lười Nam TOMS Alp Fwd",
+            "price": "1990000"
+          },
+          "quantity": 5,
+          "id": 1
+        },
+        {
+          "product": {
+            "brand": "carmela",
+            "newArrival": true,
+            "gender": "woman",
+            "category_id": 9,
+            "sale": 20,
+            "name": " Giày Đế Xuồng Nữ CARMELA Camel Leather Ladies Sandals ",
+            "image_src": "https://product.hstatic.net/1000376021/product/160835_camel_0_10557bad46b54b90ac98ef8c25ed027f_827d1d2c6a7c4373ae2b0461e708fedc_large.jpg",
+            "price": "2490000",
+            "id": 2,
+            "quantity": 100
+          },
+          "quantity": 5,
+          "id": 2
+        },
+        {
+          "product": {
+            "id": 98,
+            "image_src": "https://product.hstatic.net/1000376021/product/10019871_0_5e449dd062df4e658b073ae953339692_b0770e3f21e24d0199b7516ae3f4de05_large.jpg",
+            "name": "Giày Lười Nam TOMS Alp Fwd",
+            "price": "1290000"
+          },
+          "quantity": 3,
+          "id": 3
+        }
+      ],
+      "id": 6
     }
   ],
   "order_items": [
@@ -1769,7 +1896,7 @@
         "name": "Giày Lười Nam TOMS Alp Fwd",
         "price": "1990000"
       },
-      "quantity": 4,
+      "quantity": 5,
       "id": 1
     },
     {
@@ -1785,8 +1912,18 @@
         "id": 2,
         "quantity": 100
       },
-      "quantity": 1,
+      "quantity": 5,
       "id": 2
+    },
+    {
+      "product": {
+        "id": 98,
+        "image_src": "https://product.hstatic.net/1000376021/product/10019871_0_5e449dd062df4e658b073ae953339692_b0770e3f21e24d0199b7516ae3f4de05_large.jpg",
+        "name": "Giày Lười Nam TOMS Alp Fwd",
+        "price": "1290000"
+      },
+      "quantity": 3,
+      "id": 3
     }
   ],
   "bestsellers": [

@@ -11,7 +11,7 @@
     <div class="md:col-span-8">
       <form action="#" class="flex relative">
         <input
-          class="px-5 h-[46px] border md:w-full"
+          class="px-5 h-[46px] bg-[#E5E7EB] rounded-md md:w-full"
           type="text"
           placeholder="Enter your email"
         />

@@ -151,9 +151,4 @@ body {
 .v-application ol {
   padding-left: 0;
 }
-
-input.px-5.h-\[46px\].border.md\:w-full {
-  border: 2.4px solid;
-  border-radius: 10px;
-}
 </style>

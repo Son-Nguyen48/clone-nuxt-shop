@@ -1,26 +1,45 @@
 <template>
   <div>
-    <v-tabs v-model="tab" align-with-title>
-      <v-tabs-slider color="yellow"></v-tabs-slider>
+    <ul class="flex gap-2 overflow-x-scroll md:overflow-hidden px-2">
+      <li
+        v-for="item in items"
+        :key="item.id"
+        role="button"
+        class="border border-gray-200 rounded-md transition-all ease-linear duration-300 hover:bg-[#FFDD00] hover:text-white"
+        :class="tab === item.id ? 'bg-[#FFDD00] text-white' : ''"
+        @click="tab = item.id"
+      >
+        <h4 class="p-3 min-w-max">{{ item.title }}</h4>
+      </li>
+    </ul>
 
-      <v-tab v-for="item in items" :key="item.id">
-        {{ item.title }}
-      </v-tab>
-    </v-tabs>
-
-    <v-tabs-items v-model="tab">
-      <v-tab-item v-for="item in items" :key="item.id">
-        This is cartItems:
-        {{ item.data[0] }}
-        <hr />
-        <ul>
-          <li v-for="product in item.data" :key="product.id">
-            <span>{{ product }}</span>
-            <hr />
-          </li>
-        </ul>
-      </v-tab-item>
-    </v-tabs-items>
+    <ul class="py-5 px-2">
+      <li v-for="item in items" v-show="tab === item.id" :key="item.id">
+        <div>
+          <ul>
+            <li v-for="product in item.data" :key="product.id">
+              <div>
+                <h4>Shooz Vietnam</h4>
+                <p>
+                  Order is
+                  {{
+                    product.orderStatus === 'pending'
+                      ? 'pending'
+                      : product.orderStatus === 'wait_to_pay'
+                      ? 'waiting to pay'
+                      : product.orderStatus === 'transport'
+                      ? 'transporting'
+                      : product.orderStatus === 'delivering'
+                      ? 'delivering'
+                      : 'complete'
+                  }}
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -29,7 +48,7 @@ import { mapActions, mapGetters } from 'vuex'
 export default {
   data() {
     return {
-      tab: null,
+      tab: 1,
     }
   },
   computed: {
@@ -89,4 +108,8 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+.v-item-group.theme--light.v-slide-group.v-slide-group--is-overflowing.v-tabs-bar.v-tabs-bar--is-mobile.primary--text {
+  display: block;
+}
+</style>

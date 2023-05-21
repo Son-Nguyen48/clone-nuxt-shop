@@ -55,7 +55,10 @@
         </div>
         <hr />
       </li>
-      <p class="px-9 md:px-2">Tổng Tiền: {{ totalPrice }}đ</p>
+      <!-- <p class="px-9 md:px-2">Tổng Tiền: {{ totalPrice }}đ</p> -->
+      <span>Total: </span>
+      <currency-formatter :amount="`${String(totalPrice)}`" />
+
       <div class="flex flex-col gap-2 items-center mb-4 md:flex-row md:mx-2">
         <div class="w-3/4">
           <nuxt-link to="/">

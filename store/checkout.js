@@ -28,7 +28,11 @@ export const actions = {
     // })
     console.log(payload, 'payload')
 
-    await this.$swal.fire('Great!', 'Your order has been updated!', 'success')
+    await this.$swal.fire(
+      'Great!',
+      'Your order has been updated! You will be redirected to your order page!',
+      'success'
+    )
 
     await this.$axios.$post('/orders', {
       name: payload.form.name,
