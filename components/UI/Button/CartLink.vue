@@ -1,5 +1,5 @@
 <template>
-  <span class="relative mx-[5px]">
+  <span role="button" class="relative mx-[5px]">
     <div class="inline-block remove-hightlight" @click="openCart">
       <span>
         <svg

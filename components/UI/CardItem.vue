@@ -7,7 +7,7 @@
         <img class="rounded-lg" :src="product.image_src" alt="" />
       </div>
 
-      <div>
+      <div class="flex flex-col justify-between">
         <h4 class="font-bold">{{ product.name }}</h4>
         <currency-formatter :amount="product.price" />
       </div>

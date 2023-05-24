@@ -44,8 +44,46 @@ export const actions = {
       orderStatus: 'pending',
       order_date: payload.form.order_date.toUTCString(),
       cartItems: payload.cartItems,
+      userId: payload.id,
     })
 
     this.$router.push('/account/user?idTab=2')
+  },
+
+  async cancelOrder(vuexContext, payload) {
+    await this.$axios.$get(`/orders/${payload}`).then((res) => {
+      if (res.orderStatus === 'pending') {
+        this.$swal
+          .fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!',
+          })
+          .then((result) => {
+            if (result.isConfirmed) {
+              this.$axios.$delete(`/orders/${payload}`).then((res) => {
+                this.$axios.$get('/orders').then((res) => {
+                  vuexContext.commit('setOrders', res)
+                })
+              })
+              this.$swal.fire(
+                'Completed!',
+                'Your selected order has been canceled.',
+                'success'
+              )
+            }
+          })
+      } else {
+        this.$swal.fire(
+          'Orders cannot be canceled!',
+          'Because the order is no longer in the waiting state!',
+          'warning'
+        )
+      }
+    })
   },
 }
