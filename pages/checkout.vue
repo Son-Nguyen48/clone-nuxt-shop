@@ -401,7 +401,11 @@ export default {
 
     submit(form) {
       this.$refs.observer.validate()
-      this.addOrders({ form, cartItems: this.cartItems })
+      this.addOrders({
+        form,
+        cartItems: this.cartItems,
+        id: this.currentUser.id,
+      })
     },
     clear() {
       this.name = ''

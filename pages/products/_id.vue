@@ -58,6 +58,17 @@
         :product="product"
       ></card-item>
     </div>
+
+    <hr class="py-5" />
+
+    <div class="h-[100px] text-center">
+      <nuxt-link
+        :to="`/collections/${productItem.brand}`"
+        class="inline-block font-bold text-black bg-white hover:bg-[#FFDD00] hover:transform hover:-translate-y-2 hover:scale-105 transition-all ease-linear duration-300 rounded-lg"
+      >
+        <base-button :title="'SIMILAR PRODUCT'"></base-button>
+      </nuxt-link>
+    </div>
   </div>
 </template>
 

@@ -17,24 +17,61 @@
       <li v-for="item in items" v-show="tab === item.id" :key="item.id">
         <div>
           <ul>
-            <li v-for="product in item.data" :key="product.id">
-              <div>
-                <h4>Shooz Vietnam</h4>
-                <p>
-                  Order is
-                  {{
-                    product.orderStatus === 'pending'
-                      ? 'pending'
-                      : product.orderStatus === 'wait_to_pay'
-                      ? 'waiting to pay'
-                      : product.orderStatus === 'transport'
-                      ? 'transporting'
-                      : product.orderStatus === 'delivering'
-                      ? 'delivering'
-                      : 'complete'
-                  }}
-                </p>
+            <li v-for="product in item.data" :key="product.id" class="pt-5">
+              <div class="flex gap-5 pb-5">
+                <div class="pr-5 border-r-2 border-gray-300">
+                  <nuxt-link
+                    v-for="productItem in product.cartItems"
+                    :key="productItem.id"
+                    :to="`/products/${productItem.product.id}`"
+                    class="flex gap-2"
+                  >
+                    <img
+                      class="h-20 w-20"
+                      :src="productItem.product.image_src"
+                      alt="productItem"
+                    />
+
+                    <div>
+                      <p class="font-bold">
+                        {{ productItem.product.name }}
+                      </p>
+                      <CurrencyFormatter
+                        :amount="productItem.product.price"
+                      ></CurrencyFormatter>
+                    </div>
+                  </nuxt-link>
+                </div>
+                <div>
+                  <h4 class="font-bold text-xl">Shooz Vietnam</h4>
+                  <p>
+                    Order is
+                    {{
+                      product.orderStatus === 'pending'
+                        ? 'pending'
+                        : product.orderStatus === 'wait_to_pay'
+                        ? 'waiting to pay'
+                        : product.orderStatus === 'transport'
+                        ? 'transporting'
+                        : product.orderStatus === 'delivering'
+                        ? 'delivering'
+                        : 'complete'
+                    }}
+                  </p>
+                  <p>Receiver: {{ product.name }}</p>
+                  <p>Delivery address: {{ product.address }}</p>
+                  <p>Payment methods: {{ product.paymentsMethods }}</p>
+                  <v-btn
+                    v-show="product.orderStatus === 'pending'"
+                    class="my-5"
+                    @click="cancelOrder(product.id)"
+                    >Cancel</v-btn
+                  >
+                  <!-- <p>{{ product.id }}</p> -->
+                </div>
               </div>
+
+              <hr />
             </li>
           </ul>
         </div>
@@ -45,10 +82,14 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
+import CurrencyFormatter from './UI/CurrencyFormatter.vue'
 export default {
+  components: {
+    CurrencyFormatter,
+  },
   data() {
     return {
-      tab: 1,
+      tab: 2,
     }
   },
   computed: {
@@ -56,38 +97,55 @@ export default {
       orders: 'checkout/orders',
     }),
 
+    currentUser() {
+      return JSON.parse(localStorage.getItem('currentUser'))
+    },
+
+    ordersFilter() {
+      return this.orders.filter((order) => {
+        return order.userId === this.currentUser.id
+      })
+    },
+
     items() {
       return [
         {
           id: 1,
           title: 'All',
-          data: this.orders,
+          data: this.ordersFilter,
         },
         {
           id: 2,
-          title: 'Wait for pay',
-          data: this.orders.filter((item) => {
-            return item.orderStatus === 'wait_to_pay'
+          title: 'Pending',
+          data: this.ordersFilter.filter((item) => {
+            return item.orderStatus === 'pending'
           }),
         },
         {
           id: 3,
-          title: 'Transport',
-          data: this.orders.filter((item) => {
-            return item.orderStatus === 'transport'
+          title: 'Wait for pay',
+          data: this.ordersFilter.filter((item) => {
+            return item.orderStatus === 'wait_to_pay'
           }),
         },
         {
           id: 4,
-          title: 'Delivering',
-          data: this.orders.filter((item) => {
-            return item.orderStatus === 'delivering'
+          title: 'Transport',
+          data: this.ordersFilter.filter((item) => {
+            return item.orderStatus === 'transport'
           }),
         },
         {
           id: 5,
+          title: 'Delivering',
+          data: this.ordersFilter.filter((item) => {
+            return item.orderStatus === 'delivering'
+          }),
+        },
+        {
+          id: 6,
           title: 'Complete',
-          data: this.orders.filter((item) => {
+          data: this.ordersFilter.filter((item) => {
             return item.orderStatus === 'complete'
           }),
         },
@@ -97,12 +155,13 @@ export default {
 
   async created() {
     await this.getOrders()
-    console.log(this.items[0].data[0].cartItems[0].product, 'items')
+    console.log(this.items[0].data[0]?.cartItems[0].product, 'items')
   },
 
   methods: {
     ...mapActions({
       getOrders: 'checkout/getOrders',
+      cancelOrder: 'checkout/cancelOrder',
     }),
   },
 }

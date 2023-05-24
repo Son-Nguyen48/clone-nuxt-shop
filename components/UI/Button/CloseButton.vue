@@ -1,5 +1,9 @@
 <template>
-  <div class="absolute right-[30px] top-10" @click="closeSideMenu">
+  <div
+    role="button"
+    class="absolute right-[30px] top-10"
+    @click="closeSideMenu"
+  >
     <font-awesome-icon
       :icon="['fas', 'xmark']"
       size="lg"
