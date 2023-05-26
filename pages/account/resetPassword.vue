@@ -24,7 +24,12 @@
 </template>
 
 <script>
-export default {}
+import BaseButton from '~/components/UI/Button/BaseButton.vue'
+export default {
+  components: {
+    BaseButton,
+  },
+}
 </script>
 
 <style></style>

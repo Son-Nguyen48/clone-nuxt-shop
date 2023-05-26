@@ -41,7 +41,10 @@ export const actions = {
       email: payload.form.email,
       paymentsMethods: payload.form.paymentsMethods,
       totalPayment: payload.form.totalPayment,
-      orderStatus: 'pending',
+      orderStatus:
+        payload.form.paymentsMethods === 'transfer_payments'
+          ? 'wait_for_pay'
+          : 'pending',
       order_date: payload.form.order_date.toUTCString(),
       cartItems: payload.cartItems,
       userId: payload.id,

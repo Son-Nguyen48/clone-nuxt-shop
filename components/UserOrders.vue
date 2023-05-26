@@ -18,8 +18,8 @@
         <div>
           <ul>
             <li v-for="product in item.data" :key="product.id" class="pt-5">
-              <div class="flex gap-5 pb-5">
-                <div class="pr-5 border-r-2 border-gray-300">
+              <div class="md:flex md:gap-5 pb-5">
+                <div class="pr-5 md:border-r-2 md:border-gray-300">
                   <nuxt-link
                     v-for="productItem in product.cartItems"
                     :key="productItem.id"
@@ -42,14 +42,14 @@
                     </div>
                   </nuxt-link>
                 </div>
-                <div>
+                <div class="mt-5">
                   <h4 class="font-bold text-xl">Shooz Vietnam</h4>
                   <p>
                     Order is
                     {{
                       product.orderStatus === 'pending'
                         ? 'pending'
-                        : product.orderStatus === 'wait_to_pay'
+                        : product.orderStatus === 'wait_for_pay'
                         ? 'waiting to pay'
                         : product.orderStatus === 'transport'
                         ? 'transporting'
@@ -62,7 +62,10 @@
                   <p>Delivery address: {{ product.address }}</p>
                   <p>Payment methods: {{ product.paymentsMethods }}</p>
                   <v-btn
-                    v-show="product.orderStatus === 'pending'"
+                    v-show="
+                      product.orderStatus === 'pending' ||
+                      product.orderStatus === 'wait_for_pay'
+                    "
                     class="my-5"
                     @click="cancelOrder(product.id)"
                     >Cancel</v-btn
@@ -125,7 +128,7 @@ export default {
           id: 3,
           title: 'Wait for pay',
           data: this.ordersFilter.filter((item) => {
-            return item.orderStatus === 'wait_to_pay'
+            return item.orderStatus === 'wait_for_pay'
           }),
         },
         {

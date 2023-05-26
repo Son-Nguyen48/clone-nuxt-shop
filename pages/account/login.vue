@@ -26,26 +26,23 @@
         </div>
 
         <div class="md:flex md:gap-4 justify-center mt-5 px-2">
-          <div class="text-center mt-4 md:mt-0">
+          <div class="text-center my-4 md:mt-0">
             <base-button :title="'Login'" class="w-full"></base-button>
           </div>
 
-          <nuxt-link
-            to="/account/resetPassword"
-            class="mt-4 md:mt-0 text-center"
-          >
-            <base-button
-              :title="'Forgot password?'"
-              class="w-full"
-            ></base-button>
-          </nuxt-link>
+          <div class="text-center my-4 md:mt-0">
+            <nuxt-link to="/account/resetPassword">
+              <base-button
+                :title="'Forgot password?'"
+                class="w-full"
+              ></base-button>
+            </nuxt-link>
+          </div>
 
-          <div class="mt-4 md:mt-0 text-center">
-            <nuxt-link
-              to="/account/signup"
-              class="inline-block bg-[#FFDD00] py-2 px-3 font-bold rounded w-full"
-              >Sign up</nuxt-link
-            >
+          <div class="text-center my-4 md:mt-0">
+            <nuxt-link to="/account/signup">
+              <base-button :title="'Sign up'" class="w-full"></base-button>
+            </nuxt-link>
           </div>
         </div>
       </form>
