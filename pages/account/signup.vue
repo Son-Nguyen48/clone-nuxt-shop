@@ -53,7 +53,7 @@
       <div>
         <input
           id="date"
-          v-model="date"
+          v-model="dateOfBirth"
           class="py-2 px-3 w-full md:w-3/4 bg-gray-200 rounded"
           type="date"
           name="date"
@@ -112,16 +112,33 @@ export default {
       lastName: '',
       firstName: '',
       gender: '',
-      date: '',
+      dateOfBirth: '',
       email: '',
       phoneNumber: '',
       password: '',
     }
   },
 
+  computed: {
+    date() {
+      return new Date(this.dateOfBirth).getDate()
+    },
+    month() {
+      return new Date(this.dateOfBirth).getMonth()
+    },
+    year() {
+      return new Date(this.dateOfBirth).getFullYear()
+    },
+  },
+
   methods: {
     createUser(newUser) {
       this.$axios.$post('/accounts', newUser).then((res) => {
+        this.$swal.fire(
+          'Successful account registration!',
+          'Thank you for using the service!',
+          'success'
+        )
         this.$router.push('/account/login')
       })
     },
@@ -135,7 +152,7 @@ export default {
         nationality: 'Vietnam',
         company: 'VMO',
         password: this.password,
-        dateOfBirth: this.date,
+        dateOfBirth: this.dateOfBirth,
         gender: this.gender,
       }
       this.createUser(newUser)
