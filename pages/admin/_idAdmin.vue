@@ -191,6 +191,25 @@ export default {
           { text: 'Gender', value: 'gender' },
           { text: 'Actions', value: 'actions', sortable: false },
         ]
+      } else if (this.$route.params.idAdmin === 'currentuser') {
+        return [
+          {
+            text: 'Name',
+            align: 'start',
+            sortable: false,
+            value: 'name',
+          },
+          { text: 'Id', value: 'id' },
+          { text: 'Phone', value: 'phone' },
+          { text: 'Email', value: 'email' },
+          { text: 'Address', value: 'address' },
+          { text: 'Nationality', value: 'nationality' },
+          { text: 'Company', value: 'company' },
+          { text: 'Password', value: 'password' },
+          { text: 'Date of birth', value: 'dateOfBirth' },
+          { text: 'Gender', value: 'gender' },
+          { text: 'Actions', value: 'actions', sortable: false },
+        ]
       } else {
         return [
           {

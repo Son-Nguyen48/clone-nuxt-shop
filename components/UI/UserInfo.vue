@@ -151,10 +151,15 @@ export default {
     }
   },
   async created() {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'))
     await this.$axios.$get('currentUser').then((res) => {
-      if (res) this.user = res[0]
+      if (res) this.user = res.filter((item) => currentUser.id === item.id)[0]
+      console.log(
+        res.filter((item) => currentUser.id === item.id),
+        '?USER'
+      )
       // eslint-disable-next-line no-console
-      console.log(this.user, 'user', res, 'res')
+      console.log(currentUser?.id, 'currentUser', this.user, 'user', res, 'res')
       console.log(this.user.dateOfBirth, 'date')
     })
   },

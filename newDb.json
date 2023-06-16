@@ -2125,7 +2125,7 @@
         "name": "Giày Lười Bé Gái TOMS Alpargata",
         "price": "1290000"
       },
-      "quantity": 1,
+      "quantity": 3,
       "id": 7
     }
   ],
@@ -4808,9 +4808,21 @@
       "nationality": "Vietnam",
       "company": "VMO",
       "password": "12345678a",
-      "dateOfBirth": "1922-11-15",
+      "dateOfBirth": "1922-11-22",
       "gender": "",
       "id": 4
+    },
+    {
+      "name": "Thanh DoanhNguyen",
+      "phone": "0239847348",
+      "email": "thanhdoanh@gmail.com",
+      "address": "Vietnam",
+      "nationality": "Vietnam",
+      "company": "VMO",
+      "password": "19124321my",
+      "dateOfBirth": "2001-07-12",
+      "gender": "Man",
+      "id": 5
     }
   ],
   "currentUser": [
@@ -4822,9 +4834,21 @@
       "nationality": "Vietnam",
       "company": "VMO",
       "password": "12345678a",
-      "dateOfBirth": "1922-11-15",
+      "dateOfBirth": "1922-11-22",
       "gender": "",
       "id": 4
+    },
+    {
+      "name": "Thanh DoanhNguyen",
+      "phone": "0239847348",
+      "email": "thanhdoanh@gmail.com",
+      "address": "Vietnam",
+      "nationality": "Vietnam",
+      "company": "VMO",
+      "password": "19124321my",
+      "dateOfBirth": "2001-07-12",
+      "gender": "Man",
+      "id": 5
     }
   ]
 }

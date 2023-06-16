@@ -14,8 +14,10 @@ export const mutations = {
 
 export const actions = {
   async getCurrentUser(vuexContext, payload) {
-    await this.$axios.$get('/currentUser').then((res) => {
-      vuexContext.commit('setCurrentUser', res[0])
+    console.log(payload.id, 'payload')
+    await this.$axios.$get(`/currentUser/${payload.id}`).then((res) => {
+      console.log(res, 'res')
+      vuexContext.commit('setCurrentUser', res)
     })
   },
   async logout() {
@@ -59,5 +61,41 @@ export const actions = {
       timer: 1500,
       toast: true,
     })
+  },
+
+  async login(vuexContext, payload) {
+    let accounts = []
+    await this.$axios.$get('/accounts').then((res) => {
+      // eslint-disable-next-line no-console
+      accounts = res
+    })
+
+    // eslint-disable-next-line no-console
+    console.log(accounts, 'accounts', payload, 'account')
+
+    const isValidUser = accounts.filter((item) => {
+      return item.email === payload.email
+    })
+
+    // eslint-disable-next-line no-console
+    console.log(isValidUser, 'isValidUser')
+
+    if (payload.password === isValidUser[0].password) {
+      await this.$swal.fire(
+        'Logged in successfully!',
+        'You are redirected to the Profile page!',
+        'success'
+      )
+      this.$axios.$post('/currentUser', isValidUser[0]).then((res) => {
+        localStorage.setItem('currentUser', JSON.stringify(isValidUser[0]))
+        this.$router.push('/account/user')
+      })
+    } else {
+      await this.$swal.fire(
+        'Your email or password is incorrect!',
+        'Please enter your email and password again!',
+        'error'
+      )
+    }
   },
 }

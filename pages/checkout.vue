@@ -140,7 +140,9 @@
             style="color: #000000"
           />
           <div>
-            <p class="mb-0">{{ currentUser.name }}({{ currentUser.email }})</p>
+            <p class="mb-0">
+              {{ currentUser?.name }}({{ currentUser?.email }})
+            </p>
           </div>
         </div>
 
@@ -383,7 +385,8 @@ export default {
   },
 
   async created() {
-    await this.getCurrentUser()
+    const localUser = JSON.parse(localStorage.getItem('currentUser'))
+    await this.getCurrentUser(localUser)
     await this.$store.dispatch('cart/getListItem')
   },
 

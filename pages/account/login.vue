@@ -7,7 +7,7 @@
         Login
       </h1>
       <hr />
-      <form action="#" class="md:w-1/2" @submit.prevent="login">
+      <form action="#" class="md:w-1/2" @submit.prevent="login(account)">
         <div class="p-2 md:w-3/4 md:mx-auto">
           <input
             v-model="email"
@@ -51,6 +51,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import BaseButton from '~/components/UI/Button/BaseButton.vue'
 export default {
   components: { BaseButton },
@@ -61,42 +62,18 @@ export default {
       isForgotPassword: false,
     }
   },
-  methods: {
-    async login() {
-      let accounts = []
-      await this.$axios.$get('/accounts').then((res) => {
-        // eslint-disable-next-line no-console
-        accounts = res
-      })
-
-      // eslint-disable-next-line no-console
-      console.log(accounts, 'accounts')
-
-      const isValidUser = accounts.filter((item) => {
-        return item.email === this.email
-      })
-
-      // eslint-disable-next-line no-console
-      console.log(isValidUser, 'isValidUser')
-
-      if (this.password === isValidUser[0].password) {
-        await this.$swal.fire(
-          'Logged in successfully!',
-          'You are redirected to the Profile page!',
-          'success'
-        )
-        this.$axios.$post('/currentUser', isValidUser[0]).then((res) => {
-          localStorage.setItem('currentUser', JSON.stringify(isValidUser[0]))
-          this.$router.push('/account/user')
-        })
-      } else {
-        await this.$swal.fire(
-          'Your email or password is incorrect!',
-          'Please enter your email and password again!',
-          'error'
-        )
+  computed: {
+    account() {
+      return {
+        email: this.email,
+        password: this.password,
       }
     },
+  },
+  methods: {
+    ...mapActions({
+      login: 'login/login',
+    }),
   },
 }
 </script>

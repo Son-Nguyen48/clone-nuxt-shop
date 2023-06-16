@@ -79,6 +79,10 @@ export default {
           id: 4,
           name: 'Category',
         },
+        {
+          id: 4,
+          name: 'CurrentUser',
+        },
       ],
       isLocked: false,
       isSideBarShow: true,
