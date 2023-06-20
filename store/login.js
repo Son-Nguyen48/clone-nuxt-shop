@@ -14,8 +14,10 @@ export const mutations = {
 
 export const actions = {
   async getCurrentUser(vuexContext, payload) {
+    // eslint-disable-next-line no-console
     console.log(payload.id, 'payload')
     await this.$axios.$get(`/currentUser/${payload.id}`).then((res) => {
+      // eslint-disable-next-line no-console
       console.log(res, 'res')
       vuexContext.commit('setCurrentUser', res)
     })
@@ -69,33 +71,61 @@ export const actions = {
       // eslint-disable-next-line no-console
       accounts = res
     })
-
     // eslint-disable-next-line no-console
-    console.log(accounts, 'accounts', payload, 'account')
+    console.log(payload, 'payload', accounts, 'accounts')
 
     const isValidUser = accounts.filter((item) => {
       return item.email === payload.email
     })
 
-    // eslint-disable-next-line no-console
-    console.log(isValidUser, 'isValidUser')
+    await this.$axios.$get('/currentUser').then((res) => {
+      const isLogined = res.filter((item) => {
+        return item.id === isValidUser[0].id
+      }).length
 
-    if (payload.password === isValidUser[0].password) {
-      await this.$swal.fire(
-        'Logged in successfully!',
-        'You are redirected to the Profile page!',
-        'success'
-      )
-      this.$axios.$post('/currentUser', isValidUser[0]).then((res) => {
+      // eslint-disable-next-line no-console
+      console.log(isLogined, 'isLogined')
+
+      // eslint-disable-next-line no-console
+      console.log(isValidUser, 'isValidUser')
+
+      if (isLogined === 0) {
+        // eslint-disable-next-line no-console
+        console.log(accounts, 'accounts', payload, 'account')
+
+        // eslint-disable-next-line no-console
+        console.log(isValidUser, 'isValidUser')
+
+        if (payload.password === isValidUser[0].password) {
+          this.$swal.fire(
+            'Logged in successfully!',
+            'You are redirected to the Profile page!',
+            'success'
+          )
+          this.$axios.$post('/currentUser', isValidUser[0]).then((res) => {
+            localStorage.setItem('currentUser', JSON.stringify(isValidUser[0]))
+            this.$router.push('/account/user')
+          })
+        } else {
+          this.$swal.fire(
+            'Your email or password is incorrect!',
+            'Please enter your email and password again!',
+            'error'
+          )
+        }
+      } else {
+        this.$swal.fire(
+          'Logged in successfully!',
+          'You are redirected to the Profile page!',
+          'success'
+        )
+
+        // eslint-disable-next-line no-console
+        console.log(isValidUser, 'isValidUser')
+
         localStorage.setItem('currentUser', JSON.stringify(isValidUser[0]))
         this.$router.push('/account/user')
-      })
-    } else {
-      await this.$swal.fire(
-        'Your email or password is incorrect!',
-        'Please enter your email and password again!',
-        'error'
-      )
-    }
+      }
+    })
   },
 }

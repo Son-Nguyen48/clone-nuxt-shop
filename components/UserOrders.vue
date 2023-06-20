@@ -106,7 +106,7 @@ export default {
 
     ordersFilter() {
       return this.orders.filter((order) => {
-        return order.userId === this.currentUser.id
+        return order.userId === this.currentUser?.id
       })
     },
 

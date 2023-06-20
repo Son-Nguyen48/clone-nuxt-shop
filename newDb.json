@@ -4823,32 +4823,44 @@
       "dateOfBirth": "2001-07-12",
       "gender": "Man",
       "id": 5
+    },
+    {
+      "name": "SơnNguyễn",
+      "phone": "03343434334",
+      "email": "son123@gmail.com",
+      "address": "Vietnam",
+      "nationality": "Vietnam",
+      "company": "VMO",
+      "password": "123456",
+      "dateOfBirth": "2023-06-09",
+      "gender": "Man",
+      "id": 6
+    },
+    {
+      "name": "thanhnguyen",
+      "phone": "0123131313",
+      "email": "thanh123@gmail.com",
+      "address": "Vietnam",
+      "nationality": "Vietnam",
+      "company": "VMO",
+      "password": "123456",
+      "dateOfBirth": "2023-06-09",
+      "gender": "Man",
+      "id": 7
     }
   ],
   "currentUser": [
     {
-      "name": "hiep1doan",
-      "phone": "sdfsfsd",
-      "email": "hiepdt@gmail.com",
+      "name": "thanhnguyen",
+      "phone": "0123131313",
+      "email": "thanh123@gmail.com",
       "address": "Vietnam",
       "nationality": "Vietnam",
       "company": "VMO",
-      "password": "12345678a",
-      "dateOfBirth": "1922-11-22",
-      "gender": "",
-      "id": 4
-    },
-    {
-      "name": "Thanh DoanhNguyen",
-      "phone": "0239847348",
-      "email": "thanhdoanh@gmail.com",
-      "address": "Vietnam",
-      "nationality": "Vietnam",
-      "company": "VMO",
-      "password": "19124321my",
-      "dateOfBirth": "2001-07-12",
+      "password": "123456",
+      "dateOfBirth": "2023-06-09",
       "gender": "Man",
-      "id": 5
+      "id": 7
     }
   ]
 }
