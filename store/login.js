@@ -23,7 +23,8 @@ export const actions = {
     })
   },
   async logout() {
-    if (localStorage.getItem('currentUser')) {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'))
+    if (currentUser) {
       await this.$swal
         .fire({
           title: 'Are you sure?',
@@ -41,13 +42,13 @@ export const actions = {
               'You are redirected to the login page!',
               'success'
             )
+            const idCurrentUser = currentUser.id
+            console.log(currentUser, 'currentUser', currentUser.id, 'currentId')
+            this.$axios.$delete(`currentUser/${idCurrentUser}`)
+            localStorage.clear('currentUser')
+            this.$router.push('/account/login')
           }
         })
-      const currentUser = await this.$axios.$get('/currentUser')
-      const idCurrentUser = currentUser[0].id
-      await this.$axios.$delete(`currentUser/${idCurrentUser}`)
-      localStorage.clear('currentUser')
-      this.$router.push('/account/login')
     }
   },
 

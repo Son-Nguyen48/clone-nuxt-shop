@@ -55,6 +55,19 @@
             />
           </div>
 
+          <div class="w-full md:w-auto md:flex md:items-center">
+            <label
+              class="opacity-70 inline-block w-full md:w-1/2 lg:w-1/3"
+              for=""
+              >Avatar Profile</label
+            >
+            <input
+              v-model="user.src"
+              class="bg-gray-200 md:py-2 md:pr-8 md:pl-3 rounded-lg w-full md:w-1/2 lg:w-auto inline-block p-3 mt-5 md:mt-0"
+              type="text"
+            />
+          </div>
+
           <div class="mt-5">
             <label
               class="opacity-70 inline-block w-full md:w-1/2 lg:w-1/3"
@@ -89,11 +102,11 @@
       <div class="w-full mt-5 md:mt-0 md:w-1/2">
         <div class="md:w-full">
           <img
-            class="w-[200px] h-[200px] rounded-full mx-auto"
+            class="w-[300px] h-[300px] rounded-full mx-auto"
             :src="
               user.src
                 ? user.src
-                : 'https://scontent.fhan5-2.fna.fbcdn.net/v/t39.30808-6/309437122_207033221675116_7160048155097169836_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=gqM-L9PcCHoAX87-y9e&_nc_ht=scontent.fhan5-2.fna&oh=00_AfCJ3wO3OvkWojDM7Xu2xOxH_Qc9r1N26XOEiaq2Bi7QYw&oe=6465F757'
+                : 'https://pbs.twimg.com/media/EW9Tcl0UEAAEaY3.png'
             "
             alt="avatar"
           />
@@ -129,7 +142,19 @@ export default {
   },
   data() {
     return {
-      user: {},
+      user: {
+        name: '',
+        phone: '',
+        email: '',
+        address: '',
+        nationality: '',
+        company: '',
+        password: '',
+        dateOfBirth: '',
+        gender: '',
+        id: 0,
+        src: '',
+      },
       window: 0,
       items: [
         {
@@ -171,6 +196,8 @@ export default {
         console.log(this.user.dateOfBirth, 'date')
       })
     }
+
+    // this.user = JSON.parse(localStorage.getItem('currentUser'))
   },
 
   methods: {
