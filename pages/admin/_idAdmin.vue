@@ -241,6 +241,9 @@ export default {
   created() {
     this.initialize()
     console.log(this.formEdit, 'formEdit')
+    this.keyListItem = this.theHeader.map((item) => {
+      return item.value
+    })
   },
 
   methods: {
@@ -250,11 +253,10 @@ export default {
 
     editItem(item) {
       this.editedIndex = this.desserts.indexOf(item)
-      this.keyListItem = Object.keys(Object.assign({}, item))
-      if (this.keyListItem.includes('cartItems') > -1)
+      this.keyListItem = Object.keys(item)
+      if (this.keyListItem.includes('cartItems'))
         this.keyListItem.splice(this.keyListItem.indexOf('cartItems'), 1)
       this.editedItem = Object.assign({}, item)
-      console.log(this.keyListItem, 'keyListItem')
       this.dialog = true
     },
 

@@ -80,7 +80,7 @@ export default {
           name: 'Category',
         },
         {
-          id: 4,
+          id: 5,
           name: 'CurrentUser',
         },
       ],
