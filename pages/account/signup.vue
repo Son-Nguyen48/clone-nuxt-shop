@@ -103,6 +103,8 @@
 
 <script>
 import BaseButton from '~/components/UI/Button/BaseButton.vue'
+import { auth } from '~/plugins/firebase'
+
 export default {
   components: {
     BaseButton,
@@ -132,15 +134,21 @@ export default {
   },
 
   methods: {
-    createUser(newUser) {
-      this.$axios.$post('/accounts', newUser).then((res) => {
-        this.$swal.fire(
-          'Successful account registration!',
-          'Thank you for using the service!',
-          'success'
-        )
-        this.$router.push('/account/login')
-      })
+    async createUser(newUser) {
+      await this.$axios
+        .$post('/accounts', newUser)
+        .then((res) => {
+          this.$swal.fire(
+            'Successful account registration!',
+            'Thank you for using the service!',
+            'success'
+          )
+          auth.createUserWithEmailAndPassword(newUser.email, newUser.password)
+          this.$router.push('/account/Login')
+        })
+        .catch((e) => {
+          console.log(e)
+        })
     },
 
     handleSignup() {

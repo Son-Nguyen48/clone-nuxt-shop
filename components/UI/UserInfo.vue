@@ -59,6 +59,19 @@
             <label
               class="opacity-70 inline-block w-full md:w-1/2 lg:w-1/3"
               for=""
+              >Password</label
+            >
+            <input
+              v-model="user.password"
+              class="bg-gray-200 md:py-2 md:pr-8 md:pl-3 rounded-lg w-full md:w-1/2 lg:w-auto inline-block p-3 mt-5 md:mt-0"
+              type="password"
+            />
+          </div>
+
+          <div class="w-full md:w-auto md:flex md:items-center">
+            <label
+              class="opacity-70 inline-block w-full md:w-1/2 lg:w-1/3"
+              for=""
               >Avatar Profile</label
             >
             <input
@@ -112,8 +125,16 @@
           />
         </div>
 
-        <div class="text-center" @click="changeAvatar">
-          <v-btn class="mt-5">Choose image</v-btn>
+        <div class="text-center">
+          <input
+            ref="fileInput"
+            type="file"
+            @change="uploadImage(user.id)"
+            class="hidden"
+          />
+          <v-btn class="mt-5" @click="$refs.fileInput.click()"
+            >Choose image</v-btn
+          >
         </div>
 
         <p class="mt-5 text-center">
@@ -134,8 +155,11 @@
 </template>
 
 <script>
+import firebase from 'firebase/app'
+import 'firebase/storage'
 import { mapActions } from 'vuex'
 import BaseButton from './Button/BaseButton.vue'
+import { auth } from '~/plugins/firebase'
 export default {
   components: {
     BaseButton,
@@ -173,28 +197,31 @@ export default {
           length: 113,
         },
       ],
+      selectedFile: null,
+      imageUrl: null,
     }
   },
-  async created() {
+  created() {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'))
     if (currentUser) {
-      await this.$axios.$get('currentUser').then((res) => {
-        if (res) this.user = res.filter((item) => currentUser.id === item.id)[0]
-        console.log(
-          res.filter((item) => currentUser.id === item.id),
-          '?USER'
-        )
-        // eslint-disable-next-line no-console
-        console.log(
-          currentUser?.id,
-          'currentUser',
-          this.user,
-          'user',
-          res,
-          'res'
-        )
-        console.log(this.user.dateOfBirth, 'date')
-      })
+      // await this.$axios.$get('currentUser').then((res) => {
+      //   if (res) this.user = res.filter((item) => currentUser.id === item.id)[0]
+      //   console.log(
+      //     res.filter((item) => currentUser.id === item.id),
+      //     '?USER'
+      //   )
+      //   // eslint-disable-next-line no-console
+      //   console.log(
+      //     currentUser?.id,
+      //     'currentUser',
+      //     this.user,
+      //     'user',
+      //     res,
+      //     'res'
+      //   )
+      //   console.log(this.user.dateOfBirth, 'date')
+      // })
+      this.user = currentUser
     }
 
     // this.user = JSON.parse(localStorage.getItem('currentUser'))
@@ -205,7 +232,116 @@ export default {
       updateUser: 'login/updateUser',
       logout: 'login/logout',
       changeAvatar: 'login/changeAvatar',
+      // onFileSelected: 'login/onFileSelected', Ask Leader
     }),
+
+    // async uploadFile(event, file, path, fileName) {
+    //   this.selectedFile = event.target.files[0]
+    //   return await new Promise((resolve, reject) => {
+    //     const storage = getStorage()
+
+    //     const metadata = {
+    //       contentType: 'image/*',
+    //     }
+
+    //     const fileNameUpload = fileName || file.name.replace(/\s+/g, '-')
+
+    //     const storageRef = ref(storage, `${path}/` + fileNameUpload)
+    //     const uploadTask = uploadBytesResumable(storageRef, file, metadata)
+
+    //     uploadTask.on(
+    //       'state_changed',
+    //       async (snapshot) => {
+    //         // Observe state change events such as progress, pause, and resume
+    //         // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+    //         const progress =
+    //           (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+    //         console.log('Upload is ' + progress + '% done')
+    //         switch (snapshot.state) {
+    //           case 'paused':
+    //             console.log('Upload is paused')
+    //             break
+    //           case 'running':
+    //             console.log('Upload is running')
+    //             break
+    //         }
+
+    //         if (progress === 100) {
+    //           const link = await getDownloadURL(snapshot.ref).then(
+    //             (downloadURL) => {
+    //               return downloadURL
+    //             }
+    //           )
+
+    //           return link
+    //         }
+    //       },
+    //       (error) => {
+    //         // Handle unsuccessful uploads
+    //         switch (error.code) {
+    //           case 'storage/unauthorized':
+    //             // User doesn't have permission to access the object
+    //             return 'unauthorized'
+
+    //           case 'storage/canceled':
+    //             // User canceled the upload
+    //             return 'canceled'
+
+    //           // ...
+    //           case 'storage/unknown':
+    //             return 'unknown'
+    //           // Unknown error occurred, inspect error.serverResponse
+    //         }
+    //         reject(error)
+    //       },
+    //       async () => {
+    //         // Handle successful uploads on complete
+    //         // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+    //         const link = await getDownloadURL(uploadTask.snapshot.ref).then(
+    //           (downloadURL) => {
+    //             return downloadURL
+    //           }
+    //         )
+
+    //         resolve(link || '')
+    //       }
+    //     )
+    //   })
+    // },
+
+    async uploadImage(id) {
+      const file = this.$refs.fileInput.files[0]
+      const storageRef = firebase.storage().ref('images/' + file.name)
+      const snapshot = await storageRef.put(file)
+      const url = await snapshot.ref.getDownloadURL()
+      this.imageUrl = url
+      console.log(this.imageUrl, 'imageUrl')
+      await this.$axios.$patch(`/accounts/${id}`, {
+        src: this.imageUrl,
+      })
+
+      localStorage.clear('currentUser')
+
+      await this.$axios.$get(`/accounts/${id}`).then((res) => {
+        localStorage.setItem('currentUser', JSON.stringify(res))
+      })
+
+      this.user = JSON.parse(localStorage.getItem('currentUser'))
+
+      this.$swal.fire(
+        'Upload file successfully!',
+        'Be happy with your choice !',
+        'success'
+      )
+    },
+    async signOut() {
+      try {
+        await auth.signOut()
+        this.$router.push('/account/Login')
+      } catch (error) {
+        console.error(error)
+      }
+    },
   },
 }
 </script>
