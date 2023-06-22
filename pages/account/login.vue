@@ -53,6 +53,7 @@
 <script>
 import { mapActions } from 'vuex'
 import BaseButton from '~/components/UI/Button/BaseButton.vue'
+import { auth } from '~/plugins/firebase'
 export default {
   components: { BaseButton },
   data() {
@@ -74,6 +75,14 @@ export default {
     ...mapActions({
       login: 'login/login',
     }),
+    async signIn(account) {
+      try {
+        await auth.signInWithEmailAndPassword(account.email, account.password)
+        this.$router.push('/account/user')
+      } catch (error) {
+        console.error(error)
+      }
+    },
   },
 }
 </script>

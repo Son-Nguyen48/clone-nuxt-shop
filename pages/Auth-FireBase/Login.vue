@@ -47,7 +47,7 @@ export default {
     async signIn() {
       try {
         await auth.signInWithEmailAndPassword(this.email, this.password)
-        this.$router.push('/Auth-FireBase/user')
+        this.$router.push('/accounts/user')
       } catch (error) {
         console.error(error)
       }
