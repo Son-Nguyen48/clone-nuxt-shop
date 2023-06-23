@@ -81,20 +81,44 @@ export const actions = {
   },
 
   async updateUser(vuexContext, payload) {
+    console.log(payload, 'payload')
     // await this.$axios.$put(`/currentUser/${payload.id}`, payload)
-    await this.$axios.$put(`/accounts/${payload.id}`, payload)
-    localStorage.clear('currentUser')
     await this.$axios.$get(`/accounts/${payload.id}`).then((res) => {
-      localStorage.setItem('currentUser', JSON.stringify(res))
-    })
+      console.log(res, 'res')
+      const isEmailChange = payload.email !== res.email
+      const isPasswordChange = payload.password !== res.password
 
-    await this.$swal.fire({
-      position: 'top-end',
-      icon: 'success',
-      title: 'Your user profile has been updated',
-      showConfirmButton: false,
-      timer: 1500,
-      toast: true,
+      console.log(
+        isEmailChange,
+        'isEmailChange',
+        isPasswordChange,
+        'isPasswordChange'
+      )
+
+      if (isEmailChange) {
+        const user = auth.currentUser
+        console.log(user, 'user firebase')
+        user.updateEmail(payload.email)
+      }
+
+      if (isPasswordChange) {
+        const user = auth.currentUser
+        user.updatePassword(payload.password)
+      }
+
+      this.$axios.$put(`/accounts/${payload.id}`, payload)
+
+      localStorage.clear('currentUser')
+
+      this.$swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Your user profile has been updated',
+        showConfirmButton: false,
+        timer: 1500,
+        toast: true,
+      })
+      localStorage.setItem('currentUser', JSON.stringify(res))
     })
   },
 
