@@ -151,4 +151,9 @@ body {
 .v-application ol {
   padding-left: 0;
 }
+
+/* .v-application .mx-4 {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+} */
 </style>
