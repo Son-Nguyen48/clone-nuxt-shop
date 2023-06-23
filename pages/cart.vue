@@ -7,8 +7,8 @@
     <hr />
     <br />
 
-    <ul class="flex flex-col gap-2 mx-4 md:mx-auto md:w-3/4">
-      <li v-for="(product, index) in cartItems" :key="product.id" class="my-4">
+    <ul class="flex flex-col gap-2 md:mx-auto md:w-3/4">
+      <li v-for="(product, index) in cartItems" :key="product.id" class="m-4">
         <div class="flex gap-2">
           <div class="w-1/3">
             <img
@@ -56,8 +56,8 @@
         <hr />
       </li>
       <!-- <p class="px-9 md:px-2">Tổng Tiền: {{ totalPrice }}đ</p> -->
-      <span>Total: </span>
-      <currency-formatter :amount="`${String(totalPrice)}`" />
+      <span class="mx-4">Total: </span>
+      <currency-formatter class="mx-4" :amount="`${String(totalPrice)}`" />
 
       <div class="flex flex-col gap-2 items-center mb-4 md:flex-row md:mx-2">
         <div class="w-3/4">

@@ -1,16 +1,16 @@
 <template>
   <div class="md:pt-[105px] md:flex">
     <h1
-      class="text-3xl font-bold py-10 text-center w-1/2 md:flex items-center justify-center border-r border-gray-300"
+      class="text-3xl font-bold py-10 text-center w-1/2 md:flex items-center justify-center mx-auto md:m-0 md:border-r md:border-gray-300"
     >
       Create Account
     </h1>
 
-    <hr />
+    <hr class="hidden md:block" />
 
     <form
       action="#"
-      class="px-2 mt-10 flex flex-col gap-2 w-1/2 md:text-center"
+      class="px-2 mt-10 flex flex-col gap-2 w-full md:w-1/2 md:text-center"
       @submit.prevent="signup"
     >
       <div>
@@ -89,7 +89,7 @@
         />
       </div>
       <div>
-        <BaseButton :title="'Register'" class="md:w-3/4" />
+        <BaseButton :title="'Register'" class="w-full md:w-3/4" />
       </div>
 
       <div>

@@ -6,11 +6,11 @@
           Show order information
         </v-expansion-panel-header>
         <v-expansion-panel-content class="overflow-y-scroll h-[800px]">
-          <ul class="flex flex-col gap-2 mx-4 md:mx-auto md:w-3/4">
+          <ul class="flex flex-col gap-2 md:mx-auto md:w-3/4">
             <li
               v-for="(product, index) in cartItems"
               :key="product.id"
-              class="my-4"
+              class="m-4"
             >
               <div class="flex gap-2">
                 <div class="w-1/3">
@@ -61,19 +61,18 @@
               <hr />
             </li>
             <!-- <p class="px-9 md:px-2">Tổng Tiền: {{ totalPrice }}đ</p> -->
-            <currency-formatter class="ml-auto" :amount="String(totalPrice)" />
+            <currency-formatter
+              class="ml-auto mx-4"
+              :amount="String(totalPrice)"
+            />
           </ul>
         </v-expansion-panel-content>
       </v-expansion-panel>
     </v-expansion-panels>
 
     <div class="hidden md:block md:h-[800px] overflow-y-scroll md:w-1/2">
-      <ul class="flex flex-col gap-2 mx-4 md:mx-auto md:w-3/4">
-        <li
-          v-for="(product, index) in cartItems"
-          :key="product.id"
-          class="my-4"
-        >
+      <ul class="flex flex-col gap-2 md:mx-auto md:w-3/4">
+        <li v-for="(product, index) in cartItems" :key="product.id" class="m-4">
           <div class="flex gap-2">
             <div class="w-1/3">
               <img
@@ -123,7 +122,7 @@
           <hr />
         </li>
         <!-- <p class="px-9 md:px-2">Tổng Tiền: {{ totalPrice }}đ</p> -->
-        <currency-formatter class="ml-auto" :amount="String(totalPrice)" />
+        <currency-formatter class="ml-auto mx-4" :amount="String(totalPrice)" />
         <div class="w-3/4 mb-5" @click="updateCart(cartItems)">
           <base-button class="w-full" :title="'Update'"></base-button>
         </div>
