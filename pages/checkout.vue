@@ -193,10 +193,10 @@
           <validation-provider
             v-slot="{ errors }"
             name="phone"
-            rules="{
-            required: true,
-            regex: /(((\+|)84)|0)(3|5|7|8|9)+([0-9]{8})\b/
-          }"
+            :rules="{
+              required: true,
+              regex: /(((\+|)84)|0)(3|5|7|8|9)+([0-9]{8})\b/,
+            }"
           >
             <v-text-field
               v-model="phoneNumber"
@@ -214,7 +214,6 @@
             <v-checkbox
               v-model="checkbox"
               :error-messages="errors"
-              value="1"
               label="I certify that this information is correct"
               type="checkbox"
               required
@@ -367,6 +366,7 @@ export default {
         email: this.email,
         paymentsMethods: this.paymentsMethods,
         totalPayment: this.totalPayment,
+        checkbox: this.checkbox,
       }
     },
 
@@ -402,6 +402,7 @@ export default {
     }),
 
     submit(form) {
+      // eslint-disable-next-line no-debugger
       this.$refs.observer.validate()
       this.addOrders({
         form,
