@@ -50,7 +50,7 @@ export const actions = {
       userId: payload.id,
     })
 
-    this.$router.push('/account/user?idTab=2')
+    // this.$router.push('/account/user?idTab=2')
   },
 
   async cancelOrder(vuexContext, payload) {
