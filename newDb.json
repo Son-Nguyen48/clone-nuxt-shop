@@ -2277,6 +2277,158 @@
       ],
       "userId": 10,
       "id": 9
+    },
+    {
+      "name": "Satoh",
+      "address": "Ha noi",
+      "phone": "0357878359",
+      "email": "satoh001@gmail.com",
+      "paymentsMethods": "delivery_payments",
+      "totalPayment": "8225000",
+      "orderStatus": "pending",
+      "order_date": "Sun, 25 Jun 2023 03:24:53 GMT",
+      "cartItems": [
+        {
+          "product": {
+            "brand": "sledgers",
+            "newArrival": null,
+            "gender": "man",
+            "category_id": 8,
+            "sale": 20,
+            "name": " Giày Tây Nam SLEDGERS Trouville ",
+            "image_src": "http://product.hstatic.net/1000376021/product/trouville_black_0_3a7eb0ff388a413daaff77eb5d07d920_487386c3005546a1b03b5749c668f5d6_large.jpg",
+            "price": "2890000",
+            "id": 3,
+            "quantity": "10"
+          },
+          "userId": 10,
+          "quantity": 1,
+          "id": 8
+        },
+        {
+          "product": {
+            "brand": "geox",
+            "newArrival": null,
+            "gender": "man",
+            "category_id": 2,
+            "sale": 20,
+            "name": " Giày Sneakers Nam GEOX U Portello B ",
+            "image_src": "https://product.hstatic.net/1000376021/product/u25e1b_c1006_0_0fd798fa192745719f5c4a471372af59_6098f6490eea469f9c1cbccd48a31cd4_large.png",
+            "price": "3900000",
+            "id": 10,
+            "quantity": 100
+          },
+          "userId": 10,
+          "quantity": 1,
+          "id": 10
+        },
+        {
+          "product": {
+            "brand": "native",
+            "newArrival": null,
+            "gender": "unisex",
+            "category_id": 1,
+            "sale": 20,
+            "name": " Giày Lười Unisex NATIVE Miles ",
+            "image_src": "http://product.hstatic.net/1000376021/product/11104600-1999-1_dde3bbe180c1406392336f4a6cb7af70_a391a2d67e3343f282e5ef382d2e86ba_large.jpg",
+            "price": "1400000",
+            "id": 1,
+            "quantity": 100
+          },
+          "userId": 10,
+          "quantity": 1,
+          "id": 11
+        }
+      ],
+      "userId": 10,
+      "id": 10
+    },
+    {
+      "name": "Son",
+      "address": "NYC",
+      "phone": "0383475346",
+      "email": "satoh01@gmail.com",
+      "paymentsMethods": "transfer_payments",
+      "totalPayment": "12205000",
+      "orderStatus": "wait_for_pay",
+      "order_date": "Sun, 25 Jun 2023 03:26:30 GMT",
+      "cartItems": [
+        {
+          "product": {
+            "brand": "sledgers",
+            "newArrival": null,
+            "gender": "man",
+            "category_id": 8,
+            "sale": 20,
+            "name": " Giày Tây Nam SLEDGERS Trouville ",
+            "image_src": "http://product.hstatic.net/1000376021/product/trouville_black_0_3a7eb0ff388a413daaff77eb5d07d920_487386c3005546a1b03b5749c668f5d6_large.jpg",
+            "price": "2890000",
+            "id": 3,
+            "quantity": "10"
+          },
+          "userId": 10,
+          "quantity": 1,
+          "id": 8
+        },
+        {
+          "product": {
+            "brand": "geox",
+            "newArrival": null,
+            "gender": "man",
+            "category_id": 2,
+            "sale": 20,
+            "name": " Giày Sneakers Nam GEOX U Portello B ",
+            "image_src": "https://product.hstatic.net/1000376021/product/u25e1b_c1006_0_0fd798fa192745719f5c4a471372af59_6098f6490eea469f9c1cbccd48a31cd4_large.png",
+            "price": "3900000",
+            "id": 10,
+            "quantity": 100
+          },
+          "userId": 10,
+          "quantity": 1,
+          "id": 10
+        },
+        {
+          "product": {
+            "brand": "native",
+            "newArrival": null,
+            "gender": "unisex",
+            "category_id": 1,
+            "sale": 20,
+            "name": " Giày Lười Unisex NATIVE Miles ",
+            "image_src": "http://product.hstatic.net/1000376021/product/11104600-1999-1_dde3bbe180c1406392336f4a6cb7af70_a391a2d67e3343f282e5ef382d2e86ba_large.jpg",
+            "price": "1400000",
+            "id": 1,
+            "quantity": 100
+          },
+          "userId": 10,
+          "quantity": 1,
+          "id": 11
+        },
+        {
+          "product": {
+            "id": 95,
+            "image_src": "https://product.hstatic.net/1000376021/product/10019882_0_b36954f8be1946488930a863b7425d1d_2b86d670abc2411bb2e90224fcdc7ee3_large.jpg",
+            "name": "Giày Lười Nam TOMS Alp Fwd",
+            "price": "1990000"
+          },
+          "userId": 10,
+          "quantity": 1,
+          "id": 12
+        },
+        {
+          "product": {
+            "id": 96,
+            "image_src": "https://product.hstatic.net/1000376021/product/10019873_0_689fb4bb8b97470f81c8756a874b5bf6_be73b22ab6684f899ebdf5115fde586e_large.jpg",
+            "name": "Giày Lười Nam TOMS Alp Fwd",
+            "price": "1990000"
+          },
+          "userId": 10,
+          "quantity": 1,
+          "id": 13
+        }
+      ],
+      "userId": 10,
+      "id": 11
     }
   ],
   "order_items": [
@@ -2298,53 +2450,103 @@
   "cart": [
     {
       "product": {
-        "id": 97,
-        "image_src": "https://product.hstatic.net/1000376021/product/10019872_0_0b2bf01203784098979f5b04bce6dc0d_4c96caab500642ad9cd7a1411f2a5ff2_large.jpg",
-        "name": "Giày Lười Nam TOMS Alp Fwd",
-        "price": "1290000"
+        "brand": "nike",
+        "newArrival": null,
+        "gender": "children",
+        "category_id": 2,
+        "sale": 20,
+        "name": " Giày Sneakers Trẻ Em Unisex NIKE Revolution 6 Nn Jp (Psv) ",
+        "image_src": "https://product.hstatic.net/1000376021/product/dv3182-001_0_ba49b27d1eba4b879923912665dfcc32_a6ad10d8aa804bcca18009b431a8c58c_large.jpg",
+        "price": "1619000",
+        "id": 14,
+        "quantity": 100
       },
+      "userId": 14,
       "quantity": 1,
       "id": 1
     },
     {
       "product": {
-        "id": 99,
-        "image_src": "https://product.hstatic.net/1000376021/product/10019860_0_47dea577b0324830b2915d29f42bbcae_f80df078d22d430faf3063fdaf50fe8a_large.jpg",
-        "name": "Giày Lười Nam TOMS Alp Fwd",
-        "price": "1990000"
+        "brand": "nike",
+        "newArrival": null,
+        "gender": "man",
+        "category_id": 2,
+        "sale": 20,
+        "name": " Giày Sneakers Nam NIKE Renew Run 4 ",
+        "image_src": "https://product.hstatic.net/1000376021/product/dr2677-100_0_8360d75bc42a403f9fabf51fad9319b8_0fc2f8a28363472583fb564019b52c8a_large.jpg",
+        "price": "2639000",
+        "id": 19,
+        "quantity": 100
       },
+      "userId": 14,
       "quantity": 1,
       "id": 2
     },
     {
       "product": {
-        "id": 86,
-        "image_src": "https://product.hstatic.net/1000376021/product/11100102-3314-1_20d1b7b2ab9941b196ec82fc180cffa7_86dcb5efd4ec466f897583edf16fe046_large.jpg",
-        "name": "Giày Lười Unisex NATIVE Jefferson Block",
-        "price": "1690000"
+        "brand": "native",
+        "newArrival": null,
+        "gender": "unisex",
+        "category_id": 1,
+        "sale": 20,
+        "name": " Giày Lười Unisex NATIVE Miles ",
+        "image_src": "http://product.hstatic.net/1000376021/product/11104600-1999-1_dde3bbe180c1406392336f4a6cb7af70_a391a2d67e3343f282e5ef382d2e86ba_large.jpg",
+        "price": "1400000",
+        "id": "1"
       },
+      "userId": 18,
       "quantity": 1,
       "id": 3
     },
     {
       "product": {
-        "id": 102,
-        "image_src": "https://product.hstatic.net/1000376021/product/11104600-1250-1_9e76e91c6489486688a7de2fc28bb178_ed383bdbe70249eeb3e1e290c72f2897_large.jpg",
-        "name": "Giày Lười Unisex NATIVE Miles",
-        "price": "1400000"
+        "brand": "toms",
+        "newArrival": null,
+        "gender": "man",
+        "category_id": 1,
+        "sale": 20,
+        "name": "Giày Lười Nam TOMS Alp Fwd",
+        "image_src": "https://product.hstatic.net/1000376021/product/10019873_0_689fb4bb8b97470f81c8756a874b5bf6_be73b22ab6684f899ebdf5115fde586e_large.jpg",
+        "price": "1990000",
+        "id": 96,
+        "quantity": 100
       },
+      "userId": 18,
       "quantity": 1,
       "id": 4
     },
     {
       "product": {
-        "id": 104,
-        "image_src": "https://product.hstatic.net/1000376021/product/11111501-2055-1_d0de55605fe9486db8642e5977260bc3_71cf7cfb0514447790ce26f98209d2b2_large.jpg",
-        "name": "Giày Lười Unisex NATIVE Jefferson Sugarlite Print",
-        "price": "1790000"
+        "brand": "native",
+        "newArrival": null,
+        "gender": "unisex",
+        "category_id": 1,
+        "sale": 20,
+        "name": " Giày Lười Unisex NATIVE Jefferson Block ",
+        "image_src": "https://product.hstatic.net/1000376021/product/11100102-3314-1_20d1b7b2ab9941b196ec82fc180cffa7_86dcb5efd4ec466f897583edf16fe046_large.jpg",
+        "price": "1690000",
+        "id": 86,
+        "quantity": 100
       },
-      "quantity": 3,
+      "userId": 18,
+      "quantity": 1,
       "id": 5
+    },
+    {
+      "product": {
+        "brand": "native",
+        "newArrival": null,
+        "gender": "unisex",
+        "category_id": 1,
+        "sale": 20,
+        "name": " Giày Lười Unisex NATIVE Miles ",
+        "image_src": "http://product.hstatic.net/1000376021/product/11104600-1999-1_dde3bbe180c1406392336f4a6cb7af70_a391a2d67e3343f282e5ef382d2e86ba_large.jpg",
+        "price": "1400000",
+        "id": "1"
+      },
+      "userId": 14,
+      "quantity": 1,
+      "id": 6
     },
     {
       "product": {
@@ -2354,17 +2556,68 @@
         "price": "1290000"
       },
       "quantity": 1,
-      "id": 6
+      "id": 7
     },
     {
       "product": {
-        "id": 91,
-        "image_src": "https://product.hstatic.net/1000376021/product/10019832_0_3ab11bb0e0e146518e5c674773771e81_2fb886f55a3543479663624b3eff6e85_large.jpg",
-        "name": "Giày Lười Bé Gái TOMS Alpargata",
-        "price": "1290000"
+        "brand": "sledgers",
+        "newArrival": null,
+        "gender": "man",
+        "category_id": 8,
+        "sale": 20,
+        "name": " Giày Tây Nam SLEDGERS Trouville ",
+        "image_src": "http://product.hstatic.net/1000376021/product/trouville_black_0_3a7eb0ff388a413daaff77eb5d07d920_487386c3005546a1b03b5749c668f5d6_large.jpg",
+        "price": "2890000",
+        "id": 3,
+        "quantity": "10"
+      },
+      "userId": 10,
+      "quantity": 1,
+      "id": 8
+    },
+    {
+      "product": {
+        "brand": "geox",
+        "newArrival": null,
+        "gender": "man",
+        "category_id": 11,
+        "sale": 20,
+        "name": " Giày Boots Nam GEOX U Spherica Ec1 C ",
+        "image_src": "https://product.hstatic.net/1000376021/product/u16d1c_c6009_0_a781870112f9468c97c65056fb82e1df_b4d3d7a859754690a45231e84c099950_large.jpg",
+        "price": "5100000",
+        "id": 8,
+        "quantity": 100
       },
       "quantity": 1,
-      "id": 7
+      "id": 9
+    },
+    {
+      "product": {
+        "brand": "native",
+        "newArrival": null,
+        "gender": "unisex",
+        "category_id": 1,
+        "sale": 20,
+        "name": " Giày Lười Unisex NATIVE Miles ",
+        "image_src": "http://product.hstatic.net/1000376021/product/11104600-1999-1_dde3bbe180c1406392336f4a6cb7af70_a391a2d67e3343f282e5ef382d2e86ba_large.jpg",
+        "price": "1400000",
+        "id": 1,
+        "quantity": 100
+      },
+      "userId": 10,
+      "quantity": 1,
+      "id": 11
+    },
+    {
+      "product": {
+        "id": 95,
+        "image_src": "https://product.hstatic.net/1000376021/product/10019882_0_b36954f8be1946488930a863b7425d1d_2b86d670abc2411bb2e90224fcdc7ee3_large.jpg",
+        "name": "Giày Lười Nam TOMS Alp Fwd",
+        "price": "1990000"
+      },
+      "userId": 10,
+      "quantity": 1,
+      "id": 12
     }
   ],
   "bestsellers": [
@@ -5003,133 +5256,118 @@
   ],
   "accounts": [
     {
-      "name": "SơnNguyễn",
-      "phone": "0888888888",
-      "email": "a@a.com",
+      "name": "Satoh Nolan",
+      "phone": "046238450098",
+      "email": "satoh001@gmail.com",
+      "address": "Vietnam",
+      "nationality": "Vietnam",
+      "company": "VMO",
+      "password": "12345678",
+      "dateOfBirth": "1998-10-30",
+      "gender": "Man",
+      "id": 10,
+      "src": "https://firebasestorage.googleapis.com/v0/b/my-nuxt-shop-auth.appspot.com/o/images%2FEW9Tcl0UEAAEaY3.png?alt=media&token=678dcb53-d8db-4f0d-8bcb-3fd63d8751ff"
+    },
+    {
+      "name": "hiepnon",
+      "phone": "09587457488",
+      "email": "hiep1@gmail.com",
       "address": "Vietnam",
       "nationality": "Vietnam",
       "company": "VMO",
       "password": "123456",
-      "dateOfBirth": "2023-05-WeT12:00:00 am",
+      "dateOfBirth": "1998-06-10",
       "gender": "Man",
-      "id": 1,
-      "src": "https://cdn.dribbble.com/users/6063/screenshots/1960022/media/adf22fb343f4fadbdc91fb43dfde028d.png?compress=1&resize=400x300&vertical=center"
+      "id": 11,
+      "src": "https://firebasestorage.googleapis.com/v0/b/my-nuxt-shop-auth.appspot.com/o/images%2Fbg.jpg?alt=media&token=bf17165e-5579-4f62-8929-c5ed5a59bb8c"
     },
     {
-      "name": "SơnNguyễn",
-      "phone": "123123123",
-      "email": "son1@gmail.com",
+      "name": "RedDog",
+      "phone": "039484847",
+      "email": "red1@gmail.com",
       "address": "Vietnam",
       "nationality": "Vietnam",
       "company": "VMO",
-      "password": "12345678a",
-      "dateOfBirth": "2023-05-19",
+      "password": "123456",
+      "dateOfBirth": "2023-06-17",
       "gender": "Man",
-      "id": 2,
-      "src": "https://m.media-amazon.com/images/I/81ksQo6id9L.jpg"
+      "id": 12,
+      "src": "https://firebasestorage.googleapis.com/v0/b/my-nuxt-shop-auth.appspot.com/o/images%2F4454D2B9-09CF-4800-8F5A-BA29ADB2AE26.jpeg?alt=media&token=93548d38-bc4e-419c-a152-dad56ac7763f"
     },
     {
-      "name": "hiepdoan",
-      "phone": "0969367363",
-      "email": "hiepdt.ptit@gmail.com",
+      "name": "SatohNolan",
+      "phone": "0273624944",
+      "email": "satoh002@gmail.com",
       "address": "Vietnam",
       "nationality": "Vietnam",
       "company": "VMO",
-      "password": "12345678a",
-      "dateOfBirth": "2023-06-22",
+      "password": "12345678",
+      "dateOfBirth": "2000-03-26",
       "gender": "Man",
-      "id": 3,
-      "src": "https://uploads-ssl.webflow.com/61fa69bcff1ddf7138352c75/630a03b1c605382bc23a9356_Howl.png"
+      "id": 13
     },
     {
-      "name": "hiep1doan",
-      "phone": "sdfsfsd",
-      "email": "hiepdt@gmail.com",
+      "name": "red2redIsRed",
+      "phone": "0546456335",
+      "email": "red2@gmail.com",
       "address": "Vietnam",
       "nationality": "Vietnam",
       "company": "VMO",
-      "password": "12345678a",
-      "dateOfBirth": "1922-11-22",
-      "gender": "",
-      "id": 4,
-      "src": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/48bdc39e-81f8-4a50-b43f-17eb9bf50488/d4tgnn9-05d30030-84c5-4b61-9813-d947c52c19fe.png/v1/fill/w_418,h_400,q_70,strp/_howl_s_moving_castle__merry_go_round_of_life_by_vanipy05_d4tgnn9-400t.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9ODIxIiwicGF0aCI6IlwvZlwvNDhiZGMzOWUtODFmOC00YTUwLWI0M2YtMTdlYjliZjUwNDg4XC9kNHRnbm45LTA1ZDMwMDMwLTg0YzUtNGI2MS05ODEzLWQ5NDdjNTJjMTlmZS5wbmciLCJ3aWR0aCI6Ijw9ODU3In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.e-iT58ElsqBiq2xLAY9fgBWrl6uYILslRXyN4TJJwoI"
+      "password": "12345678",
+      "dateOfBirth": "2023-06-13",
+      "gender": "Man",
+      "id": 14,
+      "src": "https://firebasestorage.googleapis.com/v0/b/my-nuxt-shop-auth.appspot.com/o/images%2FEW9Tcl0UEAAEaY3.png?alt=media&token=9f11e664-11d6-4178-b4a2-e30ecb1b3bca"
     },
     {
-      "name": "Thanh DoanhNguyen",
-      "phone": "0239847348",
-      "email": "thanhdoanh@gmail.com",
+      "name": "satohNolan",
+      "phone": "035353455",
+      "email": "satoh2@gmail.com",
       "address": "Vietnam",
       "nationality": "Vietnam",
       "company": "VMO",
       "password": "19124321my",
+      "dateOfBirth": "2023-06-15",
+      "gender": "Man",
+      "id": 15,
+      "src": "https://firebasestorage.googleapis.com/v0/b/my-nuxt-shop-auth.appspot.com/o/images%2Fkhanhvd.jpg?alt=media&token=529d2802-53b6-47fb-a863-123e83508543"
+    },
+    {
+      "name": "zxczxczxczxczxczxc",
+      "phone": "zxczxczxc",
+      "email": "zxczxczxc@gmail.com",
+      "address": "Vietnam",
+      "nationality": "Vietnam",
+      "company": "VMO",
+      "password": "zxczxczxc",
+      "dateOfBirth": "2023-06-22",
+      "gender": "",
+      "id": 16
+    },
+    {
+      "name": "aaabbb",
+      "phone": "0123456789",
+      "email": "gmai@gmail.com",
+      "address": "Vietnam",
+      "nationality": "Vietnam",
+      "company": "VMO",
+      "password": "123456",
+      "dateOfBirth": "2023-06-14",
+      "gender": "",
+      "id": 17
+    },
+    {
+      "name": "thanh doanh",
+      "phone": "03874746554",
+      "email": "doanh1@gmail.com",
+      "address": "Vietnam",
+      "nationality": "Vietnam",
+      "company": "VMO",
+      "password": "12345678",
       "dateOfBirth": "2001-07-12",
       "gender": "Man",
-      "id": 5,
-      "src": "https://images.ctfassets.net/m3qyzuwrf176/program-image-445d8015-df65-ac1e-fe35-8f065b6e7a42/6f0cddee9c61d6ae93b1ce164689cf7c/program-image-445d8015-df65-ac1e-fe35-8f065b6e7a42.jpeg?w=2000"
-    },
-    {
-      "name": "SơnNguyễn",
-      "phone": "03343434334",
-      "email": "son123@gmail.com",
-      "address": "Vietnam",
-      "nationality": "Vietnam",
-      "company": "VMO",
-      "password": "123456",
-      "dateOfBirth": "2023-06-09",
-      "gender": "Man",
-      "id": 6,
-      "src": "https://www.mediaplaynews.com/wp-content/uploads/2020/02/Howls-Moving-Castle-action-shot.jpg"
-    },
-    {
-      "name": "thanhnguyen",
-      "phone": "0123131313",
-      "email": "thanh123@gmail.com",
-      "address": "Vietnam",
-      "nationality": "Vietnam",
-      "company": "VMO",
-      "password": "123456",
-      "dateOfBirth": "2023-06-09",
-      "gender": "Man",
-      "id": 7,
-      "src": "https://pbs.twimg.com/media/EW9Tcl0UEAAEaY3.png"
-    },
-    {
-      "name": "sonnguyen",
-      "phone": "0898988998",
-      "email": "a@abc.com",
-      "address": "Vietnam",
-      "nationality": "Vietnam",
-      "company": "VMO",
-      "password": "1",
-      "dateOfBirth": "2023-06-16",
-      "gender": "Man",
-      "id": 8
-    },
-    {
-      "name": "namthanh",
-      "phone": "08765367485",
-      "email": "nam123@gmail.com",
-      "address": "Vietnam",
-      "nationality": "Vietnam",
-      "company": "VMO",
-      "password": "123456",
-      "dateOfBirth": "1999-03-18",
-      "gender": "Man",
-      "id": 9,
-      "src": "https://cdn.vox-cdn.com/thumbor/kk92vqQUzmwBCP1kZjG9UR0m8Qc=/1400x1400/filters:format(png)/cdn.vox-cdn.com/uploads/chorus_asset/file/23589997/Screen_Shot_2022_05_26_at_10.49.28_AM.png"
-    },
-    {
-      "name": "SatohNolan",
-      "phone": "046238450098",
-      "email": "satoh1@gmail.com",
-      "address": "Vietnam",
-      "nationality": "Vietnam",
-      "company": "VMO",
-      "password": "123456",
-      "dateOfBirth": "1998-10-30",
-      "gender": "Man",
-      "id": 10,
-      "src": "https://pbs.twimg.com/media/EW9Tcl0UEAAEaY3.png"
+      "id": 18,
+      "src": "https://firebasestorage.googleapis.com/v0/b/my-nuxt-shop-auth.appspot.com/o/images%2Fcristiano-ronaldo-portugal-5-june-2022.jpg?alt=media&token=2a2dc16b-5f61-4cf7-b6b2-75242566985c"
     }
   ],
   "currentUser": []

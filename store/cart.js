@@ -13,6 +13,7 @@ export const getters = {
 
 export const mutations = {
   addToCart(state, payload) {
+    console.log(payload, 'payload')
     const addedItem = state.cartItems.find((i) => i.id === payload.id)
     if (addedItem) {
       state.cartItems = state.cartItems.map((i) =>
@@ -38,9 +39,13 @@ export const mutations = {
 }
 
 export const actions = {
-  async getListItem(vuexContext) {
+  async getListItem(vuexContext, payload) {
     await this.$axios.$get('/cart').then((res) => {
-      vuexContext.commit('setCartItem', res)
+      const result = res.filter((item) => {
+        return item.userId === payload
+      })
+      console.log(result, 'result')
+      vuexContext.commit('setCartItem', result)
     })
   },
 

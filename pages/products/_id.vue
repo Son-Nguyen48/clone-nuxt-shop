@@ -152,11 +152,23 @@ export default {
         .then((result) => {
           if (result.isConfirmed) {
             let data = { product }
+            console.log(data, 'data')
             const addedItem = this.$store.state.cart.cartItems.find(
               (i) => i.product?.id === product.id
             )
-            if (addedItem) data = { ...data, quantity: addedItem.quantity + 1 }
-            else data = { ...data, quantity: 1 }
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'))
+            if (addedItem)
+              data = {
+                ...data,
+                userId: currentUser.id,
+                quantity: addedItem.quantity + 1,
+              }
+            else
+              data = {
+                ...data,
+                userId: currentUser.id,
+                quantity: 1,
+              }
 
             // eslint-disable-next-line no-console
             const methods = addedItem
