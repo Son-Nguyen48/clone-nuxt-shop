@@ -224,7 +224,9 @@
 
           <div class="mt-3">
             <h4>Ship Methods</h4>
-            <div class="flex p-3 gap-3 border border-gray-200 rounded-lg mt-3">
+            <div
+              class="flex p-3 gap-3 border border-gray-200 rounded-lg mt-3 cursor-pointer"
+            >
               <input
                 id="ship"
                 v-model="shipFee"
@@ -232,7 +234,7 @@
                 name="ship-methods"
                 value="35000"
               />
-              <label class="max-w-max" for="ship">Delivery</label>
+              <label class="w-full cursor-pointer" for="ship">Delivery</label>
               <!-- <label class="ml-auto" for="fee-ship">{{ shipFee }}</label> -->
               <currency-formatter class="ml-auto" :amount="shipFee" />
             </div>
@@ -241,7 +243,9 @@
           <div class="mt-3">
             <h4>Payments Methods</h4>
 
-            <div class="flex p-3 gap-3 border border-gray-200 rounded-lg mt-3">
+            <div
+              class="flex p-3 gap-3 border border-gray-200 rounded-lg mt-3 cursor-pointer"
+            >
               <input
                 id="delivery_payments"
                 v-model="paymentsMethods"
@@ -249,14 +253,16 @@
                 name="payments_methods"
                 value="delivery_payments"
               />
-              <label class="max-w-max" for="delivery_payments"
+              <label class="w-full cursor-pointer" for="delivery_payments"
                 >Payment on delivery(COD)</label
               >
               <!-- <label class="ml-auto" for="fee-ship">{{ paymentsMethods }}</label> -->
               <currency-formatter class="ml-auto" :amount="totalPayment" />
             </div>
 
-            <div class="flex p-3 gap-3 border border-gray-200 rounded-lg mt-3">
+            <div
+              class="flex p-3 gap-3 border border-gray-200 rounded-lg mt-3 cursor-pointer"
+            >
               <input
                 id="transfer_payments"
                 v-model="paymentsMethods"
@@ -264,13 +270,15 @@
                 name="payments_methods"
                 value="transfer_payments"
               />
-              <label class="max-w-max" for="transfer_payments"
+              <label class="w-full cursor-pointer" for="transfer_payments"
                 >Bank transfer</label
               >
               <currency-formatter class="ml-auto" :amount="totalPayment" />
             </div>
 
-            <div class="flex p-3 gap-3 border border-gray-200 rounded-lg mt-3">
+            <div
+              class="flex p-3 gap-3 border border-gray-200 rounded-lg mt-3 cursor-pointer"
+            >
               <input
                 id="momo_payments"
                 v-model="paymentsMethods"
@@ -278,7 +286,9 @@
                 name="payments_methods"
                 value="momo_payments"
               />
-              <label class="max-w-max" for="momo_payments">Pay with MOMO</label>
+              <label class="w-full cursor-pointer" for="momo_payments"
+                >Pay with MOMO</label
+              >
               <currency-formatter class="ml-auto" :amount="totalPayment" />
             </div>
           </div>
@@ -386,7 +396,9 @@ export default {
   async created() {
     const localUser = JSON.parse(localStorage.getItem('currentUser'))
     await this.getCurrentUser(localUser)
-    await this.$store.dispatch('cart/getListItem')
+    const userId = JSON.parse(localStorage.getItem('currentUser'))?.id
+    console.log(userId, 'userId')
+    if (userId) await this.$store.dispatch('cart/getListItem', userId)
   },
 
   methods: {

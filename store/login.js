@@ -72,6 +72,7 @@ export const actions = {
               'You are redirected to the login page!',
               'success'
             )
+            localStorage.clear('currentUser')
             this.$router.push('/account/login')
           }
         })

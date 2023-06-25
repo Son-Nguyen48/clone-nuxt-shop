@@ -43,7 +43,9 @@ export default {
     }),
   },
   async created() {
-    await this.$store.dispatch('cart/getListItem')
+    const userId = JSON.parse(localStorage.getItem('currentUser'))?.id
+    console.log(userId, 'userId')
+    if (userId) await this.$store.dispatch('cart/getListItem', userId)
   },
   methods: {
     openCart() {
