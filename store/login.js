@@ -72,7 +72,7 @@ export const actions = {
               'You are redirected to the login page!',
               'success'
             )
-            localStorage.clear('currentUser')
+            localStorage.removeItem('currentUser')
             this.$router.push('/account/login')
           }
         })
@@ -109,7 +109,7 @@ export const actions = {
 
       this.$axios.$put(`/accounts/${payload.id}`, payload)
 
-      localStorage.clear('currentUser')
+      localStorage.removeItem('currentUser')
 
       this.$swal.fire({
         position: 'top-end',
@@ -124,84 +124,94 @@ export const actions = {
   },
 
   async login(vuexContext, payload) {
-    let accounts = []
-    await this.$axios.$get('/accounts').then((res) => {
+    console.log(payload, 'payload')
+    if (payload.email === 'admin@gmail.com') {
+      console.log('go here')
+      if (payload.password === '19124321') {
+        console.log('go here')
+        localStorage.setItem('adminUser', JSON.stringify(payload))
+        this.$router.push('/admin')
+      }
+    } else {
+      let accounts = []
+      await this.$axios.$get('/accounts').then((res) => {
+        // eslint-disable-next-line no-console
+        accounts = res
+      })
       // eslint-disable-next-line no-console
-      accounts = res
-    })
-    // eslint-disable-next-line no-console
-    console.log(payload, 'payload', accounts, 'accounts')
+      console.log(payload, 'payload', accounts, 'accounts')
 
-    const isValidUser = accounts.filter((item) => {
-      return item.email === payload.email
-    })
+      const isValidUser = accounts.filter((item) => {
+        return item.email === payload.email
+      })
 
-    // await this.$axios.$get('/currentUser').then((res) => {
-    //   const isLogined = res.filter((item) => {
-    //     return item.id === isValidUser[0].id
-    //   }).length
+      // await this.$axios.$get('/currentUser').then((res) => {
+      //   const isLogined = res.filter((item) => {
+      //     return item.id === isValidUser[0].id
+      //   }).length
 
-    //   // eslint-disable-next-line no-console
-    //   console.log(isLogined, 'isLogined')
+      //   // eslint-disable-next-line no-console
+      //   console.log(isLogined, 'isLogined')
 
-    //   // eslint-disable-next-line no-console
-    //   console.log(isValidUser, 'isValidUser')
+      //   // eslint-disable-next-line no-console
+      //   console.log(isValidUser, 'isValidUser')
 
-    //   if (isLogined === 0) {
-    //     // eslint-disable-next-line no-console
-    //     console.log(accounts, 'accounts', payload, 'account')
+      //   if (isLogined === 0) {
+      //     // eslint-disable-next-line no-console
+      //     console.log(accounts, 'accounts', payload, 'account')
 
-    //     // eslint-disable-next-line no-console
-    //     console.log(isValidUser, 'isValidUser')
+      //     // eslint-disable-next-line no-console
+      //     console.log(isValidUser, 'isValidUser')
 
-    //     if (payload.password === isValidUser[0].password) {
-    //       this.$swal.fire(
-    //         'Logged in successfully!',
-    //         'You are redirected to the Profile page!',
-    //         'success'
-    //       )
-    //       this.$axios.$post('/currentUser', isValidUser[0]).then((res) => {
-    //         localStorage.setItem('currentUser', JSON.stringify(isValidUser[0]))
-    //         this.$router.push('/account/user')
-    //       })
-    //     } else {
-    //       this.$swal.fire(
-    //         'Your email or password is incorrect!',
-    //         'Please enter your email and password again!',
-    //         'error'
-    //       )
-    //     }
-    //   } else {
-    //     this.$swal.fire(
-    //       'Logged in successfully!',
-    //       'You are redirected to the Profile page!',
-    //       'success'
-    //     )
+      //     if (payload.password === isValidUser[0].password) {
+      //       this.$swal.fire(
+      //         'Logged in successfully!',
+      //         'You are redirected to the Profile page!',
+      //         'success'
+      //       )
+      //       this.$axios.$post('/currentUser', isValidUser[0]).then((res) => {
+      //         localStorage.setItem('currentUser', JSON.stringify(isValidUser[0]))
+      //         this.$router.push('/account/user')
+      //       })
+      //     } else {
+      //       this.$swal.fire(
+      //         'Your email or password is incorrect!',
+      //         'Please enter your email and password again!',
+      //         'error'
+      //       )
+      //     }
+      //   } else {
+      //     this.$swal.fire(
+      //       'Logged in successfully!',
+      //       'You are redirected to the Profile page!',
+      //       'success'
+      //     )
 
-    //     // eslint-disable-next-line no-console
-    //     console.log(isValidUser, 'isValidUser')
+      //     // eslint-disable-next-line no-console
+      //     console.log(isValidUser, 'isValidUser')
 
-    //     localStorage.setItem('currentUser', JSON.stringify(isValidUser[0]))
-    //     this.$router.push('/account/user')
-    //   }
-    // })
+      //     localStorage.setItem('currentUser', JSON.stringify(isValidUser[0]))
+      //     this.$router.push('/account/user')
+      //   }
+      // })
 
-    try {
-      await auth.signInWithEmailAndPassword(payload.email, payload.password)
-      this.$swal.fire(
-        'Logged in successfully!',
-        'You are redirected to the Profile page!',
-        'success'
-      )
-      localStorage.setItem('currentUser', JSON.stringify(isValidUser[0]))
-      this.$router.push('/account/user')
-    } catch (error) {
-      this.$swal.fire(
-        'Your email or password is incorrect!',
-        'Please enter your email and password again!',
-        'error'
-      )
-      console.error(error)
+      try {
+        await auth.signInWithEmailAndPassword(payload.email, payload.password)
+        this.$swal.fire(
+          'Logged in successfully!',
+          'You are redirected to the Profile page!',
+          'success'
+        )
+        localStorage.setItem('currentUser', JSON.stringify(isValidUser[0]))
+        this.$router.push('/account/user')
+      } catch (error) {
+        this.$swal.fire(
+          'Your email or password is incorrect!',
+          'Please enter your email and password again!',
+          'error'
+        )
+        console.error(error)
+      }
     }
   },
 

@@ -320,7 +320,7 @@ export default {
         src: this.imageUrl,
       })
 
-      localStorage.clear('currentUser')
+      localStorage.removeItem('currentUser')
 
       await this.$axios.$get(`/accounts/${id}`).then((res) => {
         localStorage.setItem('currentUser', JSON.stringify(res))

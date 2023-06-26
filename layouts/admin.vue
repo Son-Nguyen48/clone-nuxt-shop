@@ -6,6 +6,9 @@
       <h1 class="text-4xl py-4 font-bold inline-block">
         <nuxt-link to="/admin">Admin</nuxt-link>
       </h1>
+      <h1 class="text-4xl py-4 font-bold inline-block">
+        <nuxt-link to="/">Shop</nuxt-link>
+      </h1>
 
       <!-- <div class="my-auto">
         <div class="flex gap-4">
@@ -81,7 +84,7 @@ export default {
         },
         {
           id: 5,
-          name: 'CurrentUser',
+          name: 'Cart',
         },
       ],
       isLocked: false,

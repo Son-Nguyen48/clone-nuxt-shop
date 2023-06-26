@@ -191,23 +191,16 @@ export default {
           { text: 'Gender', value: 'gender' },
           { text: 'Actions', value: 'actions', sortable: false },
         ]
-      } else if (this.$route.params.idAdmin === 'currentuser') {
+      } else if (this.$route.params.idAdmin === 'cart') {
         return [
           {
-            text: 'Name',
+            text: 'userId',
             align: 'start',
             sortable: false,
-            value: 'name',
+            value: 'userId',
           },
           { text: 'Id', value: 'id' },
-          { text: 'Phone', value: 'phone' },
-          { text: 'Email', value: 'email' },
-          { text: 'Address', value: 'address' },
-          { text: 'Nationality', value: 'nationality' },
-          { text: 'Company', value: 'company' },
-          { text: 'Password', value: 'password' },
-          { text: 'Date of birth', value: 'dateOfBirth' },
-          { text: 'Gender', value: 'gender' },
+          { text: 'Quantity', value: 'quantity' },
           { text: 'Actions', value: 'actions', sortable: false },
         ]
       } else {
@@ -256,6 +249,8 @@ export default {
       this.keyListItem = Object.keys(item)
       if (this.keyListItem.includes('cartItems'))
         this.keyListItem.splice(this.keyListItem.indexOf('cartItems'), 1)
+      if (this.keyListItem.includes('product'))
+        this.keyListItem.splice(this.keyListItem.indexOf('product'), 1)
       this.editedItem = Object.assign({}, item)
       this.dialog = true
     },
