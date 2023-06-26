@@ -9,6 +9,9 @@
       <h1 class="text-4xl py-4 font-bold inline-block">
         <nuxt-link to="/">Shop</nuxt-link>
       </h1>
+      <div class="text-4xl py-4 font-bold inline-block">
+        <v-btn @click="logoutAdmin">Logout</v-btn>
+      </div>
 
       <!-- <div class="my-auto">
         <div class="flex gap-4">
@@ -90,6 +93,31 @@ export default {
       isLocked: false,
       isSideBarShow: true,
     }
+  },
+  methods: {
+    async logoutAdmin() {
+      await this.$swal
+        .fire({
+          title: 'Are you sure?',
+          text: 'Do you really want to logout?',
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, let me out!',
+        })
+        .then((result) => {
+          if (result.isConfirmed) {
+            this.$swal.fire(
+              'Logout!',
+              'You are redirected to the login page!',
+              'success'
+            )
+            localStorage.removeItem('adminUser')
+            this.$router.push('/account/login')
+          }
+        })
+    },
   },
 }
 </script>

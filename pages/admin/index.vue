@@ -191,13 +191,18 @@ export default {
     },
   },
 
-  created() {
+  async created() {
     this.getItems('products')
     // eslint-disable-next-line no-console
     console.log(this.getState, 'getState')
     const adminUser = JSON.parse(localStorage.getItem('adminUser'))
 
     if (!adminUser) {
+      await this.$swal.fire(
+        'Warning! You do not have permission to access this website! ',
+        'You must be logged in with an admin account to continue!',
+        'error'
+      )
       this.$router.push('/account/login')
     }
   },
