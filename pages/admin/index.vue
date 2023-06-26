@@ -195,6 +195,11 @@ export default {
     this.getItems('products')
     // eslint-disable-next-line no-console
     console.log(this.getState, 'getState')
+    const adminUser = JSON.parse(localStorage.getItem('adminUser'))
+
+    if (!adminUser) {
+      this.$router.push('/account/login')
+    }
   },
 
   methods: {
