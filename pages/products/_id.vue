@@ -1,6 +1,6 @@
 <template>
   <div class="px-6 md:pt-[105px]">
-    <div class="flex flex-col gap-6 md:flex-row lg:p-20 md:h-[800px] py-20">
+    <div class="flex flex-col gap-6 md:flex-row lg:p-20 md:h-auto py-20">
       <div class="md:w-1/2 flex justify-center items-center">
         <img
           class="shadow-[0_2px_12px_0_rgba(0,0,0,0.8)] rounded"
