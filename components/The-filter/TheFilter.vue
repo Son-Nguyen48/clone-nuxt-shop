@@ -7,14 +7,20 @@
           <v-expansion-panel-header>{{ item.name }}</v-expansion-panel-header>
           <v-expansion-panel-content>
             <ul>
-              <li v-for="option in item.listFilter" :key="option">
-                <p
+              <li
+                v-for="option in item.listFilter"
+                :key="option"
+                class="flex gap-3"
+              >
+                <label
                   role="button"
+                  :for="option"
                   class="hover:text-[#FFDD00]"
                   @click="doFilter(item.name, option)"
                 >
                   {{ option }}
-                </p>
+                </label>
+                <input :id="option" type="checkbox" name="option" />
               </li>
             </ul>
           </v-expansion-panel-content>
