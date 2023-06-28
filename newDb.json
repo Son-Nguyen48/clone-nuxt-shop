@@ -2689,6 +2689,54 @@
       ],
       "userId": 14,
       "id": 14
+    },
+    {
+      "name": "Son",
+      "address": "English",
+      "phone": "0348395753",
+      "email": "red@gmail.com",
+      "paymentsMethods": "delivery_payments",
+      "totalPayment": "4672000",
+      "orderStatus": "pending",
+      "order_date": "Tue, 27 Jun 2023 14:20:06 GMT",
+      "cartItems": [
+        {
+          "product": {
+            "brand": "nike",
+            "newArrival": null,
+            "gender": "children",
+            "category_id": 2,
+            "sale": 20,
+            "name": " Giày Sneakers Trẻ Em Unisex NIKE Revolution 6 Nn (Psv) ",
+            "image_src": "https://product.hstatic.net/1000376021/product/dd1095-600_0_a86d1c505a7745ef9b2b61c29356d3da_eb27c4c2575347d787455a8ae25e9a17_large.jpg",
+            "price": "1399000",
+            "id": 13,
+            "quantity": 100
+          },
+          "userId": 14,
+          "quantity": 1,
+          "id": 13
+        },
+        {
+          "product": {
+            "brand": "nike",
+            "newArrival": null,
+            "gender": "unisex",
+            "category_id": 2,
+            "sale": 20,
+            "name": " Giày Sneakers Trẻ Em Unisex NIKE Omni Multi-Court (Gs) ",
+            "image_src": "https://product.hstatic.net/1000376021/product/dv3182-001_0_ba49b27d1eba4b879923912665dfcc32_a6ad10d8aa804bcca18009b431a8c58c_large.jpg",
+            "price": "1619000",
+            "id": 15,
+            "quantity": 100
+          },
+          "userId": 14,
+          "quantity": 2,
+          "id": 14
+        }
+      ],
+      "userId": 14,
+      "id": 15
     }
   ],
   "order_items": [
@@ -2708,144 +2756,6 @@
     }
   ],
   "cart": [
-    {
-      "product": {
-        "brand": "nike",
-        "newArrival": null,
-        "gender": "children",
-        "category_id": 2,
-        "sale": 20,
-        "name": " Giày Sneakers Trẻ Em Unisex NIKE Revolution 6 Nn Jp (Psv) ",
-        "image_src": "https://product.hstatic.net/1000376021/product/dv3182-001_0_ba49b27d1eba4b879923912665dfcc32_a6ad10d8aa804bcca18009b431a8c58c_large.jpg",
-        "price": "1619000",
-        "id": 14,
-        "quantity": 100
-      },
-      "userId": 14,
-      "quantity": 2,
-      "id": 1
-    },
-    {
-      "product": {
-        "brand": "nike",
-        "newArrival": null,
-        "gender": "man",
-        "category_id": 2,
-        "sale": 20,
-        "name": " Giày Sneakers Nam NIKE Renew Run 4 ",
-        "image_src": "https://product.hstatic.net/1000376021/product/dr2677-100_0_8360d75bc42a403f9fabf51fad9319b8_0fc2f8a28363472583fb564019b52c8a_large.jpg",
-        "price": "2639000",
-        "id": 19,
-        "quantity": 100
-      },
-      "userId": 14,
-      "quantity": 1,
-      "id": 2
-    },
-    {
-      "product": {
-        "brand": "native",
-        "newArrival": null,
-        "gender": "unisex",
-        "category_id": 1,
-        "sale": 20,
-        "name": " Giày Lười Unisex NATIVE Miles ",
-        "image_src": "http://product.hstatic.net/1000376021/product/11104600-1999-1_dde3bbe180c1406392336f4a6cb7af70_a391a2d67e3343f282e5ef382d2e86ba_large.jpg",
-        "price": "1400000",
-        "id": "1"
-      },
-      "userId": 18,
-      "quantity": 1,
-      "id": 3
-    },
-    {
-      "product": {
-        "brand": "toms",
-        "newArrival": null,
-        "gender": "man",
-        "category_id": 1,
-        "sale": 20,
-        "name": "Giày Lười Nam TOMS Alp Fwd",
-        "image_src": "https://product.hstatic.net/1000376021/product/10019873_0_689fb4bb8b97470f81c8756a874b5bf6_be73b22ab6684f899ebdf5115fde586e_large.jpg",
-        "price": "1990000",
-        "id": 96,
-        "quantity": 100
-      },
-      "userId": 18,
-      "quantity": 1,
-      "id": 4
-    },
-    {
-      "product": {
-        "brand": "native",
-        "newArrival": null,
-        "gender": "unisex",
-        "category_id": 1,
-        "sale": 20,
-        "name": " Giày Lười Unisex NATIVE Jefferson Block ",
-        "image_src": "https://product.hstatic.net/1000376021/product/11100102-3314-1_20d1b7b2ab9941b196ec82fc180cffa7_86dcb5efd4ec466f897583edf16fe046_large.jpg",
-        "price": "1690000",
-        "id": 86,
-        "quantity": 100
-      },
-      "userId": 18,
-      "quantity": 1,
-      "id": 5
-    },
-    {
-      "product": {
-        "brand": "native",
-        "newArrival": null,
-        "gender": "unisex",
-        "category_id": 1,
-        "sale": 20,
-        "name": " Giày Lười Unisex NATIVE Miles ",
-        "image_src": "http://product.hstatic.net/1000376021/product/11104600-1999-1_dde3bbe180c1406392336f4a6cb7af70_a391a2d67e3343f282e5ef382d2e86ba_large.jpg",
-        "price": "1400000",
-        "id": "1"
-      },
-      "userId": 14,
-      "quantity": 1,
-      "id": 6
-    },
-    {
-      "product": {
-        "id": 90,
-        "image_src": "https://product.hstatic.net/1000376021/product/10019847_0_9582de7c459647678ae9b95ba9bce600_ae4c97a9f73647c2b340d6eb8902c466_large.jpg",
-        "name": "Giày Lười Bé Gái TOMS Alpargata",
-        "price": "1290000"
-      },
-      "quantity": 1,
-      "id": 7
-    },
-    {
-      "product": {
-        "brand": "sledgers",
-        "newArrival": null,
-        "gender": "man",
-        "category_id": 8,
-        "sale": 20,
-        "name": " Giày Tây Nam SLEDGERS Trouville ",
-        "image_src": "http://product.hstatic.net/1000376021/product/trouville_black_0_3a7eb0ff388a413daaff77eb5d07d920_487386c3005546a1b03b5749c668f5d6_large.jpg",
-        "price": "2890000",
-        "id": 3,
-        "quantity": "10"
-      },
-      "userId": 10,
-      "quantity": 1,
-      "id": 8
-    },
-    {
-      "product": {
-        "id": 95,
-        "image_src": "https://product.hstatic.net/1000376021/product/10019882_0_b36954f8be1946488930a863b7425d1d_2b86d670abc2411bb2e90224fcdc7ee3_large.jpg",
-        "name": "Giày Lười Nam TOMS Alp Fwd",
-        "price": "1990000"
-      },
-      "userId": 10,
-      "quantity": 1,
-      "id": 12
-    },
     {
       "product": {
         "brand": "nike",
@@ -2877,8 +2787,25 @@
         "quantity": 100
       },
       "userId": 14,
-      "quantity": 1,
+      "quantity": 2,
       "id": 14
+    },
+    {
+      "product": {
+        "brand": "toms",
+        "newArrival": null,
+        "gender": "man",
+        "category_id": 1,
+        "sale": 20,
+        "name": "Giày Lười Nam TOMS Alp Fwd",
+        "image_src": "https://product.hstatic.net/1000376021/product/10019860_0_47dea577b0324830b2915d29f42bbcae_f80df078d22d430faf3063fdaf50fe8a_large.jpg",
+        "price": "1990000",
+        "id": 99,
+        "quantity": 100
+      },
+      "userId": 14,
+      "quantity": 1,
+      "id": 15
     }
   ],
   "bestsellers": [
@@ -5578,7 +5505,7 @@
       "dateOfBirth": "2023-06-13",
       "gender": "Man",
       "id": 14,
-      "src": "https://firebasestorage.googleapis.com/v0/b/my-nuxt-shop-auth.appspot.com/o/images%2FEW9Tcl0UEAAEaY3.png?alt=media&token=9f11e664-11d6-4178-b4a2-e30ecb1b3bca"
+      "src": "https://firebasestorage.googleapis.com/v0/b/my-nuxt-shop-auth.appspot.com/o/images%2FEW9Tcl0UEAAEaY3.png?alt=media&token=57faeac4-f20d-4b83-9c58-935be77971cc"
     },
     {
       "name": "satohNolan",
