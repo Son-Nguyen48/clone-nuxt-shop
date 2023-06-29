@@ -25,7 +25,19 @@ export const mutations = {
     state.cartItems = payload
   },
 
-  updateQuantity(state, payload) {
+  // updateQuantity(state, payload) {
+  //   const quantity = +state.cartItems[payload.index].quantity
+  //   if (payload.type === 'sub')
+  //     state.cartItems[payload.index].quantity = quantity - 1
+  //   else if (payload.type === 'add')
+  //     state.cartItems[payload.index].quantity = quantity + 1
+  //   else {
+  //     state.cartItems[payload.index].quantity =
+  //       +payload.quantity >= 0 ? +payload.quantity : 0
+  //   }
+  // },
+
+  setQuantity(state, payload) {
     const quantity = +state.cartItems[payload.index].quantity
     if (payload.type === 'sub')
       state.cartItems[payload.index].quantity = quantity - 1
@@ -114,5 +126,10 @@ export const actions = {
       )
       this.$router.push('/account/login')
     }
+  },
+
+  updateQuantity(state, vuexContext, payload) {
+    console.log(payload, 'payload')
+    console.log(state.cartItems[payload.index], 'state index')
   },
 }

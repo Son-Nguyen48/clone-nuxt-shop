@@ -157,7 +157,7 @@ export default {
               (i) => i.product?.id === product.id
             )
             const currentUser = JSON.parse(localStorage.getItem('currentUser'))
-            if (addedItem)
+            if (addedItem && addedItem.quantity > 1)
               data = {
                 ...data,
                 userId: currentUser.id,
@@ -174,14 +174,33 @@ export default {
             const methods = addedItem
               ? this.$axios.$put(`/cart/${addedItem.id}`, data)
               : this.$axios.$post(`/cart`, data)
-            methods.then((res) => {
-              this.$store.commit('cart/addToCart', res)
-              this.$store.dispatch('sideMenu/setSideMenuId', 'side-menu-cart')
-              if (!this.$store.state.sideMenu.isSideMenuOpen)
-                this.$store.dispatch('sideMenu/setStateSideMenu')
-            })
 
-            this.$swal.fire('Great!', 'Your item has been added.', 'success')
+            const currentProduct = this.$axios.$get(`/products/${product.id}`)
+            const currentQuantity = currentProduct.quantity
+            console.log(currentProduct, 'currentProduct')
+            if (currentQuantity > 1) {
+              methods.then((res) => {
+                this.$axios.$patch(`/products/${data.product.id}`, {
+                  quantity: currentQuantity - 1,
+                })
+                this.$store.commit('cart/addToCart', res)
+                this.$store.dispatch('sideMenu/setSideMenuId', 'side-menu-cart')
+                if (!this.$store.state.sideMenu.isSideMenuOpen)
+                  this.$store.dispatch('sideMenu/setStateSideMenu')
+              })
+
+              this.$swal.fire('Great!', 'Your item has been added.', 'success')
+            } else {
+              this.$swal.fire({
+                position: 'top-end',
+                icon: 'error',
+                title:
+                  'You can not add this item to the cart because this product quantity is 0!',
+                showConfirmButton: false,
+                timer: 3000,
+                toast: true,
+              })
+            }
           }
         })
     },

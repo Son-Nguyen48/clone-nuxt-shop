@@ -104,11 +104,10 @@ export default {
       removeItem: 'cart/removeItem',
       updateCart: 'cart/updateCart',
       checkoutCart: 'cart/checkoutCart',
-    }),
-
-    ...mapMutations({
       updateQuantity: 'cart/updateQuantity',
     }),
+
+    ...mapMutations({}),
   },
 }
 </script>
