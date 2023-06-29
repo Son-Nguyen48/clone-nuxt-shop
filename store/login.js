@@ -127,7 +127,7 @@ export const actions = {
     console.log(payload, 'payload')
     if (payload.email === 'admin@gmail.com') {
       console.log('go here')
-      if (payload.password === '19124321') {
+      if (payload.password === '19124321my') {
         console.log('go here')
         localStorage.setItem('adminUser', JSON.stringify(payload))
         this.$router.push('/admin')

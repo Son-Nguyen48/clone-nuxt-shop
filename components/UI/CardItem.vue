@@ -50,32 +50,49 @@ export default {
         (i) => i.product?.id === product.id
       )
       const currentUser = JSON.parse(localStorage.getItem('currentUser'))
-      if (addedItem)
+      if (addedItem && addedItem.quantity > 1)
         data = {
           ...data,
           userId: currentUser.id,
           quantity: addedItem.quantity + 1,
         }
       else data = { ...data, userId: currentUser.id, quantity: 1 }
-
-      const methods = addedItem
-        ? this.$axios.$put(`/cart/${addedItem.id}`, data)
-        : this.$axios.$post(`/cart`, data)
-
-      methods.then((res) => {
-        this.$store.commit('cart/addToCart', res)
-        // this.$store.dispatch('sideMenu/setSideMenuId', 'side-menu-cart')
-        // if (!this.$store.state.sideMenu.isSideMenuOpen)
-        //   this.$store.dispatch('sideMenu/setStateSideMenu')
+      const currentProduct = await this.$axios.$get(`/products/${product.id}`)
+      const currentQuantity = currentProduct.quantity
+      if (currentQuantity >= 1) {
+        const methods = addedItem
+          ? this.$axios.$put(`/cart/${addedItem.id}`, data)
+          : this.$axios.$post(`/cart`, data)
+        console.log(currentQuantity, 'currentQuantity')
+        methods.then((res) => {
+          console.log(res, 'res')
+          this.$axios.$patch(`/products/${data.product.id}`, {
+            quantity: currentQuantity - 1,
+          })
+          this.$store.commit('cart/addToCart', res)
+          // this.$store.dispatch('sideMenu/setSideMenuId', 'side-menu-cart')
+          // if (!this.$store.state.sideMenu.isSideMenuOpen)
+          //   this.$store.dispatch('sideMenu/setStateSideMenu')
+          this.$swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Your product has been added to cart!',
+            showConfirmButton: false,
+            timer: 1500,
+            toast: true,
+          })
+        })
+      } else {
         this.$swal.fire({
           position: 'top-end',
-          icon: 'success',
-          title: 'Your product has been added to cart!',
+          icon: 'error',
+          title:
+            'You can not add this item to the cart because this product quantity is 0!',
           showConfirmButton: false,
-          timer: 1500,
+          timer: 3000,
           toast: true,
         })
-      })
+      }
       //       this.$swal.fire('Great!', 'Your item has been added.', 'success')
       //     }
       //   })

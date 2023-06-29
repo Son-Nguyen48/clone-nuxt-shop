@@ -385,7 +385,7 @@
       "image_src": "http://product.hstatic.net/1000376021/product/d642ta_c7005_0_4f5d7313edf449559772241c954e7264_a1962bfcb5d44e8da101997bbc10cfcd_large.jpg",
       "price": "4800000",
       "id": 5,
-      "quantity": 100
+      "quantity": 99
     },
     {
       "brand": "geox",
@@ -469,7 +469,7 @@
       "image_src": "https://product.hstatic.net/1000376021/product/d15nua_c1q8x_0_83fd96b1f31a445ebc0eae947e1ab949_1990fd85553d43729c45a9ed5400d0ca_large.jpg",
       "price": "4800000",
       "id": 12,
-      "quantity": "10"
+      "quantity": 1
     },
     {
       "brand": "nike",
@@ -481,7 +481,7 @@
       "image_src": "https://product.hstatic.net/1000376021/product/dd1095-600_0_a86d1c505a7745ef9b2b61c29356d3da_eb27c4c2575347d787455a8ae25e9a17_large.jpg",
       "price": "1399000",
       "id": 13,
-      "quantity": 100
+      "quantity": 99
     },
     {
       "brand": "nike",
@@ -493,7 +493,7 @@
       "image_src": "https://product.hstatic.net/1000376021/product/dv3182-001_0_ba49b27d1eba4b879923912665dfcc32_a6ad10d8aa804bcca18009b431a8c58c_large.jpg",
       "price": "1619000",
       "id": 14,
-      "quantity": 100
+      "quantity": 98
     },
     {
       "brand": "nike",
@@ -2758,54 +2758,54 @@
   "cart": [
     {
       "product": {
+        "brand": "geox",
+        "newArrival": null,
+        "gender": "woman",
+        "category_id": 1,
+        "sale": 20,
+        "name": " Giày Lười Nữ GEOX D Elidia A ",
+        "image_src": "http://product.hstatic.net/1000376021/product/d642ta_c7005_0_4f5d7313edf449559772241c954e7264_a1962bfcb5d44e8da101997bbc10cfcd_large.jpg",
+        "price": "4800000",
+        "id": 5,
+        "quantity": 100
+      },
+      "userId": 14,
+      "quantity": 1,
+      "id": 21
+    },
+    {
+      "product": {
         "brand": "nike",
         "newArrival": null,
         "gender": "children",
         "category_id": 2,
         "sale": 20,
-        "name": " Giày Sneakers Trẻ Em Unisex NIKE Revolution 6 Nn (Psv) ",
-        "image_src": "https://product.hstatic.net/1000376021/product/dd1095-600_0_a86d1c505a7745ef9b2b61c29356d3da_eb27c4c2575347d787455a8ae25e9a17_large.jpg",
-        "price": "1399000",
-        "id": 13,
-        "quantity": 100
-      },
-      "userId": 14,
-      "quantity": 1,
-      "id": 13
-    },
-    {
-      "product": {
-        "brand": "nike",
-        "newArrival": null,
-        "gender": "unisex",
-        "category_id": 2,
-        "sale": 20,
-        "name": " Giày Sneakers Trẻ Em Unisex NIKE Omni Multi-Court (Gs) ",
+        "name": " Giày Sneakers Trẻ Em Unisex NIKE Revolution 6 Nn Jp (Psv) ",
         "image_src": "https://product.hstatic.net/1000376021/product/dv3182-001_0_ba49b27d1eba4b879923912665dfcc32_a6ad10d8aa804bcca18009b431a8c58c_large.jpg",
         "price": "1619000",
-        "id": 15,
-        "quantity": 100
-      },
-      "userId": 14,
-      "quantity": 2,
-      "id": 14
-    },
-    {
-      "product": {
-        "brand": "toms",
-        "newArrival": null,
-        "gender": "man",
-        "category_id": 1,
-        "sale": 20,
-        "name": "Giày Lười Nam TOMS Alp Fwd",
-        "image_src": "https://product.hstatic.net/1000376021/product/10019860_0_47dea577b0324830b2915d29f42bbcae_f80df078d22d430faf3063fdaf50fe8a_large.jpg",
-        "price": "1990000",
-        "id": 99,
+        "id": 14,
         "quantity": 100
       },
       "userId": 14,
       "quantity": 1,
-      "id": 15
+      "id": 23
+    },
+    {
+      "product": {
+        "brand": "geox",
+        "newArrival": null,
+        "gender": "woman",
+        "category_id": 2,
+        "sale": 20,
+        "name": " Giày Sneakers Nữ GEOX D Spherica A ",
+        "image_src": "https://product.hstatic.net/1000376021/product/d15nua_c1q8x_0_83fd96b1f31a445ebc0eae947e1ab949_1990fd85553d43729c45a9ed5400d0ca_large.jpg",
+        "price": "4800000",
+        "id": 12,
+        "quantity": 100
+      },
+      "userId": 14,
+      "quantity": 1,
+      "id": 24
     }
   ],
   "bestsellers": [
