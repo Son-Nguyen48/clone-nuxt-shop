@@ -117,7 +117,7 @@
           <img
             class="w-[300px] h-[300px] rounded-full mx-auto"
             :src="
-              !user.src
+              user.src
                 ? user.src
                 : 'https://pbs.twimg.com/media/EW9Tcl0UEAAEaY3.png'
             "
