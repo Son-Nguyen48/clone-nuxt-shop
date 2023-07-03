@@ -361,7 +361,7 @@
       "image_src": "http://product.hstatic.net/1000376021/product/trouville_black_0_3a7eb0ff388a413daaff77eb5d07d920_487386c3005546a1b03b5749c668f5d6_large.jpg",
       "price": "2890000",
       "id": 3,
-      "quantity": "10"
+      "quantity": 9
     },
     {
       "brand": "geox",
@@ -409,7 +409,7 @@
       "image_src": "https://product.hstatic.net/1000376021/product/d04ldc_c0013_0_f2234de9f9ad46f59054a6895ac9d6f9_5ca88fcdaa9a4c6f8f452892e73c09e9_large.jpg",
       "price": "5500000",
       "id": 7,
-      "quantity": 100
+      "quantity": 99
     },
     {
       "brand": "geox",
@@ -2806,6 +2806,40 @@
       "userId": 14,
       "quantity": 1,
       "id": 24
+    },
+    {
+      "product": {
+        "brand": "sledgers",
+        "newArrival": null,
+        "gender": "man",
+        "category_id": 8,
+        "sale": 20,
+        "name": " Giày Tây Nam SLEDGERS Trouville ",
+        "image_src": "http://product.hstatic.net/1000376021/product/trouville_black_0_3a7eb0ff388a413daaff77eb5d07d920_487386c3005546a1b03b5749c668f5d6_large.jpg",
+        "price": "2890000",
+        "id": 3,
+        "quantity": 100
+      },
+      "userId": 14,
+      "quantity": 1,
+      "id": 25
+    },
+    {
+      "product": {
+        "brand": "geox",
+        "newArrival": null,
+        "gender": "woman",
+        "category_id": 11,
+        "sale": 20,
+        "name": " Giày Boots Nữ GEOX D Anylla Wedge C ",
+        "image_src": "https://product.hstatic.net/1000376021/product/d04ldc_c0013_0_f2234de9f9ad46f59054a6895ac9d6f9_5ca88fcdaa9a4c6f8f452892e73c09e9_large.jpg",
+        "price": "5500000",
+        "id": 7,
+        "quantity": 100
+      },
+      "userId": 14,
+      "quantity": 1,
+      "id": 26
     }
   ],
   "bestsellers": [
@@ -5505,7 +5539,7 @@
       "dateOfBirth": "2023-06-13",
       "gender": "Man",
       "id": 14,
-      "src": "https://firebasestorage.googleapis.com/v0/b/my-nuxt-shop-auth.appspot.com/o/images%2FEW9Tcl0UEAAEaY3.png?alt=media&token=57faeac4-f20d-4b83-9c58-935be77971cc"
+      "src": "https://firebasestorage.googleapis.com/v0/b/my-nuxt-shop-auth.appspot.com/o/images%2Fhowl-s-moving-castle-magic-colorful-movie-7IMK.jpg?alt=media&token=d6809b4f-eb13-4f2e-933f-b16e7d97aa32"
     },
     {
       "name": "satohNolan",
@@ -5555,7 +5589,7 @@
       "dateOfBirth": "2001-07-12",
       "gender": "Man",
       "id": 18,
-      "src": "https://firebasestorage.googleapis.com/v0/b/my-nuxt-shop-auth.appspot.com/o/images%2Fcristiano-ronaldo-portugal-5-june-2022.jpg?alt=media&token=2a2dc16b-5f61-4cf7-b6b2-75242566985c"
+      "src": "https://firebasestorage.googleapis.com/v0/b/my-nuxt-shop-auth.appspot.com/o/images%2Fhowl-s-moving-castle-magic-colorful-movie-7IMK.jpg?alt=media&token=53f58a95-d7a2-47a9-b5d5-4d1808b23b08"
     }
   ],
   "currentUser": []
