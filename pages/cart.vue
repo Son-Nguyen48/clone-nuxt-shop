@@ -68,11 +68,11 @@
             ></base-button>
           </nuxt-link>
         </div>
-        <div class="w-3/4" @click="updateCart(cartItems)">
+        <div class="w-3/4" @click="updateCart({ cartItems, deleteId })">
           <base-button class="w-full" :title="'Update'"></base-button>
         </div>
 
-        <div class="w-3/4" @click="checkoutCart(cartItems)">
+        <div class="w-3/4" @click="checkoutCart({ cartItems, deleteId })">
           <base-button class="w-full" :title="'Pay'"></base-button>
         </div>
       </div>
@@ -93,6 +93,7 @@ export default {
     ...mapGetters({
       cartItems: 'cart/cartItems',
       totalPrice: 'cart/totalPrice',
+      deleteId: 'cart/deleteId',
     }),
   },
   async created() {
