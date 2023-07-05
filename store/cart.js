@@ -2,6 +2,7 @@
 
 export const state = () => ({
   cartItems: [],
+  deleteId: [],
 })
 
 export const getters = {
@@ -9,6 +10,7 @@ export const getters = {
   itemsQuantity: (s) => s.cartItems.reduce((sum, i) => sum + i.quantity, 0),
   totalPrice: (s) =>
     s.cartItems.reduce((sum, i) => sum + i.quantity * +i.product.price, 0),
+  deleteId: (s) => s.deleteId,
 }
 
 export const mutations = {
@@ -23,6 +25,15 @@ export const mutations = {
   },
   setCartItem(state, payload) {
     state.cartItems = payload
+  },
+
+  removeItem(state, payload) {
+    state.cartItems.splice(payload, 1)
+  },
+
+  setDeleteId(state, payload) {
+    state.deleteId.push(payload)
+    console.log(payload, 'payload', state.deleteId, 'deleteId')
   },
 
   updateQuantity(state, payload) {
@@ -61,7 +72,7 @@ export const actions = {
     })
   },
 
-  async removeItem(vuexContext, payload) {
+  async removeItem({ state, commit }, payload) {
     await this.$swal
       .fire({
         title: 'Are you sure?',
@@ -74,20 +85,25 @@ export const actions = {
       })
       .then((result) => {
         if (result.isConfirmed) {
-          this.$axios.$delete(`/cart/${payload}`).then((res) => {
-            this.$axios.$get('/cart').then((res) => {
-              vuexContext.commit('setCartItem', res)
-            })
-          })
+          const indexDelete = state.cartItems.findIndex(
+            (obj) => obj.id === payload
+          )
+          commit('removeItem', indexDelete)
+          commit('setDeleteId', payload)
+          // this.$axios.$delete(`/cart/${payload.id}`)
           this.$swal.fire('Deleted!', 'Your file has been deleted.', 'success')
         }
       })
   },
 
   async updateCart(vuexContext, payload) {
-    for (let index = 0; index < payload.length; index++) {
-      await this.$axios.$patch(`/cart/${payload[index].id}`, {
-        quantity: payload[index].quantity,
+    console.log(payload, 'payload')
+    for (let index = 0; index < payload.deleteId.length; index++) {
+      await this.$axios.$delete(`/cart/${payload.deleteId[index]}`)
+    }
+    for (let index = 0; index < payload.cartItems.length; index++) {
+      await this.$axios.$patch(`/cart/${payload.cartItems[index].id}`, {
+        quantity: payload.cartItems[index].quantity,
       })
     }
 
