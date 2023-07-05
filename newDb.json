@@ -337,7 +337,8 @@
       "name": " Giày Lười Unisex NATIVE Miles ",
       "image_src": "http://product.hstatic.net/1000376021/product/11104600-1999-1_dde3bbe180c1406392336f4a6cb7af70_a391a2d67e3343f282e5ef382d2e86ba_large.jpg",
       "price": "1400000",
-      "id": "1"
+      "id": "1",
+      "quantity": "999"
     },
     {
       "brand": "native",
@@ -349,7 +350,8 @@
       "description": "description 2",
       "image_src": "https://product.hstatic.net/1000376021/product/160835_camel_0_10557bad46b54b90ac98ef8c25ed027f_827d1d2c6a7c4373ae2b0461e708fedc_large.jpg",
       "price": "2490000",
-      "id": "2"
+      "id": "2",
+      "quantity": "998"
     },
     {
       "brand": "sledgers",
@@ -361,7 +363,7 @@
       "image_src": "http://product.hstatic.net/1000376021/product/trouville_black_0_3a7eb0ff388a413daaff77eb5d07d920_487386c3005546a1b03b5749c668f5d6_large.jpg",
       "price": "2890000",
       "id": 3,
-      "quantity": 9
+      "quantity": "992"
     },
     {
       "brand": "geox",
@@ -373,7 +375,7 @@
       "image_src": "https://product.hstatic.net/1000376021/product/d620qa_c9999_0_3d5e319fefb24b4db5257e0919c73337_b59358b78c9048b5bc98059aab51fdf4_large.jpg",
       "price": "5700000",
       "id": 4,
-      "quantity": 100
+      "quantity": 99
     },
     {
       "brand": "geox",
@@ -385,7 +387,7 @@
       "image_src": "http://product.hstatic.net/1000376021/product/d642ta_c7005_0_4f5d7313edf449559772241c954e7264_a1962bfcb5d44e8da101997bbc10cfcd_large.jpg",
       "price": "4800000",
       "id": 5,
-      "quantity": 99
+      "quantity": "990"
     },
     {
       "brand": "geox",
@@ -457,7 +459,7 @@
       "image_src": "https://product.hstatic.net/1000376021/product/d15nua_c1q8z_0_b6a0fe231c9c4cbaa5245b50198b1e67_fd070e63700a450b8d629e2d7bde158d_large.jpg",
       "price": "4800000",
       "id": 11,
-      "quantity": 100
+      "quantity": "55"
     },
     {
       "brand": "geox",
@@ -469,7 +471,7 @@
       "image_src": "https://product.hstatic.net/1000376021/product/d15nua_c1q8x_0_83fd96b1f31a445ebc0eae947e1ab949_1990fd85553d43729c45a9ed5400d0ca_large.jpg",
       "price": "4800000",
       "id": 12,
-      "quantity": 1
+      "quantity": 0
     },
     {
       "brand": "nike",
@@ -481,7 +483,7 @@
       "image_src": "https://product.hstatic.net/1000376021/product/dd1095-600_0_a86d1c505a7745ef9b2b61c29356d3da_eb27c4c2575347d787455a8ae25e9a17_large.jpg",
       "price": "1399000",
       "id": 13,
-      "quantity": 99
+      "quantity": 98
     },
     {
       "brand": "nike",
@@ -493,7 +495,7 @@
       "image_src": "https://product.hstatic.net/1000376021/product/dv3182-001_0_ba49b27d1eba4b879923912665dfcc32_a6ad10d8aa804bcca18009b431a8c58c_large.jpg",
       "price": "1619000",
       "id": 14,
-      "quantity": 98
+      "quantity": 96
     },
     {
       "brand": "nike",
@@ -505,7 +507,7 @@
       "image_src": "https://product.hstatic.net/1000376021/product/dv3182-001_0_ba49b27d1eba4b879923912665dfcc32_a6ad10d8aa804bcca18009b431a8c58c_large.jpg",
       "price": "1619000",
       "id": 15,
-      "quantity": 100
+      "quantity": 99
     },
     {
       "brand": "nike",
@@ -1381,7 +1383,7 @@
       "image_src": "https://product.hstatic.net/1000376021/product/10019759_0_f295321360cd48c1b59e85a997d028be_842d0346afd243ca933ff9004fd760b0_large.jpg",
       "price": "2390000",
       "id": 88,
-      "quantity": 100
+      "quantity": "98"
     },
     {
       "brand": "toms",
@@ -1465,7 +1467,7 @@
       "image_src": "https://product.hstatic.net/1000376021/product/10019882_0_b36954f8be1946488930a863b7425d1d_2b86d670abc2411bb2e90224fcdc7ee3_large.jpg",
       "price": "1990000",
       "id": 95,
-      "quantity": 100
+      "quantity": 99
     },
     {
       "brand": "toms",
@@ -1489,7 +1491,7 @@
       "image_src": "https://product.hstatic.net/1000376021/product/10019872_0_0b2bf01203784098979f5b04bce6dc0d_4c96caab500642ad9cd7a1411f2a5ff2_large.jpg",
       "price": "1290000",
       "id": 97,
-      "quantity": 100
+      "quantity": 99
     },
     {
       "brand": "toms",
@@ -2737,6 +2739,107 @@
       ],
       "userId": 14,
       "id": 15
+    },
+    {
+      "name": "Phat",
+      "address": "Thai Nguyen",
+      "phone": "0387423646",
+      "email": "doanh1@gmail.com",
+      "paymentsMethods": "transfer_payments",
+      "totalPayment": "2925000",
+      "orderStatus": "wait_for_pay",
+      "order_date": "Mon, 03 Jul 2023 18:31:04 GMT",
+      "cartItems": [
+        {
+          "product": {
+            "brand": "sledgers",
+            "newArrival": null,
+            "gender": "man",
+            "category_id": 8,
+            "sale": 20,
+            "name": " Giày Tây Nam SLEDGERS Trouville ",
+            "image_src": "http://product.hstatic.net/1000376021/product/trouville_black_0_3a7eb0ff388a413daaff77eb5d07d920_487386c3005546a1b03b5749c668f5d6_large.jpg",
+            "price": "2890000",
+            "id": 3,
+            "quantity": 100
+          },
+          "userId": 18,
+          "quantity": 1,
+          "id": 28
+        }
+      ],
+      "userId": 18,
+      "id": 17
+    },
+    {
+      "name": "Thanh",
+      "address": "Thanh Hoa",
+      "phone": "0308472347",
+      "email": "doanh1@gmail.com",
+      "paymentsMethods": "delivery_payments",
+      "totalPayment": "11005000",
+      "orderStatus": "transport",
+      "order_date": "Mon, 03 Jul 2023 18:32:35 GMT",
+      "cartItems": [
+        {
+          "product": {
+            "brand": "sledgers",
+            "newArrival": null,
+            "gender": "man",
+            "category_id": 8,
+            "sale": 20,
+            "name": " Giày Tây Nam SLEDGERS Trouville ",
+            "image_src": "http://product.hstatic.net/1000376021/product/trouville_black_0_3a7eb0ff388a413daaff77eb5d07d920_487386c3005546a1b03b5749c668f5d6_large.jpg",
+            "price": "2890000",
+            "id": 3,
+            "quantity": 100
+          },
+          "userId": 18,
+          "quantity": 1,
+          "id": 28
+        },
+        {
+          "product": {
+            "brand": "geox",
+            "newArrival": null,
+            "gender": "woman",
+            "category_id": 2,
+            "sale": 20,
+            "name": " Giày Sneakers Nữ GEOX D Spherica A ",
+            "image_src": "https://product.hstatic.net/1000376021/product/d15nua_c1q8z_0_b6a0fe231c9c4cbaa5245b50198b1e67_fd070e63700a450b8d629e2d7bde158d_large.jpg",
+            "price": "4800000",
+            "id": 11,
+            "quantity": 100
+          },
+          "userId": 18,
+          "quantity": 1,
+          "id": 29
+        },
+        {
+          "product": {
+            "id": 95,
+            "image_src": "https://product.hstatic.net/1000376021/product/10019882_0_b36954f8be1946488930a863b7425d1d_2b86d670abc2411bb2e90224fcdc7ee3_large.jpg",
+            "name": "Giày Lười Nam TOMS Alp Fwd",
+            "price": "1990000"
+          },
+          "userId": 18,
+          "quantity": 1,
+          "id": 30
+        },
+        {
+          "product": {
+            "id": 97,
+            "image_src": "https://product.hstatic.net/1000376021/product/10019872_0_0b2bf01203784098979f5b04bce6dc0d_4c96caab500642ad9cd7a1411f2a5ff2_large.jpg",
+            "name": "Giày Lười Nam TOMS Alp Fwd",
+            "price": "1290000"
+          },
+          "userId": 18,
+          "quantity": 1,
+          "id": 31
+        }
+      ],
+      "userId": 18,
+      "id": 18
     }
   ],
   "order_items": [
@@ -2758,57 +2861,6 @@
   "cart": [
     {
       "product": {
-        "brand": "geox",
-        "newArrival": null,
-        "gender": "woman",
-        "category_id": 1,
-        "sale": 20,
-        "name": " Giày Lười Nữ GEOX D Elidia A ",
-        "image_src": "http://product.hstatic.net/1000376021/product/d642ta_c7005_0_4f5d7313edf449559772241c954e7264_a1962bfcb5d44e8da101997bbc10cfcd_large.jpg",
-        "price": "4800000",
-        "id": 5,
-        "quantity": 100
-      },
-      "userId": 14,
-      "quantity": 1,
-      "id": 21
-    },
-    {
-      "product": {
-        "brand": "nike",
-        "newArrival": null,
-        "gender": "children",
-        "category_id": 2,
-        "sale": 20,
-        "name": " Giày Sneakers Trẻ Em Unisex NIKE Revolution 6 Nn Jp (Psv) ",
-        "image_src": "https://product.hstatic.net/1000376021/product/dv3182-001_0_ba49b27d1eba4b879923912665dfcc32_a6ad10d8aa804bcca18009b431a8c58c_large.jpg",
-        "price": "1619000",
-        "id": 14,
-        "quantity": 100
-      },
-      "userId": 14,
-      "quantity": 1,
-      "id": 23
-    },
-    {
-      "product": {
-        "brand": "geox",
-        "newArrival": null,
-        "gender": "woman",
-        "category_id": 2,
-        "sale": 20,
-        "name": " Giày Sneakers Nữ GEOX D Spherica A ",
-        "image_src": "https://product.hstatic.net/1000376021/product/d15nua_c1q8x_0_83fd96b1f31a445ebc0eae947e1ab949_1990fd85553d43729c45a9ed5400d0ca_large.jpg",
-        "price": "4800000",
-        "id": 12,
-        "quantity": 100
-      },
-      "userId": 14,
-      "quantity": 1,
-      "id": 24
-    },
-    {
-      "product": {
         "brand": "sledgers",
         "newArrival": null,
         "gender": "man",
@@ -2818,28 +2870,29 @@
         "image_src": "http://product.hstatic.net/1000376021/product/trouville_black_0_3a7eb0ff388a413daaff77eb5d07d920_487386c3005546a1b03b5749c668f5d6_large.jpg",
         "price": "2890000",
         "id": 3,
-        "quantity": 100
+        "quantity": "997"
       },
-      "userId": 14,
+      "userId": 18,
       "quantity": 1,
-      "id": 25
+      "id": 3
     },
     {
       "product": {
-        "brand": "geox",
+        "brand": "native",
         "newArrival": null,
         "gender": "woman",
-        "category_id": 11,
+        "category_id": 9,
         "sale": 20,
-        "name": " Giày Boots Nữ GEOX D Anylla Wedge C ",
-        "image_src": "https://product.hstatic.net/1000376021/product/d04ldc_c0013_0_f2234de9f9ad46f59054a6895ac9d6f9_5ca88fcdaa9a4c6f8f452892e73c09e9_large.jpg",
-        "price": "5500000",
-        "id": 7,
-        "quantity": 100
+        "name": " Giày Đế Xuồng Nữ CARMELA Camel Leather Ladies Sandals ",
+        "description": "description 2",
+        "image_src": "https://product.hstatic.net/1000376021/product/160835_camel_0_10557bad46b54b90ac98ef8c25ed027f_827d1d2c6a7c4373ae2b0461e708fedc_large.jpg",
+        "price": "2490000",
+        "id": "2",
+        "quantity": 1000
       },
-      "userId": 14,
+      "userId": 18,
       "quantity": 1,
-      "id": 26
+      "id": 4
     }
   ],
   "bestsellers": [
@@ -5579,17 +5632,17 @@
       "id": 17
     },
     {
-      "name": "thanh doanh",
+      "name": "Cristiano Ronaldo",
       "phone": "03874746554",
-      "email": "doanh1@gmail.com",
+      "email": "doanh01@gmail.com",
       "address": "Vietnam",
       "nationality": "Vietnam",
       "company": "VMO",
-      "password": "12345678",
+      "password": "12345678my",
       "dateOfBirth": "2001-07-12",
       "gender": "Man",
       "id": 18,
-      "src": "https://firebasestorage.googleapis.com/v0/b/my-nuxt-shop-auth.appspot.com/o/images%2Fhowl-s-moving-castle-magic-colorful-movie-7IMK.jpg?alt=media&token=53f58a95-d7a2-47a9-b5d5-4d1808b23b08"
+      "src": "https://firebasestorage.googleapis.com/v0/b/my-nuxt-shop-auth.appspot.com/o/images%2Fcristiano-ronaldo-portugal-5-june-2022.jpg?alt=media&token=2a60a688-3de4-47a1-8820-6ea12aaedd58"
     }
   ],
   "currentUser": []

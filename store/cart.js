@@ -25,17 +25,17 @@ export const mutations = {
     state.cartItems = payload
   },
 
-  // updateQuantity(state, payload) {
-  //   const quantity = +state.cartItems[payload.index].quantity
-  //   if (payload.type === 'sub')
-  //     state.cartItems[payload.index].quantity = quantity - 1
-  //   else if (payload.type === 'add')
-  //     state.cartItems[payload.index].quantity = quantity + 1
-  //   else {
-  //     state.cartItems[payload.index].quantity =
-  //       +payload.quantity >= 0 ? +payload.quantity : 0
-  //   }
-  // },
+  updateQuantity(state, payload) {
+    const quantity = +state.cartItems[payload.index].quantity
+    if (payload.type === 'sub')
+      state.cartItems[payload.index].quantity = quantity - 1
+    else if (payload.type === 'add')
+      state.cartItems[payload.index].quantity = quantity + 1
+    else {
+      state.cartItems[payload.index].quantity =
+        +payload.quantity >= 0 ? +payload.quantity : 0
+    }
+  },
 
   setQuantity(state, payload) {
     const quantity = +state.cartItems[payload.index].quantity
@@ -128,8 +128,48 @@ export const actions = {
     }
   },
 
-  updateQuantity(state, vuexContext, payload) {
+  async updateQuantity({ state, commit }, payload) {
     console.log(payload, 'payload')
     console.log(state.cartItems[payload.index], 'state index')
+    const stateIndex = state.cartItems[payload.index]
+    console.log(stateIndex.product.id, 'stateIndex.product.id')
+
+    const currentProduct = await this.$axios.$get(
+      `/products/${stateIndex.product.id}`
+    )
+    const currentQuantity = stateIndex.product.quantity
+    const productQuantity = Number(currentProduct.quantity)
+    console.log(state, 'state')
+    console.log(currentQuantity, 'currentQuantity')
+    console.log(productQuantity, 'productQuantity')
+    if (
+      Number(productQuantity) >= 1 ||
+      Number(productQuantity) > Number(payload?.quantity)
+    ) {
+      commit('updateQuantity', payload)
+      await this.$axios.$patch(`/products/${stateIndex.product.id}`, {
+        quantity:
+          payload.type === 'add'
+            ? String(productQuantity - 1)
+            : payload.type === 'sub'
+            ? String(productQuantity + 1)
+            : String(currentQuantity - payload?.quantity),
+      })
+    } else {
+      if (payload.type === 'sub') {
+        commit('updateQuantity', payload)
+        await this.$axios.$patch(`/products/${stateIndex.product.id}`, {
+          quantity: String(productQuantity + 1),
+        })
+      }
+
+      if (payload.type !== 'sub') {
+        await this.$swal.fire(
+          'This product quantity is empty!',
+          'Wait until stock is back !',
+          'error'
+        )
+      }
+    }
   },
 }

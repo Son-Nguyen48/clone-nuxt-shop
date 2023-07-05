@@ -110,6 +110,7 @@ export const actions = {
       this.$axios.$put(`/accounts/${payload.id}`, payload)
 
       localStorage.removeItem('currentUser')
+      localStorage.setItem('currentUser', JSON.stringify(res))
 
       this.$swal.fire({
         position: 'top-end',
@@ -119,7 +120,6 @@ export const actions = {
         timer: 1500,
         toast: true,
       })
-      localStorage.setItem('currentUser', JSON.stringify(res))
     })
   },
 

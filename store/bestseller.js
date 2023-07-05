@@ -16,18 +16,14 @@ export const mutations = {
 
 export const actions = {
   getListProduct(vuexContext) {
-    return this.$axios
-      .$get('/bestsellers')
-      .then((res) => {
-        vuexContext.commit('store', res)
-      })
+    return this.$axios.$get('/bestsellers').then((res) => {
+      vuexContext.commit('store', res)
+    })
   },
 
   getListProductHomePage(vuexContext) {
-    return this.$axios
-      .$get('/bestsellers?_page=1&_limit=20')
-      .then((res) => {
-        vuexContext.commit('store', res)
-      })
+    return this.$axios.$get('/products?_page=1&_limit=20').then((res) => {
+      vuexContext.commit('store', res)
+    })
   },
 }
