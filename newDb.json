@@ -363,7 +363,7 @@
       "image_src": "http://product.hstatic.net/1000376021/product/trouville_black_0_3a7eb0ff388a413daaff77eb5d07d920_487386c3005546a1b03b5749c668f5d6_large.jpg",
       "price": "2890000",
       "id": 3,
-      "quantity": 974
+      "quantity": 972
     },
     {
       "brand": "geox",
@@ -2840,6 +2840,71 @@
       ],
       "userId": 18,
       "id": 18
+    },
+    {
+      "name": "Doanh",
+      "address": "Hai Phong",
+      "phone": "0392834742",
+      "email": "doanh01@gmail.com",
+      "paymentsMethods": "delivery_payments",
+      "totalPayment": "30474000",
+      "orderStatus": "pending",
+      "order_date": "Thu, 06 Jul 2023 06:47:48 GMT",
+      "cartItems": [
+        {
+          "product": {
+            "brand": "sledgers",
+            "newArrival": null,
+            "gender": "man",
+            "category_id": 8,
+            "sale": 20,
+            "name": " Giày Tây Nam SLEDGERS Trouville ",
+            "image_src": "http://product.hstatic.net/1000376021/product/trouville_black_0_3a7eb0ff388a413daaff77eb5d07d920_487386c3005546a1b03b5749c668f5d6_large.jpg",
+            "price": "2890000",
+            "id": 3,
+            "quantity": 976
+          },
+          "userId": 18,
+          "quantity": 8,
+          "id": 10
+        },
+        {
+          "product": {
+            "brand": "geox",
+            "newArrival": "true",
+            "gender": "woman",
+            "category_id": 2,
+            "sale": 20,
+            "name": " Giày Sneakers Nữ GEOX D Nydame A ",
+            "image_src": "https://product.hstatic.net/1000376021/product/d620qa_c9999_0_3d5e319fefb24b4db5257e0919c73337_b59358b78c9048b5bc98059aab51fdf4_large.jpg",
+            "price": "5700000",
+            "id": 4,
+            "quantity": 97
+          },
+          "userId": 18,
+          "quantity": 1,
+          "id": 13
+        },
+        {
+          "product": {
+            "brand": "nike",
+            "newArrival": null,
+            "gender": "unisex",
+            "category_id": 2,
+            "sale": 20,
+            "name": " Giày Sneakers Trẻ Em Unisex NIKE Omni Multi-Court (Gs) ",
+            "image_src": "https://product.hstatic.net/1000376021/product/dv3182-001_0_ba49b27d1eba4b879923912665dfcc32_a6ad10d8aa804bcca18009b431a8c58c_large.jpg",
+            "price": "1619000",
+            "id": 15,
+            "quantity": 99
+          },
+          "userId": 18,
+          "quantity": 1,
+          "id": 14
+        }
+      ],
+      "userId": 18,
+      "id": 19
     }
   ],
   "order_items": [
@@ -2879,45 +2944,11 @@
         "image_src": "http://product.hstatic.net/1000376021/product/trouville_black_0_3a7eb0ff388a413daaff77eb5d07d920_487386c3005546a1b03b5749c668f5d6_large.jpg",
         "price": "2890000",
         "id": 3,
-        "quantity": 976
+        "quantity": "974"
       },
       "userId": 18,
-      "quantity": 8,
-      "id": 10
-    },
-    {
-      "product": {
-        "brand": "geox",
-        "newArrival": "true",
-        "gender": "woman",
-        "category_id": 2,
-        "sale": 20,
-        "name": " Giày Sneakers Nữ GEOX D Nydame A ",
-        "image_src": "https://product.hstatic.net/1000376021/product/d620qa_c9999_0_3d5e319fefb24b4db5257e0919c73337_b59358b78c9048b5bc98059aab51fdf4_large.jpg",
-        "price": "5700000",
-        "id": 4,
-        "quantity": 97
-      },
-      "userId": 18,
-      "quantity": 1,
-      "id": 13
-    },
-    {
-      "product": {
-        "brand": "nike",
-        "newArrival": null,
-        "gender": "unisex",
-        "category_id": 2,
-        "sale": 20,
-        "name": " Giày Sneakers Trẻ Em Unisex NIKE Omni Multi-Court (Gs) ",
-        "image_src": "https://product.hstatic.net/1000376021/product/dv3182-001_0_ba49b27d1eba4b879923912665dfcc32_a6ad10d8aa804bcca18009b431a8c58c_large.jpg",
-        "price": "1619000",
-        "id": 15,
-        "quantity": 99
-      },
-      "userId": 18,
-      "quantity": 1,
-      "id": 14
+      "quantity": 3,
+      "id": 8
     }
   ],
   "bestsellers": [
@@ -5667,7 +5698,7 @@
       "dateOfBirth": "2001-07-12",
       "gender": "Man",
       "id": 18,
-      "src": "https://firebasestorage.googleapis.com/v0/b/my-nuxt-shop-auth.appspot.com/o/images%2Fcristiano-ronaldo-portugal-5-june-2022.jpg?alt=media&token=2a60a688-3de4-47a1-8820-6ea12aaedd58"
+      "src": "https://firebasestorage.googleapis.com/v0/b/my-nuxt-shop-auth.appspot.com/o/images%2FEW9Tcl0UEAAEaY3.png?alt=media&token=483a5d65-d74d-4c20-8137-1c632dc10c76"
     }
   ],
   "currentUser": []
