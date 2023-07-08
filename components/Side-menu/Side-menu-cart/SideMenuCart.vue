@@ -57,7 +57,7 @@
           </nuxt-link>
         </div>
 
-        <div class="w-3/4" @click="updateCart(cartItems)">
+        <div class="w-3/4" @click="updateCart({ cartItems, deleteId })">
           <base-button class="w-full" :title="'Update'"></base-button>
         </div>
 
@@ -65,7 +65,7 @@
           class="w-3/4"
           @click="
             closeSideMenu()
-            updateCart(cartItems)
+            updateCart({ cartItems, deleteId })
           "
         >
           <nuxt-link to="/cart">
@@ -95,6 +95,7 @@ export default {
     ...mapGetters({
       cartItems: 'cart/cartItems',
       totalPrice: 'cart/totalPrice',
+      deleteId: 'cart/deleteId',
     }),
   },
   methods: {
