@@ -32,8 +32,12 @@ export const mutations = {
   },
 
   setDeleteId(state, payload) {
-    state.deleteId.push(payload)
-    console.log(payload, 'payload', state.deleteId, 'deleteId')
+    if (payload) {
+      state.deleteId.push(payload)
+      console.log(payload, 'payload', state.deleteId, 'deleteId')
+    } else {
+      state.deleteId = []
+    }
   },
 
   updateQuantity(state, payload) {
@@ -106,6 +110,8 @@ export const actions = {
         quantity: payload.cartItems[index].quantity,
       })
     }
+
+    vuexContext.commit('setDeleteId')
 
     await this.$swal.fire({
       position: 'top-end',
