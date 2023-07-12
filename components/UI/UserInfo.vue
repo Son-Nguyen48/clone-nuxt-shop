@@ -137,9 +137,9 @@
           >
         </div>
 
-        <p class="mt-5 text-center">
+        <!-- <p class="mt-5 text-center">
           Maximum file size 1 MB Format: .JPEG, .PNG
-        </p>
+        </p> -->
       </div>
     </div>
 
