@@ -6,6 +6,8 @@
 # install dependencies
 $ npm install
 
+# regiter a console firebase to get env variables and add a .env to your project
+
 # serve with hot reload at localhost:3000
 $ npm run dev
 
