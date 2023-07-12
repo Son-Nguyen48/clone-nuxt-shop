@@ -1,6 +1,7 @@
 <template>
   <span
-    class="hamburger-menu inline-block relative bg-[#252a2b] w-[27px] h-[3px] transform -translate-y-2 mx-[5px]"
+    role="button"
+    class="hamburger-menu inline-block relative bg-[#252a2b] w-[27px] h-[3px] transform translate-y-5 mx-[5px]"
     @click="toggleSideMenu"
   ></span>
 </template>

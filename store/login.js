@@ -131,7 +131,18 @@ export const actions = {
       if (payload.password === '19124321my') {
         console.log('go here')
         localStorage.setItem('adminUser', JSON.stringify(payload))
+        this.$swal.fire(
+          'Logged in successfully!',
+          'You are redirected to the Profile page!',
+          'success'
+        )
         this.$router.push('/admin')
+      } else {
+        this.$swal.fire(
+          'Your email or password is incorrect!',
+          'Please enter your email and password again!',
+          'error'
+        )
       }
     } else {
       let accounts = []

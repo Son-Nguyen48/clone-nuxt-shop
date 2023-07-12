@@ -1,6 +1,18 @@
 <template>
-  <div>
+  <div class="flex__right-menu">
     <cart-link></cart-link>
+
+    <nuxt-link
+      to="/account/user"
+      class="flex justify-center items-center w-10 h-10 rounded-full bg-black"
+    >
+      <font-awesome-icon
+        :icon="['fas', 'user']"
+        style="color: #000000"
+        size="lg"
+        class="filter brightness-0 invert"
+      />
+    </nuxt-link>
 
     <hamburger-button></hamburger-button>
   </div>
@@ -40,5 +52,12 @@ export default {
 }
 .hamburger-menu::after {
   top: 7px;
+}
+
+@media (max-width: 1023px) {
+  .flex__right-menu {
+    display: flex;
+    gap: 10px;
+  }
 }
 </style>

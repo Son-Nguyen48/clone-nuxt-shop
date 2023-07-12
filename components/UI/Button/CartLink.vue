@@ -1,5 +1,5 @@
 <template>
-  <span role="button" class="relative mx-[5px]">
+  <div role="button" class="relative mx-[5px] flex items-center">
     <div class="inline-block remove-hightlight" @click="openCart">
       <span>
         <svg
@@ -22,11 +22,11 @@
         </svg>
       </span>
       <span
-        class="inline-block absolute -top-[5.6px] left-1/2 transform -translate-x-1/2"
+        class="inline-block absolute top-1/2 left-1/2 transform -translate-y-1/3 -translate-x-1/2"
         >{{ itemsQuantity }}</span
       >
     </div>
-  </span>
+  </div>
 </template>
 
 <script>
