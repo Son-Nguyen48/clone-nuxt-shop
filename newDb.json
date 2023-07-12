@@ -351,7 +351,7 @@
       "image_src": "https://product.hstatic.net/1000376021/product/160835_camel_0_10557bad46b54b90ac98ef8c25ed027f_827d1d2c6a7c4373ae2b0461e708fedc_large.jpg",
       "price": "2490000",
       "id": "2",
-      "quantity": 994
+      "quantity": 993
     },
     {
       "brand": "sledgers",
@@ -363,7 +363,7 @@
       "image_src": "http://product.hstatic.net/1000376021/product/trouville_black_0_3a7eb0ff388a413daaff77eb5d07d920_487386c3005546a1b03b5749c668f5d6_large.jpg",
       "price": "2890000",
       "id": 3,
-      "quantity": 972
+      "quantity": 971
     },
     {
       "brand": "geox",
@@ -375,7 +375,7 @@
       "image_src": "https://product.hstatic.net/1000376021/product/d620qa_c9999_0_3d5e319fefb24b4db5257e0919c73337_b59358b78c9048b5bc98059aab51fdf4_large.jpg",
       "price": "5700000",
       "id": 4,
-      "quantity": 97
+      "quantity": 96
     },
     {
       "brand": "geox",
@@ -2905,6 +2905,72 @@
       ],
       "userId": 18,
       "id": 19
+    },
+    {
+      "name": "Nam",
+      "address": "Hai Phong",
+      "phone": "0348937444",
+      "email": "red2@gmail.com",
+      "paymentsMethods": "transfer_payments",
+      "totalPayment": "11115000",
+      "orderStatus": "wait_for_pay",
+      "order_date": "Wed, 12 Jul 2023 09:02:30 GMT",
+      "cartItems": [
+        {
+          "product": {
+            "brand": "native",
+            "newArrival": null,
+            "gender": "woman",
+            "category_id": 9,
+            "sale": 20,
+            "name": " Giày Đế Xuồng Nữ CARMELA Camel Leather Ladies Sandals ",
+            "description": "description 2",
+            "image_src": "https://product.hstatic.net/1000376021/product/160835_camel_0_10557bad46b54b90ac98ef8c25ed027f_827d1d2c6a7c4373ae2b0461e708fedc_large.jpg",
+            "price": "2490000",
+            "id": "2",
+            "quantity": 994
+          },
+          "userId": 14,
+          "quantity": 1,
+          "id": 9
+        },
+        {
+          "product": {
+            "brand": "sledgers",
+            "newArrival": null,
+            "gender": "man",
+            "category_id": 8,
+            "sale": 20,
+            "name": " Giày Tây Nam SLEDGERS Trouville ",
+            "image_src": "http://product.hstatic.net/1000376021/product/trouville_black_0_3a7eb0ff388a413daaff77eb5d07d920_487386c3005546a1b03b5749c668f5d6_large.jpg",
+            "price": "2890000",
+            "id": 3,
+            "quantity": 972
+          },
+          "userId": 14,
+          "quantity": 1,
+          "id": 10
+        },
+        {
+          "product": {
+            "brand": "geox",
+            "newArrival": "true",
+            "gender": "woman",
+            "category_id": 2,
+            "sale": 20,
+            "name": " Giày Sneakers Nữ GEOX D Nydame A ",
+            "image_src": "https://product.hstatic.net/1000376021/product/d620qa_c9999_0_3d5e319fefb24b4db5257e0919c73337_b59358b78c9048b5bc98059aab51fdf4_large.jpg",
+            "price": "5700000",
+            "id": 4,
+            "quantity": 97
+          },
+          "userId": 14,
+          "quantity": 1,
+          "id": 11
+        }
+      ],
+      "userId": 14,
+      "id": 20
     }
   ],
   "order_items": [
@@ -2949,6 +3015,58 @@
       "userId": 18,
       "quantity": 3,
       "id": 8
+    },
+    {
+      "product": {
+        "brand": "native",
+        "newArrival": null,
+        "gender": "woman",
+        "category_id": 9,
+        "sale": 20,
+        "name": " Giày Đế Xuồng Nữ CARMELA Camel Leather Ladies Sandals ",
+        "description": "description 2",
+        "image_src": "https://product.hstatic.net/1000376021/product/160835_camel_0_10557bad46b54b90ac98ef8c25ed027f_827d1d2c6a7c4373ae2b0461e708fedc_large.jpg",
+        "price": "2490000",
+        "id": "2",
+        "quantity": 994
+      },
+      "userId": 14,
+      "quantity": 1,
+      "id": 9
+    },
+    {
+      "product": {
+        "brand": "sledgers",
+        "newArrival": null,
+        "gender": "man",
+        "category_id": 8,
+        "sale": 20,
+        "name": " Giày Tây Nam SLEDGERS Trouville ",
+        "image_src": "http://product.hstatic.net/1000376021/product/trouville_black_0_3a7eb0ff388a413daaff77eb5d07d920_487386c3005546a1b03b5749c668f5d6_large.jpg",
+        "price": "2890000",
+        "id": 3,
+        "quantity": 972
+      },
+      "userId": 14,
+      "quantity": 1,
+      "id": 10
+    },
+    {
+      "product": {
+        "brand": "geox",
+        "newArrival": "true",
+        "gender": "woman",
+        "category_id": 2,
+        "sale": 20,
+        "name": " Giày Sneakers Nữ GEOX D Nydame A ",
+        "image_src": "https://product.hstatic.net/1000376021/product/d620qa_c9999_0_3d5e319fefb24b4db5257e0919c73337_b59358b78c9048b5bc98059aab51fdf4_large.jpg",
+        "price": "5700000",
+        "id": 4,
+        "quantity": 97
+      },
+      "userId": 14,
+      "quantity": 1,
+      "id": 11
     }
   ],
   "bestsellers": [
@@ -5648,7 +5766,7 @@
       "dateOfBirth": "2023-06-13",
       "gender": "Man",
       "id": 14,
-      "src": "https://firebasestorage.googleapis.com/v0/b/my-nuxt-shop-auth.appspot.com/o/images%2Fhowl-s-moving-castle-magic-colorful-movie-7IMK.jpg?alt=media&token=d6809b4f-eb13-4f2e-933f-b16e7d97aa32"
+      "src": "https://firebasestorage.googleapis.com/v0/b/my-nuxt-shop-auth.appspot.com/o/images%2Fb46f3b32549f8bc1d28e.jpg?alt=media&token=b5a6969e-c6f7-4f65-8bf8-de9c184f7157"
     },
     {
       "name": "satohNolan",
