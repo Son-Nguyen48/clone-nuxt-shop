@@ -1,4 +1,8 @@
 export default {
+  loading: {
+    color: '#FFDD00',
+    height: '5px',
+  },
   ssr: false,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -77,8 +81,8 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: 'http://localhost:3004',
-    // baseURL: 'https://uthcq8-3000.csb.app',
+    // baseURL: 'http://localhost:3004',
+    baseURL: 'https://uthcq8-3000.csb.app',
     // baseURL: 'https://api-nuxt-shop.vercel.app',
   },
 

@@ -24,7 +24,7 @@ export const actions = {
       vuexContext.commit('setCurrentUser', res)
     })
   },
-  async logout() {
+  async logout(vuexContext) {
     // const currentUser = JSON.parse(localStorage.getItem('currentUser'))
     // if (currentUser) {
     //   await this.$swal
@@ -73,6 +73,7 @@ export const actions = {
               'success'
             )
             localStorage.removeItem('currentUser')
+            vuexContext.commit('cart/setCartItem', [], { root: true })
             this.$router.push('/account/login')
           }
         })
@@ -203,6 +204,9 @@ export const actions = {
           'success'
         )
         localStorage.setItem('currentUser', JSON.stringify(isValidUser[0]))
+        vuexContext.dispatch('cart/getListItem', isValidUser[0].id, {
+          root: true,
+        })
         this.$router.push('/account/user')
       } catch (error) {
         this.$swal.fire(

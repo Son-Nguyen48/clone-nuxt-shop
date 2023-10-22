@@ -7,7 +7,13 @@ export const state = () => ({
 
 export const getters = {
   cartItems: (s) => s.cartItems,
-  itemsQuantity: (s) => s.cartItems.reduce((sum, i) => sum + i.quantity, 0),
+  itemsQuantity: (s) => {
+    console.log(
+      'go here: ',
+      s.cartItems.reduce((sum, i) => sum + i.quantity, 0)
+    )
+    return s.cartItems.reduce((sum, i) => sum + i.quantity, 0)
+  },
   totalPrice: (s) =>
     s.cartItems.reduce((sum, i) => sum + i.quantity * +i.product.price, 0),
   deleteId: (s) => s.deleteId,
