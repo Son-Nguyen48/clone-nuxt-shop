@@ -352,7 +352,6 @@
       "price": "2490000",
       "id": "2",
       "quantity": 993
-      "quantity": 993
     },
     {
       "brand": "sledgers",
@@ -5888,10 +5887,5 @@
       "src": "https://firebasestorage.googleapis.com/v0/b/my-nuxt-shop-auth.appspot.com/o/images%2FEW9Tcl0UEAAEaY3.png?alt=media&token=483a5d65-d74d-4c20-8137-1c632dc10c76"
     }
   ],
-  "currentFilter": [
-    {
-      "id": 1,
-      "name": "all"
-    }
-  ]
+  "currentUser": []
 }
