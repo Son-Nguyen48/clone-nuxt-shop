@@ -1,4 +1,8 @@
 export default {
+  loading: {
+    color: '#FFDD00',
+    height: '5px',
+  },
   ssr: false,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {

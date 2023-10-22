@@ -40,12 +40,16 @@ export default {
   computed: {
     ...mapGetters({
       itemsQuantity: 'cart/itemsQuantity',
+      cartItems: 'cart/cartItems',
     }),
   },
   async created() {
     const userId = JSON.parse(localStorage.getItem('currentUser'))?.id
     console.log(userId, 'userId')
-    if (userId) await this.$store.dispatch('cart/getListItem', userId)
+    if (userId) {
+      await this.$store.dispatch('cart/getListItem', userId)
+      console.log('cartItems: ', this.cartItems)
+    }
   },
   methods: {
     openCart() {

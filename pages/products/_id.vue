@@ -136,6 +136,12 @@ export default {
     // eslint-disable-next-line no-console
     console.log(this.$store.state.product.productItem, 'productItem')
     await this.getListFilter({ name: 'brand', data: this.productItem.brand })
+
+    // await this.$axios
+    //   .$get('http://localhost:3001/nuxtShops/orders')
+    //   .then((res) => {
+    //     console.log(res.orders[11].name, 'orders')
+    //   })
   },
   methods: {
     async addToCart(product) {
